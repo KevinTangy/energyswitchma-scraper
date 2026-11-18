@@ -118,8 +118,9 @@ Columns, in order: `date, zip, city, supplier, price_cents_per_kwh, term, fees`
 - Schedule: `cron: "11 11 * * *"` is 11:11 UTC, which is 6:11 AM EST and
   7:11 AM EDT. GitHub cron runs in UTC only. Also has `workflow_dispatch`
   for manual runs.
-- Steps: install Playwright and matplotlib, then scrape each city in a loop,
-  then `make_charts.py`, then commit `data charts README.md` as `rate-bot`,
+- Steps: install Playwright and matplotlib, then scrape each city in a loop
+  (with a 15-second pause between cities, `PAUSE_SECONDS`, to go easy on the
+  site), then `make_charts.py`, then commit `data charts README.md` as `rate-bot`,
   then fail the run if any city returned no offers.
 - Needs `permissions: contents: write` (already set).
 

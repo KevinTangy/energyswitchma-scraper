@@ -74,3 +74,8 @@ In the order they were made (Nov 17–18, 2026).
     now compact gzip files (about 7 KB JSON + 2 KB text). The gzip header has
     no timestamp or filename, so an unchanged capture produces identical
     bytes and git stores no new copy.
+
+20. **15-second pause between cities** (Nov 18). The load was already tiny
+    (one page view per city, one at a time), but the pause keeps it gentle
+    if more cities are added. It adds about 15 s per city to the run, which
+    costs nothing because Actions minutes are free for public repos.

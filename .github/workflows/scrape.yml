@@ -25,11 +25,18 @@ jobs:
 
       # One city failing doesn't stop the others; the step fails at the end
       # if any city came back empty, so you'll get a GitHub alert.
+      # PAUSE_SECONDS spaces out requests to energyswitchma.gov (not after
+      # the last city).
       - name: Scrape all cities
+        env:
+          PAUSE_SECONDS: 15
         run: |
           failed=""
+          first=1
           while IFS=: read -r zip city; do
             [ -z "$zip" ] && continue
+            [ "$first" = 1 ] || sleep "$PAUSE_SECONDS"
+            first=0
             python scrape.py "$zip" --city "$city" || failed="$failed $city"
           done <<'EOF'
           02148:Malden
