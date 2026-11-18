@@ -27,7 +27,7 @@ Print
 Download to CSV (Excel)
 Compare
 Electric Supply Products
-Total Products: 41
+Total Products: 40
 
 SUPPLIER NAME	PRICE 	CONTRACT TERM 	RENEWABLE ENERGY 	ADDITIONAL PRODUCTS
 & SERVICES	ESTIMATED MONTHLY
@@ -44,7 +44,7 @@ Feb '27 through Jul '27
 Required:69% | Voluntary:0%
 TOTAL : 69%
 		
-$98.38
+$98.36
 through Jul '27
 
 
@@ -99,6 +99,21 @@ through Nov '27
 
 Sign Up Compare 
 	
+15.790 ¢/kWh
+	
+12 months
+No cancellation fee
+Automatic renewal 
+	
+Required:69% | Voluntary:31%
+TOTAL : 100%
+		
+$94.74
+through Nov '27
+
+
+Sign Up Compare 
+	
 15.870 ¢/kWh
 	
 12 months
@@ -131,7 +146,7 @@ Sign Up Compare
 	
 16.190 ¢/kWh
 	
-13 months
+24 months
 No cancellation fee
 Automatic renewal 
 	
@@ -139,7 +154,7 @@ Required:69% | Voluntary:31%
 TOTAL : 100%
 		
 $97.14
-through Dec '27
+through Nov '28
 
 
 Sign Up Compare 
@@ -175,6 +190,21 @@ through Nov '27
 
 
 Sign Up Compare 
+	
+16.390 ¢/kWh
+	
+12 months
+Cancellation fee 
+Automatic renewal 
+	
+Required:69% | Voluntary:0%
+TOTAL : 69%
+		
+$98.34
+through Nov '27
+
+
+Sign Up Compare 
 New Customers Only 
 	
 16.390 ¢/kWh
@@ -192,7 +222,7 @@ through Nov '29
 
 Sign Up Compare 
 	
-16.390 ¢/kWh
+16.590 ¢/kWh
 	
 12 months
 Cancellation fee 
@@ -201,22 +231,7 @@ Automatic renewal
 Required:69% | Voluntary:0%
 TOTAL : 69%
 		
-$98.34
-through Nov '27
-
-
-Sign Up Compare 
-	
-16.490 ¢/kWh
-	
-12 months
-Cancellation fee 
-Automatic renewal 
-	
-Required:69% | Voluntary:0%
-TOTAL : 69%
-		
-$98.94
+$99.54
 through Nov '27
 
 
@@ -273,21 +288,6 @@ Sign Up Compare
 	
 16.790 ¢/kWh
 	
-24 months
-No cancellation fee
-Automatic renewal 
-	
-Required:69% | Voluntary:31%
-TOTAL : 100%
-		
-$100.74
-through Nov '28
-
-
-Sign Up Compare 
-	
-16.790 ¢/kWh
-	
 12 months
 Cancellation fee 
 Automatic renewal 
@@ -298,22 +298,6 @@ TOTAL : 100%
 		
 $100.74
 through Nov '27
-
-
-Sign Up Compare 
-New Customers Only 
-	
-16.990 ¢/kWh
-	
-18 months
-Cancellation fee 
-Automatic renewal 
-	
-Required:69% | Voluntary:0%
-TOTAL : 69%
-		
-$101.94
-through May '28
 
 
 Sign Up Compare 
@@ -340,6 +324,22 @@ New Customers Only
 	
 16.990 ¢/kWh
 	
+18 months
+Cancellation fee 
+Automatic renewal 
+	
+Required:69% | Voluntary:0%
+TOTAL : 69%
+		
+$101.94
+through May '28
+
+
+Sign Up Compare 
+New Customers Only 
+	
+16.990 ¢/kWh
+	
 11 months
 No cancellation fee
 Automatic renewal 
@@ -350,6 +350,21 @@ TOTAL : 100%
 		
 $101.94
 through Oct '27
+
+
+Sign Up Compare 
+	
+17.090 ¢/kWh
+	
+24 months
+Cancellation fee 
+Automatic renewal 
+	
+Required:69% | Voluntary:0%
+TOTAL : 69%
+		
+$102.54
+through Nov '28
 
 
 Sign Up Compare 
@@ -387,22 +402,6 @@ New Customers Only
 	
 17.290 ¢/kWh
 	
-24 months
-No cancellation fee
-Automatic renewal 
-	
-Required:69% | Voluntary:0%
-TOTAL : 69%
-		
-$103.74
-through Nov '28
-
-
-Sign Up Compare 
-New Customers Only 
-	
-17.290 ¢/kWh
-	
 18 months
 Cancellation fee 
 Automatic renewal 
@@ -412,6 +411,22 @@ TOTAL : 100%
 		
 $103.74
 through May '28
+
+
+Sign Up Compare 
+New Customers Only 
+	
+17.290 ¢/kWh
+	
+24 months
+No cancellation fee
+Automatic renewal 
+	
+Required:69% | Voluntary:0%
+TOTAL : 69%
+		
+$103.74
+through Nov '28
 
 
 Sign Up Compare 
@@ -443,36 +458,6 @@ TOTAL : 100%
 		
 $108.60
 through Nov '27
-
-
-Sign Up Compare 
-	
-18.290 ¢/kWh
-	
-18 months
-Cancellation fee 
-Automatic renewal 
-	
-Required:69% | Voluntary:0%
-TOTAL : 69%
-		
-$109.74
-through May '28
-
-
- *No Longer Available 
-	
-18.490 ¢/kWh
-	
-9 months
-Cancellation fee 
-Automatic renewal 
-	
-Required:69% | Voluntary:0%
-TOTAL : 69%
-		
-$110.94
-through Aug '27
 
 
 Sign Up Compare 
@@ -563,8 +548,8 @@ New Customers Only
 Cancellation fee 
 No automatic renewal
 	
-Required:69% | Voluntary:0%
-TOTAL : 69%
+Required:69% | Voluntary:31%
+TOTAL : 100%
 		
 $113.94
 through Dec '28
@@ -579,8 +564,8 @@ New Customers Only
 Cancellation fee 
 No automatic renewal
 	
-Required:69% | Voluntary:31%
-TOTAL : 100%
+Required:69% | Voluntary:0%
+TOTAL : 69%
 		
 $113.94
 through Dec '28
