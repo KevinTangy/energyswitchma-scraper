@@ -248,6 +248,48 @@ date,zip,city,supplier,price_cents_per_kwh,term,fees
 2026-11-17,01906,Saugus,Renaissance Power & Gas,19.970,6 months,No cancellation fee
 2026-11-17,01906,Saugus,Think Energy,20.200,12 months,No cancellation fee
 2026-11-17,01906,Saugus,Residents Energy,21.520,6 months,No cancellation fee
+2026-11-18,02148,Malden,National Grid (Basic Service),17.185,Aug '26 through Jan '27,No cancellation fee
+2026-11-18,02148,Malden,National Grid (Basic Service),16.077,Feb '27 through Jul '27,No cancellation fee
+2026-11-18,02148,Malden,Malden Community Electricity,13.345,through Dec '27,No cancellation fee
+2026-11-18,02148,Malden,Malden Community Electricity,13.758,through Dec '27,No cancellation fee
+2026-11-18,02148,Malden,Malden Community Electricity,14.696,through Dec '27,No cancellation fee
+2026-11-18,02148,Malden,CleanChoice Energy,15.200,12 months,No cancellation fee
+2026-11-18,02148,Malden,Inspire Clean Energy,15.790,12 months,No cancellation fee
+2026-11-18,02148,Malden,Town Square Energy,15.870,12 months,No cancellation fee
+2026-11-18,02148,Malden,Constellation New Energy,15.990,12 months,Cancellation fee: $150.00
+2026-11-18,02148,Malden,Inspire Clean Energy,16.190,24 months,No cancellation fee
+2026-11-18,02148,Malden,Public Power,16.290,24 months,Cancellation fee: $50.00
+2026-11-18,02148,Malden,Public Power,16.290,12 months,Cancellation fee: $50.00
+2026-11-18,02148,Malden,IGS Energy,16.390,12 months,Cancellation fee: $99.00
+2026-11-18,02148,Malden,Public Power,16.390,36 months,Cancellation fee: $50.00
+2026-11-18,02148,Malden,Clearview Energy,16.590,12 months,Cancellation fee: $150.00
+2026-11-18,02148,Malden,Massachusetts Gas & Electric,16.590,24 months,Cancellation fee: $50.00
+2026-11-18,02148,Malden,Massachusetts Gas & Electric,16.590,12 months,Cancellation fee: $50.00
+2026-11-18,02148,Malden,IGS Energy,16.790,12 months,Cancellation fee: $99.00
+2026-11-18,02148,Malden,Direct Energy Services,16.990,11 months,No cancellation fee
+2026-11-18,02148,Malden,Discount Power,16.990,12 months,No cancellation fee
+2026-11-18,02148,Malden,Public Power,16.990,18 months,Cancellation fee: $50.00
+2026-11-18,02148,Malden,Clearview Energy,17.090,24 months,Cancellation fee: $150.00
+2026-11-18,02148,Malden,Inspire Clean Energy,17.090,9 months,No cancellation fee
+2026-11-18,02148,Malden,Renaissance Power & Gas,17.270,10 months,No cancellation fee
+2026-11-18,02148,Malden,Direct Energy Services,17.290,24 months,No cancellation fee
+2026-11-18,02148,Malden,Massachusetts Gas & Electric,17.290,18 months,Cancellation fee: $50.00
+2026-11-18,02148,Malden,Inspire Clean Energy,17.790,18 months,No cancellation fee
+2026-11-18,02148,Malden,SmartEnergy,18.100,12 months,No cancellation fee
+2026-11-18,02148,Malden,Direct Energy Services,18.590,18 months,No cancellation fee
+2026-11-18,02148,Malden,Renaissance Power & Gas,18.670,22 months,No cancellation fee
+2026-11-18,02148,Malden,Residents Energy,18.780,6 months,No cancellation fee
+2026-11-18,02148,Malden,Major Energy Electric Services,18.790,25 months,Cancellation fee: $100.00
+2026-11-18,02148,Malden,Verde Energy USA,18.890,25 months,Cancellation fee: $100.00
+2026-11-18,02148,Malden,Major Energy Electric Services,18.990,25 months,Cancellation fee: $100.00
+2026-11-18,02148,Malden,Provider Power Mass,18.990,25 months,Cancellation fee: $100.00
+2026-11-18,02148,Malden,Spark Energy,18.990,25 months,Cancellation fee: $100.00
+2026-11-18,02148,Malden,Alpha Gas and Electric,19.000,24 months,No cancellation fee
+2026-11-18,02148,Malden,Provider Power Mass,19.290,25 months,Cancellation fee: $100.00
+2026-11-18,02148,Malden,Spark Energy,19.690,25 months,Cancellation fee: $100.00
+2026-11-18,02148,Malden,Renaissance Power & Gas,19.970,6 months,No cancellation fee
+2026-11-18,02148,Malden,Think Energy,20.200,12 months,No cancellation fee
+2026-11-18,02148,Malden,Residents Energy,21.520,6 months,No cancellation fee
 2026-11-18,02155,Medford,National Grid (Basic Service),17.185,Aug '26 through Jan '27,No cancellation fee
 2026-11-18,02155,Medford,National Grid (Basic Service),16.077,Feb '27 through Jul '27,No cancellation fee
 2026-11-18,02155,Medford,City of Medford Community Electricity Aggregation,13.720,through Dec '27,No cancellation fee
@@ -449,45 +491,3 @@ date,zip,city,supplier,price_cents_per_kwh,term,fees
 2026-11-18,01906,Saugus,Renaissance Power & Gas,19.970,6 months,No cancellation fee
 2026-11-18,01906,Saugus,Think Energy,20.200,12 months,No cancellation fee
 2026-11-18,01906,Saugus,Residents Energy,21.520,6 months,No cancellation fee
-2026-11-18,02148,Malden,National Grid (Basic Service),17.185,Aug '26 through Jan '27,No cancellation fee
-2026-11-18,02148,Malden,National Grid (Basic Service),16.077,Feb '27 through Jul '27,No cancellation fee
-2026-11-18,02148,Malden,Malden Community Electricity,13.345,through Dec '27,No cancellation fee
-2026-11-18,02148,Malden,Malden Community Electricity,13.758,through Dec '27,No cancellation fee
-2026-11-18,02148,Malden,Malden Community Electricity,14.696,through Dec '27,No cancellation fee
-2026-11-18,02148,Malden,CleanChoice Energy,15.200,12 months,No cancellation fee
-2026-11-18,02148,Malden,Inspire Clean Energy,15.790,12 months,No cancellation fee
-2026-11-18,02148,Malden,Town Square Energy,15.870,12 months,No cancellation fee
-2026-11-18,02148,Malden,Constellation New Energy,15.990,12 months,Cancellation fee: $150.00
-2026-11-18,02148,Malden,Inspire Clean Energy,16.190,24 months,No cancellation fee
-2026-11-18,02148,Malden,Public Power,16.290,24 months,Cancellation fee: $50.00
-2026-11-18,02148,Malden,Public Power,16.290,12 months,Cancellation fee: $50.00
-2026-11-18,02148,Malden,IGS Energy,16.390,12 months,Cancellation fee: $99.00
-2026-11-18,02148,Malden,Public Power,16.390,36 months,Cancellation fee: $50.00
-2026-11-18,02148,Malden,Clearview Energy,16.590,12 months,Cancellation fee: $150.00
-2026-11-18,02148,Malden,Massachusetts Gas & Electric,16.590,24 months,Cancellation fee: $50.00
-2026-11-18,02148,Malden,Massachusetts Gas & Electric,16.590,12 months,Cancellation fee: $50.00
-2026-11-18,02148,Malden,IGS Energy,16.790,12 months,Cancellation fee: $99.00
-2026-11-18,02148,Malden,Direct Energy Services,16.990,11 months,No cancellation fee
-2026-11-18,02148,Malden,Discount Power,16.990,12 months,No cancellation fee
-2026-11-18,02148,Malden,Public Power,16.990,18 months,Cancellation fee: $50.00
-2026-11-18,02148,Malden,Clearview Energy,17.090,24 months,Cancellation fee: $150.00
-2026-11-18,02148,Malden,Inspire Clean Energy,17.090,9 months,No cancellation fee
-2026-11-18,02148,Malden,Renaissance Power & Gas,17.270,10 months,No cancellation fee
-2026-11-18,02148,Malden,Direct Energy Services,17.290,24 months,No cancellation fee
-2026-11-18,02148,Malden,Massachusetts Gas & Electric,17.290,18 months,Cancellation fee: $50.00
-2026-11-18,02148,Malden,Inspire Clean Energy,17.790,18 months,No cancellation fee
-2026-11-18,02148,Malden,SmartEnergy,18.100,12 months,No cancellation fee
-2026-11-18,02148,Malden,Direct Energy Services,18.590,18 months,No cancellation fee
-2026-11-18,02148,Malden,Renaissance Power & Gas,18.670,22 months,No cancellation fee
-2026-11-18,02148,Malden,Residents Energy,18.780,6 months,No cancellation fee
-2026-11-18,02148,Malden,Major Energy Electric Services,18.790,25 months,Cancellation fee: $100.00
-2026-11-18,02148,Malden,Verde Energy USA,18.890,25 months,Cancellation fee: $100.00
-2026-11-18,02148,Malden,Major Energy Electric Services,18.990,25 months,Cancellation fee: $100.00
-2026-11-18,02148,Malden,Provider Power Mass,18.990,25 months,Cancellation fee: $100.00
-2026-11-18,02148,Malden,Spark Energy,18.990,25 months,Cancellation fee: $100.00
-2026-11-18,02148,Malden,Alpha Gas and Electric,19.000,24 months,No cancellation fee
-2026-11-18,02148,Malden,Provider Power Mass,19.290,25 months,Cancellation fee: $100.00
-2026-11-18,02148,Malden,Spark Energy,19.690,25 months,Cancellation fee: $100.00
-2026-11-18,02148,Malden,Renaissance Power & Gas,19.970,6 months,No cancellation fee
-2026-11-18,02148,Malden,Think Energy,20.200,12 months,No cancellation fee
-2026-11-18,02148,Malden,Residents Energy,21.520,6 months,No cancellation fee
