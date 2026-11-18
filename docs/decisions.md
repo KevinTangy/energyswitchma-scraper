@@ -89,3 +89,15 @@ In the order they were made (Nov 17–18, 2026).
     answers "where's the best deal today?" at a glance. The README table now
     shows savings (positive = cheaper than basic) instead of a negative
     difference, to match the bar chart.
+
+22. **One compare page per city, chosen by checking both** (Nov 18). The
+    site has a page per utility (1 = National Grid, 2 = Eversource). Rather
+    than guess each town's utility, `probe.py` loads both pages and keeps
+    the one that names a basic service and lists competing offers; the
+    result is saved as `compare_id` in `cities.csv`, so the daily job loads
+    only one page per city. City list moved from the workflow heredoc to
+    `cities.csv` so it's easy to edit as cities are added.
+
+23. **Municipal light plant towns excluded** (Nov 18): Wakefield, Reading,
+    Belmont, Peabody and Lynnfield. State law exempts them from competitive
+    supply, so there are no offers to track.

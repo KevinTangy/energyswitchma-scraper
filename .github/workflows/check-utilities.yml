@@ -1,0 +1,43 @@
+name: Check which utility page each ZIP uses
+
+# Run by hand from the Actions tab. Loads both EnergySwitch compare pages
+# (1 = National Grid, 2 = Eversource) for each ZIP and reports which one has
+# competing offers. Changes nothing in the repo; results are in the run
+# summary and the log, and as a downloadable probe_results.csv.
+on:
+  workflow_dispatch:
+    inputs:
+      zips:
+        description: "ZIPs to check, separated by spaces (blank = all of candidates.csv)"
+        required: false
+        default: ""
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install Playwright
+        run: |
+          pip install playwright
+          python -m playwright install --with-deps chromium
+
+      - name: Check ZIPs
+        env:
+          ZIPS: ${{ inputs.zips }}
+        run: python probe.py $ZIPS --pause 10
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: probe-results
+          path: probe_results.csv

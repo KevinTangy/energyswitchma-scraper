@@ -2,9 +2,9 @@
 
 Daily scraper that tracks retail electricity supply offers from
 [EnergySwitch MA](https://energyswitchma.gov) (the state's official
-comparison site) for six cities north of Boston. It records every supplier's
-¢/kWh rate, then builds a README with one chart per city comparing National
-Grid basic service against the cheapest offer.
+comparison site) for cities north of Boston. It records every supplier's
+¢/kWh rate, then builds a README comparing each city's utility basic service
+(National Grid or Eversource) against the cheapest offer.
 
 Owner: Kevin. Runs on GitHub Actions; this local repo is a clone of that
 GitHub repo.
@@ -13,8 +13,12 @@ GitHub repo.
 
 ```
 scrape.py                     # Scrape one ZIP -> append rows to data/rates.csv
+probe.py                      # Check which utility page (1 or 2) each ZIP uses
+cities.csv                    # Cities the daily job scrapes: zip,city,compare_id
+candidates.csv                # ZIPs being considered (input for probe.py)
 make_charts.py                # data/rates.csv -> charts/*.svg + README.md
-.github/workflows/scrape.yml  # Daily job: scrape all 6 cities, build charts, commit
+.github/workflows/scrape.yml  # Daily job: scrape cities.csv, build charts, commit
+.github/workflows/check-utilities.yml  # Manual: run probe.py on GitHub
 data/rates.csv                # The running dataset (all cities, all days)
 data/raw/<zip>/<date>.json.gz # Raw JSON captured from the site each day (gzip)
 data/raw/<zip>/<date>.txt.gz  # Page text, for debugging when JSON is missing
@@ -32,6 +36,9 @@ pip install playwright matplotlib
 python -m playwright install chromium
 
 python scrape.py 02148 --city Malden          # live scrape (headless Chromium)
+python scrape.py 02138 --city Cambridge --compare-id 2     # Eversource page
+python scrape.py 02138 --city Cambridge --compare-id auto  # try both pages
+python probe.py 02148 02138                    # which page has offers? (changes nothing)
 python make_charts.py                          # rebuild charts + README
 
 # Re-process a saved capture without hitting the site:
@@ -44,7 +51,7 @@ duplicates); other days and ZIPs are kept. Dates default to today in
 America/New_York, not UTC. When testing with `--from-raw`, still run it from
 a scratch directory (or back up the CSV) so you don't overwrite real data.
 
-## Cities tracked (set in the workflow)
+## Cities tracked (cities.csv)
 
 | City | ZIP |
 |---|---|
@@ -55,15 +62,27 @@ a scratch directory (or back up the CSV) so you don't overwrite real data.
 | Revere | 02151 |
 | Saugus | 01906 |
 
-To add or remove a city, edit the `ZIP:City` list in the heredoc in
-`.github/workflows/scrape.yml`.
+To add or remove a city, edit `cities.csv` (`zip,city,compare_id`; no commas
+in city names). `compare_id` is the utility's page: `1` = National Grid,
+`2` = Eversource. Find it with `probe.py` or the "Check which utility page
+each ZIP uses" workflow before adding a city.
+
+Not candidates: towns served by a municipal light plant (Wakefield,
+Reading, Belmont, Peabody, Lynnfield, etc.). By law (M.G.L. c. 164 §47A)
+their residents can't buy from competing suppliers, so EnergySwitch has no
+offers for them.
 
 ## How scraping works
 
 - The site is a JavaScript single-page app. Plain HTTP fetches return an empty
   shell, so `scrape.py` loads the page in headless Chromium (Playwright) and
   captures the JSON responses.
-- Page URL: `https://energyswitchma.gov/#/compare/1/1/{zip}//`
+- Page URL: `https://energyswitchma.gov/#/compare/{compare_id}/1/{zip}//`,
+  one page per utility: `1` = National Grid, `2` = Eversource. Each city
+  uses only the page for the utility that serves it and lists competing
+  offers. `choose_compare_id()` in `scrape.py` decides: a page counts only if
+  it names a utility's basic service AND has competing offers; if both pages
+  count, the one whose utility matches the ID wins.
 - The offer list comes from the JSON response at
   `https://energyswitchma.gov/consumers/compare`: a list with one object per
   offer. See `docs/data-source.md` for the fields.
@@ -77,10 +96,10 @@ Columns, in order: `date, zip, city, supplier, price_cents_per_kwh, term, fees`
 
 - **supplier** is the supplier NAME (`supplierName`), never the numeric ID.
   An early version wrongly used `supplierId`.
-- **National Grid basic service is split into two rows**, one per price
-  period. The source puts both in one record, joined by `|`, in both
-  `pricePerUnit` and `contractTerm`. These rows are labeled
-  `National Grid (Basic Service)`.
+- **Basic service is split into two rows**, one per price period. The
+  source puts both in one record, joined by `|`, in both `pricePerUnit` and
+  `contractTerm`. These rows are labeled `<utility> (Basic Service)`, e.g.
+  `National Grid (Basic Service)` or `Eversource (Basic Service)`.
 - **price_cents_per_kwh** is a bare number (`17.185`), not `17.185 ¢/kWh`.
 - **fees**: cancellation fee text (or `No cancellation fee`), plus the
   enrollment fee and monthly charge when they exist.
@@ -111,7 +130,8 @@ The larger per-city charts (`draw`) are still generated and linked from the
 README. Each has:
 
 - Two series:
-  1. **National Grid basic service:** the rate for whichever period covers
+  1. **Utility basic service** (National Grid or Eversource, named from the
+     `(Basic Service)` rows): the rate for whichever period covers
      that day, found by parsing terms like `Aug '26 through Jan '27`. Drawn
      as a step line.
   2. **Cheapest offer:** the lowest-priced row that isn't basic service,
@@ -125,7 +145,7 @@ README. Each has:
   `prefers-color-scheme`. Colors come from a colorblind-safe palette that
   was checked with a palette-checking tool: blue `#2a78d6` / `#3987e5` for
   basic service, orange `#eb6834` / `#d95926` for the cheapest offer.
-- The README also has a "Today's savings" table with basic, cheapest,
+- The README also has a "Today's savings" table with utility, basic, cheapest,
   supplier and savings (basic minus cheapest, positive = cheaper than basic),
   in ¢ to 3 decimals, sorted by savings.
 - If `data/rates.csv` doesn't exist, the script exits cleanly so the commit
@@ -136,7 +156,8 @@ README. Each has:
 - Schedule: `cron: "11 11 * * *"` is 11:11 UTC, which is 6:11 AM EST and
   7:11 AM EDT. GitHub cron runs in UTC only. Also has `workflow_dispatch`
   for manual runs.
-- Steps: install Playwright and matplotlib, then scrape each city in a loop
+- Steps: install Playwright and matplotlib, then scrape each city in
+  `cities.csv` in a loop, passing its `compare_id`
   (with a 15-second pause between cities, `PAUSE_SECONDS`, to go easy on the
   site), then `make_charts.py`, then commit `data charts README.md` as `rate-bot`,
   then fail the run if any city returned no offers.
@@ -151,8 +172,9 @@ See `docs/status.md` for details. In short:
   fired about 8 hours late, at 2:24 PM EST. The schedule was moved to
   6:11 AM EST; watch whether later runs are on time. Details in
   `docs/status.md`.
-- Not yet confirmed: whether the 5 cities other than Malden return data with
-  the same `/compare/1/1/` URL.
+- All 6 tracked cities return data on page 1 (National Grid); confirmed by
+  the Nov 18 runs. The Eversource page (2) hasn't been seen yet; run the
+  "Check which utility page each ZIP uses" workflow to confirm it.
 
 ## Conventions
 

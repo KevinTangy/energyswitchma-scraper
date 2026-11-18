@@ -1,6 +1,6 @@
 # Electricity Rate Tracker
 
-Daily electricity supply rates from [EnergySwitch MA](https://energyswitchma.gov), comparing National Grid's basic service rate with the cheapest supplier offer in each city.
+Daily electricity supply rates from [EnergySwitch MA](https://energyswitchma.gov), comparing each city's utility basic service rate (National Grid or Eversource) with the cheapest supplier offer.
 
 **Last updated:** November 18, 2026
 
@@ -8,17 +8,17 @@ Daily electricity supply rates from [EnergySwitch MA](https://energyswitchma.gov
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="charts/savings-dark.svg">
-  <img src="charts/savings.svg" alt="Bar chart: how many cents per kWh less the cheapest supplier offer costs than National Grid basic service in each city today">
+  <img src="charts/savings.svg" alt="Bar chart: how many cents per kWh less the cheapest supplier offer costs than the utility's basic service in each city today">
 </picture>
 
-| City | Basic service | Cheapest offer | Cheapest supplier | Savings |
-|---|---:|---:|---|---:|
-| Malden | 17.185¢ | 13.345¢ | Malden Community Electricity | 3.840¢ |
-| Medford | 17.185¢ | 13.720¢ | City of Medford Community Electricity Aggregation | 3.465¢ |
-| Melrose | 17.185¢ | 14.310¢ | City of Melrose Community Power | 2.875¢ |
-| Everett | 17.185¢ | 15.200¢ | CleanChoice Energy | 1.985¢ |
-| Revere | 17.185¢ | 15.200¢ | CleanChoice Energy | 1.985¢ |
-| Saugus | 17.185¢ | 15.200¢ | CleanChoice Energy | 1.985¢ |
+| City | Utility | Basic service | Cheapest offer | Cheapest supplier | Savings |
+|---|---|---:|---:|---|---:|
+| Malden | National Grid | 17.185¢ | 13.345¢ | Malden Community Electricity | 3.840¢ |
+| Medford | National Grid | 17.185¢ | 13.720¢ | City of Medford Community Electricity Aggregation | 3.465¢ |
+| Melrose | National Grid | 17.185¢ | 14.310¢ | City of Melrose Community Power | 2.875¢ |
+| Everett | National Grid | 17.185¢ | 15.200¢ | CleanChoice Energy | 1.985¢ |
+| Revere | National Grid | 17.185¢ | 15.200¢ | CleanChoice Energy | 1.985¢ |
+| Saugus | National Grid | 17.185¢ | 15.200¢ | CleanChoice Energy | 1.985¢ |
 
 Rates are in cents per kWh. Savings is basic service minus the cheapest offer; a negative number would mean basic service is cheaper.
 
@@ -26,7 +26,7 @@ Rates are in cents per kWh. Savings is basic service minus the cheapest offer; a
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="charts/all-cities-dark.svg">
-  <img src="charts/all-cities.svg" alt="Small charts, one per city, of the National Grid basic service rate and the cheapest supplier rate over time">
+  <img src="charts/all-cities.svg" alt="Small charts, one per city, of the utility basic service rate and the cheapest supplier rate over time">
 </picture>
 
 Larger chart for one city: [Malden](charts/malden.svg) · [Medford](charts/medford.svg) · [Melrose](charts/melrose.svg) · [Everett](charts/everett.svg) · [Revere](charts/revere.svg) · [Saugus](charts/saugus.svg)

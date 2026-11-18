@@ -2,7 +2,8 @@
 Builds README.md and one line chart per city from data/rates.csv.
 
 For each city and each day it tracks:
-  1. the National Grid basic service rate for the period that covers that day
+  1. the utility's basic service rate (National Grid or Eversource) for the
+     period that covers that day
   2. the cheapest supplier offer, labeled with the supplier's name
 
 Charts are written to charts/<city>.svg (light) and charts/<city>-dark.svg
@@ -67,6 +68,12 @@ def price(row):
         return None
 
 
+# {city: utility name}, e.g. "National Grid", taken from the latest basic
+# service rows ("National Grid (Basic Service)"). Filled in by load_series().
+UTILITY = {}
+BASIC_SUFFIX = " (Basic Service)"
+
+
 def load_series():
     """Return {city: [(date, basic_rate, cheapest_rate, cheapest_supplier), ...]}."""
     by_city_day = OrderedDict()
@@ -86,6 +93,7 @@ def load_series():
 
             basic_rate = None
             if basic:
+                UTILITY[city] = basic[0]["supplier"].removesuffix(BASIC_SUFFIX)
                 current = basic[0]
                 for r in basic:
                     period = parse_period(r["term"])
@@ -153,7 +161,7 @@ def draw(city, points, theme_name, path):
 
     ax.plot(days, basic, color=t["basic"], lw=2, marker=marker, ms=6,
             markeredgecolor=t["surface"], markeredgewidth=1.5,
-            label="National Grid basic service", drawstyle="steps-post" if len(points) > 1 else "default")
+            label=f"{UTILITY.get(city, 'Utility')} basic service", drawstyle="steps-post" if len(points) > 1 else "default")
     ax.plot(days, cheap, color=t["cheap"], lw=2, marker=marker, ms=6,
             markeredgecolor=t["surface"], markeredgewidth=1.5, label="Cheapest supplier offer")
 
@@ -347,7 +355,7 @@ def draw_grid(series, theme_name, path):
         common = dict(lw=2, marker=marker, ms=4.5, markeredgecolor=t["surface"],
                       markeredgewidth=1.2, solid_capstyle="round", solid_joinstyle="round")
         ax.plot(days, basic, color=t["basic"], drawstyle="steps-post" if len(days) > 1 else "default",
-                label="National Grid basic service", **common)
+                label="Utility basic service", **common)
         ax.plot(days, cheap, color=t["cheap"], label="Cheapest supplier offer", **common)
         # Latest values at the line ends, pushed apart when the lines are close.
         ends = [v[-1] for v in (basic, cheap)]
@@ -366,9 +374,12 @@ def draw_grid(series, theme_name, path):
                             color=t["text"], fontweight="bold")
         ax.set_title(city, loc="left", fontsize=11, fontweight="bold", color=t["text"], pad=16)
         supplier = points[-1][3] or ""
-        if len(supplier) > 38:
-            supplier = supplier[:36].rstrip() + "…"
-        ax.text(0, 1.02, f"Cheapest: {supplier}", transform=ax.transAxes, fontsize=7.5,
+        limit = 38 - len(UTILITY.get(city, "")) - 3 if UTILITY.get(city) else 38
+        if len(supplier) > limit:
+            supplier = supplier[:limit - 2].rstrip() + "…"
+        utility = UTILITY.get(city, "")
+        ax.text(0, 1.02, f"{utility} · Cheapest: {supplier}" if utility else f"Cheapest: {supplier}",
+                transform=ax.transAxes, fontsize=7.5,
                 color=t["muted"], va="bottom")
         style_time_axes(ax, days_range, t, labelsize=8, show_year=False)
 
@@ -411,22 +422,23 @@ def write_readme(series):
         "# Electricity Rate Tracker",
         "",
         "Daily electricity supply rates from [EnergySwitch MA](https://energyswitchma.gov), "
-        "comparing National Grid's basic service rate with the cheapest supplier offer in each city.",
+        "comparing each city's utility basic service rate (National Grid or Eversource) "
+        "with the cheapest supplier offer.",
         "",
         f"**Last updated:** {latest.strftime('%B %-d, %Y') if latest else 'n/a'}",
         "",
         "## Today's savings",
         "",
         picture("savings", "Bar chart: how many cents per kWh less the cheapest supplier offer "
-                "costs than National Grid basic service in each city today"),
+                "costs than the utility's basic service in each city today"),
         "",
-        "| City | Basic service | Cheapest offer | Cheapest supplier | Savings |",
-        "|---|---:|---:|---|---:|",
+        "| City | Utility | Basic service | Cheapest offer | Cheapest supplier | Savings |",
+        "|---|---|---:|---:|---|---:|",
     ]
     for city in city_order(series):
         _, basic, cheap, supplier = series[city][-1]
         saving = f"{basic - cheap:.3f}¢" if basic is not None and cheap is not None else "n/a"
-        lines.append(f"| {city} | {fmt(basic)} | {fmt(cheap)} | {supplier or 'n/a'} | {saving} |")
+        lines.append(f"| {city} | {UTILITY.get(city, 'n/a')} | {fmt(basic)} | {fmt(cheap)} | {supplier or 'n/a'} | {saving} |")
 
     lines += [
         "",
@@ -435,7 +447,7 @@ def write_readme(series):
         "",
         "## Rate history",
         "",
-        picture("all-cities", "Small charts, one per city, of the National Grid basic service "
+        picture("all-cities", "Small charts, one per city, of the utility basic service "
                 "rate and the cheapest supplier rate over time"),
         "",
         "Larger chart for one city: " + " · ".join(

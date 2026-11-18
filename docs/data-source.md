@@ -6,10 +6,13 @@
 - It's an AngularJS-style single-page app. The offer table is filled in by
   JavaScript, so WebFetch, curl and requests only see an empty shell.
   Scraping needs a real browser, which is why `scrape.py` uses Playwright.
-- What the two `1`s in `/compare/1/1/` mean is **not confirmed**. They might
-  be the customer class (residential) and/or the utility. It's assumed that all six
-  tracked cities are on National Grid, but this hasn't been checked.
-  If a city comes back with no offers, suspect this part of the URL first.
+- The first number in `/compare/{id}/1/` is the utility: `1` = National
+  Grid, `2` = Eversource (per Kevin). The second `1` is probably the
+  customer class (residential); not confirmed. `probe.py` loads both pages
+  for a ZIP and reports which one lists competing offers; nothing about
+  page 2's behavior has been observed directly yet.
+- Towns served by a municipal light plant can't buy from competing
+  suppliers (M.G.L. c. 164 §47A), so neither page should have offers.
 
 ## API endpoint
 
