@@ -22,6 +22,10 @@ from pathlib import Path
 import matplotlib
 
 matplotlib.use("Agg")
+# Same data -> byte-identical SVGs, so git only records charts that changed:
+# no creation timestamp, and fixed (not random) element ids.
+matplotlib.rcParams["svg.hashsalt"] = "rate-tracker"
+SVG_META = {"Date": None}
 import matplotlib.dates as mdates  # noqa: E402
 import matplotlib.pyplot as plt  # noqa: E402
 
@@ -106,6 +110,35 @@ def slug(city):
     return re.sub(r"[^a-z0-9]+", "-", city.lower()).strip("-")
 
 
+def style_time_axes(ax, days, t, labelsize=9, show_year=True):
+    """Shared x-axis (dates) and frame styling for the line charts."""
+    span = (days[-1] - days[0]).days
+    if span <= 14:
+        # Daily data: one tick per day, never hour ticks like "12:00".
+        ax.xaxis.set_major_locator(mdates.DayLocator(interval=1 if span <= 7 else 2))
+        ax.xaxis.set_major_formatter(mdates.DateFormatter("%b %-d"))
+    else:
+        locator = mdates.AutoDateLocator(minticks=3, maxticks=6)
+        locator.intervald[mdates.HOURLY] = [24]  # no sub-day ticks
+        ax.xaxis.set_major_locator(locator)
+        ax.xaxis.set_major_formatter(mdates.ConciseDateFormatter(locator, show_offset=show_year))
+    if len(days) == 1:
+        ax.set_xlim(days[0] - dt.timedelta(days=3), days[0] + dt.timedelta(days=3))
+    else:
+        # Small margin on the left so the first point isn't clipped; more on
+        # the right for the latest-value labels.
+        # (Plain date objects drop fractions of a day, so use day numbers.)
+        first, last = mdates.date2num(days[0]), mdates.date2num(days[-1])
+        ax.set_xlim(first - max(0.15, span * 0.02), last + max(0.35, span * 0.08))
+
+    ax.grid(axis="y", color=t["grid"], lw=0.8)
+    ax.set_axisbelow(True)
+    for side in ("top", "right", "left"):
+        ax.spines[side].set_visible(False)
+    ax.spines["bottom"].set_color(t["grid"])
+    ax.tick_params(colors=t["muted"], labelsize=labelsize, length=0)
+
+
 def draw(city, points, theme_name, path):
     t = THEMES[theme_name]
     fig, ax = plt.subplots(figsize=(9, 4.2), dpi=100)
@@ -173,38 +206,186 @@ def draw(city, points, theme_name, path):
     ax.set_ylabel("¢ per kWh", color=t["muted"], fontsize=9.5)
     ax.yaxis.set_major_locator(plt.MaxNLocator(nbins=6, steps=[1, 2, 2.5, 5, 10]))
     ax.yaxis.set_major_formatter(plt.FuncFormatter(lambda v, _: f"{v:g}¢"))
-    span = (days[-1] - days[0]).days
-    if span <= 14:
-        # Daily data: one tick per day, never hour ticks like "12:00".
-        ax.xaxis.set_major_locator(mdates.DayLocator(interval=1 if span <= 7 else 2))
-        ax.xaxis.set_major_formatter(mdates.DateFormatter("%b %-d"))
-    else:
-        locator = mdates.AutoDateLocator(minticks=3, maxticks=8)
-        locator.intervald[mdates.HOURLY] = [24]  # no sub-day ticks
-        ax.xaxis.set_major_locator(locator)
-        ax.xaxis.set_major_formatter(mdates.ConciseDateFormatter(locator))
-    if len(days) == 1:
-        ax.set_xlim(days[0] - dt.timedelta(days=3), days[0] + dt.timedelta(days=3))
-    else:
-        # Small margin on the left so the first point isn't clipped; more on
-        # the right for the latest-value labels.
-        # (Plain date objects drop fractions of a day, so use day numbers.)
-        first, last = mdates.date2num(days[0]), mdates.date2num(days[-1])
-        ax.set_xlim(first - max(0.15, span * 0.02), last + max(0.35, span * 0.08))
-
-    ax.grid(axis="y", color=t["grid"], lw=0.8)
-    ax.set_axisbelow(True)
-    for side in ("top", "right", "left"):
-        ax.spines[side].set_visible(False)
-    ax.spines["bottom"].set_color(t["grid"])
-    ax.tick_params(colors=t["muted"], labelsize=9, length=0)
+    style_time_axes(ax, days, t)
 
     leg = ax.legend(loc="upper left", bbox_to_anchor=(0, 1.0), ncol=2, frameon=False,
                     fontsize=9, labelcolor=t["text"], handlelength=1.6)
     leg.set_zorder(5)
 
     fig.tight_layout()
-    fig.savefig(path, format="svg", facecolor=t["surface"])
+    fig.savefig(path, format="svg", facecolor=t["surface"], metadata=SVG_META)
+    plt.close(fig)
+
+
+def latest_savings(series):
+    """[(city, savings, cheapest_supplier), ...] for each city's latest day,
+    biggest savings first. Savings = basic service minus cheapest offer, so a
+    positive number means the cheapest offer beats basic service."""
+    rows = []
+    for city, points in series.items():
+        if not points:
+            continue
+        _, basic, cheap, supplier = points[-1]
+        if basic is not None and cheap is not None:
+            rows.append((city, basic - cheap, supplier))
+    return sorted(rows, key=lambda r: (-r[1], r[0]))
+
+
+def city_order(series):
+    """Cities with the biggest savings first (same order as the bar chart);
+    cities missing a basic or cheapest rate go last."""
+    ranked = [c for c, _, _ in latest_savings(series)]
+    return ranked + sorted(c for c in series if c not in ranked and series[c])
+
+
+def bar(ax, y, length, height, color, radius_pts=4):
+    """Horizontal bar from 0 with a rounded data end and a square baseline."""
+    from matplotlib.patches import FancyBboxPatch, Rectangle
+    if length == 0:
+        return
+    fig = ax.figure
+    # Convert the corner radius from points to data units along x.
+    x_per_pt = (ax.get_xlim()[1] - ax.get_xlim()[0]) / (
+        ax.get_window_extent().width * 72 / fig.dpi)
+    y_per_pt = (ax.get_ylim()[0] - ax.get_ylim()[1]) / (
+        ax.get_window_extent().height * 72 / fig.dpi)
+    r = min(abs(length), radius_pts * x_per_pt)
+    left = min(0, length)
+    ax.add_patch(FancyBboxPatch(
+        (left, y - height / 2), abs(length), height, color=color, lw=0,
+        boxstyle="round,pad=0,rounding_size=%f" % r,
+        mutation_aspect=abs(y_per_pt / x_per_pt) if x_per_pt else 1))
+    # Square off the baseline end.
+    base = 0 if length > 0 else -r
+    ax.add_patch(Rectangle((base, y - height / 2), r, height, color=color, lw=0))
+
+
+def draw_savings(series, theme_name, path):
+    """Horizontal bars: how much cheaper each city's cheapest offer is than
+    basic service today, biggest first."""
+    t = THEMES[theme_name]
+    rows = latest_savings(series)
+    if not rows:
+        return False
+    n = len(rows)
+    row_h = 0.42  # inches per city
+    fig, ax = plt.subplots(figsize=(9, 1.25 + row_h * n), dpi=100)
+    fig.patch.set_facecolor(t["surface"])
+    ax.set_facecolor(t["surface"])
+
+    rows = [(c, v, s if len(s or "") <= 50 else s[:48].rstrip() + "…") for c, v, s in rows]
+    vals = [v for _, v, _ in rows]
+    lo, hi = min(0, min(vals)), max(0, max(vals))
+    ax.set_xlim(lo, hi or 1)  # provisional, for layout
+    ax.set_ylim(n - 0.4, -0.6)
+    ax.set_yticks(range(n))
+    ax.set_yticklabels([c for c, _, _ in rows], fontsize=10, color=t["text"])
+    ax.tick_params(length=0, pad=8)
+    # Lay out before drawing bars: bar() converts its corner radius using the
+    # final axes size.
+    fig.tight_layout(rect=(0, 0, 1, 1 - 0.62 / fig.get_figheight()))
+    # Leave room past the longest bar for its value + supplier label
+    # (value ~44pt, then ~5.2pt per character of supplier name).
+    axes_pts = ax.get_window_extent().width * 72 / fig.dpi
+    label_pts = 56 + 5.2 * max(len(s or "") for _, _, s in rows)
+    bar_frac = max(0.25, 1 - label_pts / axes_pts)  # share of width for bars
+    span = (hi - lo) or 1
+    ax.set_xlim(lo, lo + span / bar_frac)
+
+    bar_h = min(0.6, (24 / 72) / row_h)  # <= 24px thick
+    for i, (city, v, supplier) in enumerate(rows):
+        bar(ax, i, v, bar_h, t["cheap"] if v >= 0 else t["muted"])
+        x = max(v, 0)
+        ax.annotate(f"{v:.2f}¢", (x, i), xytext=(6, 0), textcoords="offset points",
+                    va="center", fontsize=10, color=t["text"], fontweight="bold")
+        ax.annotate(supplier, (x, i), xytext=(50, 0), textcoords="offset points",
+                    va="center", fontsize=9, color=t["muted"])
+
+    ax.axvline(0, color=t["grid"], lw=1)
+    ax.set_xticks([])
+    for side in ("top", "right", "bottom", "left"):
+        ax.spines[side].set_visible(False)
+    fig.suptitle("How much less the cheapest offer costs than basic service",
+                 x=0.012, ha="left", y=0.985, fontsize=13, fontweight="bold", color=t["text"])
+    fig.text(0.012, 0.985 - 0.32 / fig.get_figheight(),
+             "Cents per kWh, today. Gray bars would mean basic service is cheaper.",
+             ha="left", va="top", fontsize=9, color=t["muted"])
+    fig.savefig(path, format="svg", facecolor=t["surface"], metadata=SVG_META)
+    plt.close(fig)
+    return True
+
+
+def draw_grid(series, theme_name, path):
+    """Small multiples: one panel per city with the same two lines as the
+    single-city charts, all on the same scale, biggest savings first."""
+    t = THEMES[theme_name]
+    cities = city_order(series)
+    n = len(cities)
+    ncols = 1 if n == 1 else 2 if n <= 4 else 3 if n <= 12 else 4
+    nrows = -(-n // ncols)
+    fig, axes = plt.subplots(nrows, ncols, figsize=(3.3 * ncols, 2.35 * nrows + 0.75),
+                             dpi=100, sharex=True, sharey=True, squeeze=False)
+    fig.patch.set_facecolor(t["surface"])
+
+    all_days = [p[0] for c in cities for p in series[c]]
+    all_vals = [v for c in cities for p in series[c] for v in (p[1], p[2]) if v is not None]
+    days_range = sorted(set(all_days))
+    lo, hi = min(all_vals), max(all_vals)
+    pad = max((hi - lo) * 0.15, 0.5)
+
+    for idx, ax in enumerate(axes.flat):
+        ax.set_facecolor(t["surface"])
+        if idx >= n:
+            ax.set_visible(False)
+            continue
+        city = cities[idx]
+        points = series[city]
+        days = [p[0] for p in points]
+        basic = [p[1] for p in points]
+        cheap = [p[2] for p in points]
+        marker = "o" if len(days_range) < 40 else None
+        common = dict(lw=2, marker=marker, ms=4.5, markeredgecolor=t["surface"],
+                      markeredgewidth=1.2, solid_capstyle="round", solid_joinstyle="round")
+        ax.plot(days, basic, color=t["basic"], drawstyle="steps-post" if len(days) > 1 else "default",
+                label="National Grid basic service", **common)
+        ax.plot(days, cheap, color=t["cheap"], label="Cheapest supplier offer", **common)
+        # Latest values at the line ends, pushed apart when the lines are close.
+        ends = [v[-1] for v in (basic, cheap)]
+        nudge = [0, 0]
+        if None not in ends:
+            panel_pts = 1.55 * 72  # approximate plot height of one panel
+            gap_pts = abs(ends[0] - ends[1]) / ((hi + pad) - (lo - pad)) * panel_pts
+            if gap_pts < 10:
+                push = (10 - gap_pts) / 2
+                upper = 0 if ends[0] >= ends[1] else 1
+                nudge[upper], nudge[1 - upper] = push, -push
+        for v, dy in zip(ends, nudge):
+            if v is not None:
+                ax.annotate(f"{v:.2f}¢", (days[-1], v), xytext=(5, dy),
+                            textcoords="offset points", va="center", fontsize=8,
+                            color=t["text"], fontweight="bold")
+        ax.set_title(city, loc="left", fontsize=11, fontweight="bold", color=t["text"], pad=16)
+        supplier = points[-1][3] or ""
+        if len(supplier) > 38:
+            supplier = supplier[:36].rstrip() + "…"
+        ax.text(0, 1.02, f"Cheapest: {supplier}", transform=ax.transAxes, fontsize=7.5,
+                color=t["muted"], va="bottom")
+        style_time_axes(ax, days_range, t, labelsize=8, show_year=False)
+
+    ax0 = axes.flat[0]
+    ax0.set_ylim(lo - pad, hi + pad)
+    ax0.yaxis.set_major_locator(plt.MaxNLocator(nbins=4, steps=[1, 2, 2.5, 5, 10]))
+    ax0.yaxis.set_major_formatter(plt.FuncFormatter(lambda v, _: f"{v:g}¢"))
+    # With sharex, hidden empty panels would hide the date labels above them.
+    for ax in axes.flat:
+        if ax.get_visible():
+            ax.xaxis.set_tick_params(labelbottom=True)
+
+    handles, labels = ax0.get_legend_handles_labels()
+    fig.legend(handles, labels, loc="upper left", bbox_to_anchor=(0.008, 1.0), ncol=2,
+               frameon=False, fontsize=9.5, labelcolor=t["text"], handlelength=1.6)
+    fig.tight_layout(rect=(0, 0, 1, 1 - 0.5 / fig.get_figheight()), h_pad=1.6, w_pad=1.2)
+    fig.savefig(path, format="svg", facecolor=t["surface"], metadata=SVG_META)
     plt.close(fig)
 
 
@@ -212,6 +393,16 @@ def draw(city, points, theme_name, path):
 
 def fmt(v):
     return f"{v:.3f}¢" if v is not None else "n/a"
+
+
+def picture(name, alt):
+    """README <picture> that follows the reader's light/dark GitHub theme."""
+    return "\n".join([
+        "<picture>",
+        f'  <source media="(prefers-color-scheme: dark)" srcset="charts/{name}-dark.svg">',
+        f'  <img src="charts/{name}.svg" alt="{alt}">',
+        "</picture>",
+    ])
 
 
 def write_readme(series):
@@ -224,39 +415,40 @@ def write_readme(series):
         "",
         f"**Last updated:** {latest.strftime('%B %-d, %Y') if latest else 'n/a'}",
         "",
-        "## Today's rates",
+        "## Today's savings",
         "",
-        "| City | Basic service | Cheapest offer | Cheapest supplier | Difference |",
+        picture("savings", "Bar chart: how many cents per kWh less the cheapest supplier offer "
+                "costs than National Grid basic service in each city today"),
+        "",
+        "| City | Basic service | Cheapest offer | Cheapest supplier | Savings |",
         "|---|---:|---:|---|---:|",
     ]
-    for city, points in series.items():
-        if not points:
-            continue
-        _, basic, cheap, supplier = points[-1]
-        diff = f"{cheap - basic:+.3f}¢" if basic is not None and cheap is not None else "n/a"
-        lines.append(f"| {city} | {fmt(basic)} | {fmt(cheap)} | {supplier or 'n/a'} | {diff} |")
+    for city in city_order(series):
+        _, basic, cheap, supplier = series[city][-1]
+        saving = f"{basic - cheap:.3f}¢" if basic is not None and cheap is not None else "n/a"
+        lines.append(f"| {city} | {fmt(basic)} | {fmt(cheap)} | {supplier or 'n/a'} | {saving} |")
 
-    lines += ["", "Rates are in cents per kWh. A negative difference means the cheapest offer "
-              "beats basic service.", "", "## Rate history by city", ""]
-    for city in series:
-        s = slug(city)
-        lines += [
-            f"### {city}",
-            "",
-            "<picture>",
-            f'  <source media="(prefers-color-scheme: dark)" srcset="charts/{s}-dark.svg">',
-            f'  <img src="charts/{s}.svg" alt="{city}: National Grid basic service rate and '
-            f'cheapest supplier rate over time">',
-            "</picture>",
-            "",
-        ]
+    lines += [
+        "",
+        "Rates are in cents per kWh. Savings is basic service minus the cheapest offer; "
+        "a negative number would mean basic service is cheaper.",
+        "",
+        "## Rate history",
+        "",
+        picture("all-cities", "Small charts, one per city, of the National Grid basic service "
+                "rate and the cheapest supplier rate over time"),
+        "",
+        "Larger chart for one city: " + " · ".join(
+            f"[{c}](charts/{slug(c)}.svg)" for c in city_order(series)),
+        "",
+    ]
     lines += [
         "## How this works",
         "",
         "- `scrape.py` collects each city's offers every morning and adds them to `data/rates.csv`.",
         "- `make_charts.py` rebuilds this README and the charts from that file.",
         "- Basic service is the rate for the period that covers each day.",
-        "- The cheapest offer leaves out basic service and is labeled whenever the cheapest supplier changes.",
+        "- The cheapest offer leaves out basic service. Cities are ordered by today's savings.",
         "",
         "_This file is generated automatically. Edits made by hand will be overwritten._",
         "",
@@ -275,6 +467,9 @@ def main():
             continue
         draw(city, points, "light", CHART_DIR / f"{slug(city)}.svg")
         draw(city, points, "dark", CHART_DIR / f"{slug(city)}-dark.svg")
+    for theme, suffix in (("light", ""), ("dark", "-dark")):
+        draw_grid(series, theme, CHART_DIR / f"all-cities{suffix}.svg")
+        draw_savings(series, theme, CHART_DIR / f"savings{suffix}.svg")
     write_readme(series)
     print(f"Wrote README.md and charts for {len(series)} cities")
 

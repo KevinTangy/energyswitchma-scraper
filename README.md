@@ -4,68 +4,38 @@ Daily electricity supply rates from [EnergySwitch MA](https://energyswitchma.gov
 
 **Last updated:** November 18, 2026
 
-## Today's rates
+## Today's savings
 
-| City | Basic service | Cheapest offer | Cheapest supplier | Difference |
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="charts/savings-dark.svg">
+  <img src="charts/savings.svg" alt="Bar chart: how many cents per kWh less the cheapest supplier offer costs than National Grid basic service in each city today">
+</picture>
+
+| City | Basic service | Cheapest offer | Cheapest supplier | Savings |
 |---|---:|---:|---|---:|
-| Malden | 17.185¢ | 13.345¢ | Malden Community Electricity | -3.840¢ |
-| Medford | 17.185¢ | 13.720¢ | City of Medford Community Electricity Aggregation | -3.465¢ |
-| Melrose | 17.185¢ | 14.310¢ | City of Melrose Community Power | -2.875¢ |
-| Everett | 17.185¢ | 15.200¢ | CleanChoice Energy | -1.985¢ |
-| Revere | 17.185¢ | 15.200¢ | CleanChoice Energy | -1.985¢ |
-| Saugus | 17.185¢ | 15.200¢ | CleanChoice Energy | -1.985¢ |
+| Malden | 17.185¢ | 13.345¢ | Malden Community Electricity | 3.840¢ |
+| Medford | 17.185¢ | 13.720¢ | City of Medford Community Electricity Aggregation | 3.465¢ |
+| Melrose | 17.185¢ | 14.310¢ | City of Melrose Community Power | 2.875¢ |
+| Everett | 17.185¢ | 15.200¢ | CleanChoice Energy | 1.985¢ |
+| Revere | 17.185¢ | 15.200¢ | CleanChoice Energy | 1.985¢ |
+| Saugus | 17.185¢ | 15.200¢ | CleanChoice Energy | 1.985¢ |
 
-Rates are in cents per kWh. A negative difference means the cheapest offer beats basic service.
+Rates are in cents per kWh. Savings is basic service minus the cheapest offer; a negative number would mean basic service is cheaper.
 
-## Rate history by city
-
-### Malden
+## Rate history
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="charts/malden-dark.svg">
-  <img src="charts/malden.svg" alt="Malden: National Grid basic service rate and cheapest supplier rate over time">
+  <source media="(prefers-color-scheme: dark)" srcset="charts/all-cities-dark.svg">
+  <img src="charts/all-cities.svg" alt="Small charts, one per city, of the National Grid basic service rate and the cheapest supplier rate over time">
 </picture>
 
-### Medford
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="charts/medford-dark.svg">
-  <img src="charts/medford.svg" alt="Medford: National Grid basic service rate and cheapest supplier rate over time">
-</picture>
-
-### Melrose
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="charts/melrose-dark.svg">
-  <img src="charts/melrose.svg" alt="Melrose: National Grid basic service rate and cheapest supplier rate over time">
-</picture>
-
-### Everett
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="charts/everett-dark.svg">
-  <img src="charts/everett.svg" alt="Everett: National Grid basic service rate and cheapest supplier rate over time">
-</picture>
-
-### Revere
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="charts/revere-dark.svg">
-  <img src="charts/revere.svg" alt="Revere: National Grid basic service rate and cheapest supplier rate over time">
-</picture>
-
-### Saugus
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="charts/saugus-dark.svg">
-  <img src="charts/saugus.svg" alt="Saugus: National Grid basic service rate and cheapest supplier rate over time">
-</picture>
+Larger chart for one city: [Malden](charts/malden.svg) · [Medford](charts/medford.svg) · [Melrose](charts/melrose.svg) · [Everett](charts/everett.svg) · [Revere](charts/revere.svg) · [Saugus](charts/saugus.svg)
 
 ## How this works
 
 - `scrape.py` collects each city's offers every morning and adds them to `data/rates.csv`.
 - `make_charts.py` rebuilds this README and the charts from that file.
 - Basic service is the rate for the period that covers each day.
-- The cheapest offer leaves out basic service and is labeled whenever the cheapest supplier changes.
+- The cheapest offer leaves out basic service. Cities are ordered by today's savings.
 
 _This file is generated automatically. Edits made by hand will be overwritten._

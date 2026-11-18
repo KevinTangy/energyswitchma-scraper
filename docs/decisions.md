@@ -79,3 +79,13 @@ In the order they were made (Nov 17–18, 2026).
     (one page view per city, one at a time), but the pause keeps it gentle
     if more cities are added. It adds about 15 s per city to the run, which
     costs nothing because Actions minutes are free for public repos.
+
+21. **Savings bar chart + grid of small charts instead of one chart per
+    city** (Nov 18). One combined chart was ruled out: past about six cities
+    the line colors become hard to tell apart (especially for colorblind
+    readers), and cities with identical offers (Everett, Revere and Saugus
+    today) draw exactly on top of each other. A grid keeps each panel to the
+    familiar two lines, and adding a city just adds a panel. The bar chart
+    answers "where's the best deal today?" at a glance. The README table now
+    shows savings (positive = cheaper than basic) instead of a negative
+    difference, to match the bar chart.
