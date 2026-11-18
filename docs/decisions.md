@@ -106,3 +106,11 @@ In the order they were made (Nov 17–18, 2026).
     The first full check flagged 50 of 68 ZIPs as ambiguous because a
     town's program products (e.g. Malden Community Electricity) appear on
     both utilities' pages. Only regular supplier offers now count.
+
+25. **Added the 13 towns that run their own city electricity program**
+    (Nov 18): Winthrop and Quincy (National Grid); Chelsea, Boston,
+    Somerville, Cambridge, Arlington, Brookline, Stoneham, Winchester,
+    Woburn, Burlington and Waltham (Eversource). Their offer lists differ
+    from town to town; towns without a program would duplicate existing
+    charts. Daily run grows from 6 to 19 cities (about 10 minutes with the
+    15-second pause; free on a public repo).

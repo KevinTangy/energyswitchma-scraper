@@ -2,7 +2,7 @@
 
 Daily scraper that tracks retail electricity supply offers from
 [EnergySwitch MA](https://energyswitchma.gov) (the state's official
-comparison site) for cities north of Boston. It records every supplier's
+comparison site) for 19 cities and towns in and around Boston. It records every supplier's
 ¢/kWh rate, then builds a README comparing each city's utility basic service
 (National Grid or Eversource) against the cheapest offer.
 
@@ -53,14 +53,38 @@ a scratch directory (or back up the CSV) so you don't overwrite real data.
 
 ## Cities tracked (cities.csv)
 
-| City | ZIP |
-|---|---|
-| Malden | 02148 |
-| Medford | 02155 |
-| Melrose | 02176 |
-| Everett | 02149 |
-| Revere | 02151 |
-| Saugus | 01906 |
+| City | ZIP | Utility (compare_id) | Own city electricity program |
+|---|---|---|---|
+| Malden | 02148 | National Grid (1) | yes |
+| Medford | 02155 | National Grid (1) | yes |
+| Melrose | 02176 | National Grid (1) | yes |
+| Everett | 02149 | National Grid (1) | no |
+| Revere | 02151 | National Grid (1) | no |
+| Saugus | 01906 | National Grid (1) | no |
+| Winthrop | 02152 | National Grid (1) | yes |
+| Quincy | 02170 | National Grid (1) | yes |
+| Chelsea | 02150 | Eversource (2) | yes |
+| Boston | 02130 | Eversource (2) | yes |
+| Somerville | 02143 | Eversource (2) | yes |
+| Cambridge | 02139 | Eversource (2) | yes |
+| Arlington | 02474 | Eversource (2) | yes |
+| Brookline | 02446 | Eversource (2) | yes |
+| Stoneham | 02180 | Eversource (2) | yes |
+| Winchester | 01890 | Eversource (2) | yes |
+| Woburn | 01801 | Eversource (2) | yes |
+| Burlington | 01803 | Eversource (2) | yes |
+| Waltham | 02453 | Eversource (2) | yes |
+
+One ZIP per town: the Nov 18 check showed the same offers across a town's
+ZIPs. Quincy uses 02170 because 02169 straddles both utilities. Boston's
+neighborhoods all showed the same offers, so one ZIP (02130) stands for the
+city.
+
+Left out on purpose (Nov 18): towns with no city program (Lynn, Nahant,
+Swampscott, Salem; Watertown, Lexington, Newton) have exactly the same
+offers as other towns on their utility, so they'd repeat existing charts.
+Chestnut Hill (02467) isn't a town; it spans Newton, Brookline and Boston,
+so its offers don't belong to one place.
 
 To add or remove a city, edit `cities.csv` (`zip,city,compare_id`; no commas
 in city names). `compare_id` is the utility's page: `1` = National Grid,
@@ -105,8 +129,9 @@ Columns, in order: `date, zip, city, supplier, price_cents_per_kwh, term, fees`
   An early version wrongly used `supplierId`.
 - **Basic service is split into two rows**, one per price period. The
   source puts both in one record, joined by `|`, in both `pricePerUnit` and
-  `contractTerm`. These rows are labeled `<utility> (Basic Service)`, e.g.
-  `National Grid (Basic Service)` or `Eversource (Basic Service)`.
+  `contractTerm`. These rows are labeled `<utility> (Basic Service)` using
+  the site's name: `National Grid (Basic Service)` or
+  `NSTAR d/b/a Eversource Energy (Basic Service)`.
 - **price_cents_per_kwh** is a bare number (`17.185`), not `17.185 ¢/kWh`.
 - **fees**: cancellation fee text (or `No cancellation fee`), plus the
   enrollment fee and monthly charge when they exist.
@@ -179,9 +204,10 @@ See `docs/status.md` for details. In short:
   fired about 8 hours late, at 2:24 PM EST. The schedule was moved to
   6:11 AM EST; watch whether later runs are on time. Details in
   `docs/status.md`.
-- All 6 tracked cities return data on page 1 (National Grid). The Eversource
+- The original 6 cities return data on page 1 (National Grid). The Eversource
   page (2) works; its utility is named "NSTAR d/b/a Eversource Energy"
-  (shown as "Eversource" on charts).
+  (shown as "Eversource" on charts). 13 towns with their own city programs
+  were added Nov 18 (2 National Grid, 11 Eversource).
 
 ## Conventions
 
