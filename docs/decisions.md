@@ -14,7 +14,7 @@ In the order they were made (Nov 17–18, 2026).
    column meanings with regexes on field names. After Kevin shared a real
    capture, this was replaced with exact field names.
 
-4. **Keep the raw captures every day** (`data/raw/<zip>/<date>.json`). That
+4. **Keep the raw captures every day** (`data/raw/<zip>/<date>.json.gz`). That
    way parsing changes can be re-run on past days with `--from-raw`.
 
 5. **ZIP as a CLI argument** (5 digits, checked) with an optional `--city`
@@ -67,3 +67,10 @@ In the order they were made (Nov 17–18, 2026).
 
 18. **Dates in Massachusetts time** (Nov 18). GitHub runners use UTC, which
     labeled evening runs with the next day.
+
+19. **Compress raw captures** (Nov 18). Uncompressed captures were about
+    120 KB per city per day, which would push the repo past GitHub's
+    recommended 1 GB within a year or two if more cities were added. They're
+    now compact gzip files (about 7 KB JSON + 2 KB text). The gzip header has
+    no timestamp or filename, so an unchanged capture produces identical
+    bytes and git stores no new copy.

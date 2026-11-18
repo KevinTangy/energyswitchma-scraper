@@ -3,19 +3,21 @@ Daily scraper for EnergySwitch MA supplier offers.
 
 Usage:
     python scrape.py 02148 --city Malden
-    python scrape.py 02148 --city Malden --from-raw data/raw/02148/2026-11-18.json
+    python scrape.py 02148 --city Malden --from-raw data/raw/02148/2026-11-18.json.gz
 
 Opens the compare page for the given ZIP in headless Chromium, captures the
 offer list the site loads from /consumers/compare, and appends one row per
 offer to data/rates.csv (shared across all ZIPs, with zip and city columns).
 Re-running for a ZIP on the same date replaces that day's rows for the ZIP
 instead of adding them again; earlier days are never touched.
-The raw capture is kept in data/raw/<zip>/ so history can be re-processed.
+The raw capture is kept gzip-compressed in data/raw/<zip>/<date>.json.gz so
+history can be re-processed.
 --from-raw skips the browser and re-reads a saved capture instead.
 """
 import argparse
 import csv
 import datetime as dt
+import gzip
 import json
 import re
 import sys
@@ -36,7 +38,7 @@ def parse_args():
     ap = argparse.ArgumentParser(description="Scrape EnergySwitch MA offers for a ZIP code.")
     ap.add_argument("zip", help="5-digit Massachusetts ZIP code, e.g. 02148")
     ap.add_argument("--city", default="", help="Optional city name to record in the CSV")
-    ap.add_argument("--from-raw", type=Path, help="Re-process a saved raw JSON capture instead of scraping")
+    ap.add_argument("--from-raw", type=Path, help="Re-process a saved raw capture (.json.gz or .json) instead of scraping")
     ap.add_argument("--date", help="Date to record (YYYY-MM-DD); defaults to today")
     args = ap.parse_args()
     if not re.fullmatch(r"\d{5}", args.zip):
@@ -63,11 +65,33 @@ def capture(zip_code, raw_dir, today):
         page.on("response", on_response)
         page.goto(URL_TEMPLATE.format(zip=zip_code), wait_until="networkidle", timeout=90_000)
         page.wait_for_timeout(8_000)  # let the offer list finish loading
-        (raw_dir / f"{today}.txt").write_text(page.inner_text("body"))
+        save_gz(raw_dir / f"{today}.txt.gz", page.inner_text("body").encode())
         browser.close()
 
-    (raw_dir / f"{today}.json").write_text(json.dumps(captured, indent=1))
+    save_raw(raw_dir / f"{today}.json.gz", captured)
+    for ext in ("json", "txt"):  # uncompressed files from older versions
+        (raw_dir / f"{today}.{ext}").unlink(missing_ok=True)
     return captured
+
+
+def save_gz(path, data):
+    """gzip-compress bytes to path. mtime=0 keeps the bytes identical when the
+    content hasn't changed, so git stores no new copy. (The filename is left
+    out of the gzip header for the same reason.)"""
+    with path.open("wb") as raw, gzip.GzipFile(filename="", fileobj=raw, mode="wb", mtime=0, compresslevel=9) as f:
+        f.write(data)
+
+
+def save_raw(path, captured):
+    """Write a capture as compact, gzip-compressed JSON."""
+    save_gz(path, json.dumps(captured, separators=(",", ":"), ensure_ascii=False).encode())
+
+
+def load_raw(path):
+    """Read a capture saved as .json.gz (current) or plain .json (older)."""
+    opener = gzip.open if path.suffix == ".gz" else open
+    with opener(path, "rt", encoding="utf-8") as f:
+        return json.load(f)
 
 
 def find_offers(captured):
@@ -173,7 +197,7 @@ def main():
     label = f"{args.zip} {args.city}".strip()
 
     if args.from_raw:
-        captured = json.loads(args.from_raw.read_text())
+        captured = load_raw(args.from_raw)
     else:
         raw_dir = DATA / "raw" / args.zip
         raw_dir.mkdir(parents=True, exist_ok=True)
@@ -181,7 +205,7 @@ def main():
 
     offers = find_offers(captured)
     if not offers:
-        print(f"[{label}] No offer data found; check data/raw/{args.zip}/{today}.txt")
+        print(f"[{label}] No offer data found; check data/raw/{args.zip}/{today}.txt.gz")
         sys.exit(1)
 
     rows = []

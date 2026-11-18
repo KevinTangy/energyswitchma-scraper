@@ -23,7 +23,8 @@ The response is a JSON **list**, one object per offer. For ZIP 02148 on
 2026-11-18 it held 42 offers.
 
 `scrape.py` saves every JSON response the page loads into
-`data/raw/<zip>/<date>.json`, as a list of `{"url": ..., "body": ...}`.
+`data/raw/<zip>/<date>.json.gz` (gzip-compressed, compact JSON), as a list of
+`{"url": ..., "body": ...}`. View one with `zcat`.
 `find_offers()` picks the entry whose URL contains `/consumers/compare`. As a
 fallback, it uses any list of records that have `supplierName`.
 
@@ -65,5 +66,6 @@ devtools.
 
 ## Sample capture
 
-`data/raw/02148/2026-11-18.json` (about 112 KB) is the reference fixture used
+`data/raw/02148/2026-11-18.json.gz` (about 7 KB compressed, 112 KB as
+originally saved) is the reference fixture used
 to build and test the parsing.
