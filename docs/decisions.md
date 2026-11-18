@@ -101,3 +101,8 @@ In the order they were made (Nov 17–18, 2026).
 23. **Municipal light plant towns excluded** (Nov 18): Wakefield, Reading,
     Belmont, Peabody and Lynnfield. State law exempts them from competitive
     supply, so there are no offers to track.
+
+24. **Ignore town electricity programs when picking the page** (Nov 18).
+    The first full check flagged 50 of 68 ZIPs as ambiguous because a
+    town's program products (e.g. Malden Community Electricity) appear on
+    both utilities' pages. Only regular supplier offers now count.

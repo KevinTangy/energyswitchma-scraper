@@ -74,6 +74,11 @@ UTILITY = {}
 BASIC_SUFFIX = " (Basic Service)"
 
 
+def short_utility(name):
+    """'NSTAR d/b/a Eversource Energy' -> 'Eversource' for labels."""
+    return "Eversource" if "eversource" in name.lower() else name
+
+
 def load_series():
     """Return {city: [(date, basic_rate, cheapest_rate, cheapest_supplier), ...]}."""
     by_city_day = OrderedDict()
@@ -93,7 +98,7 @@ def load_series():
 
             basic_rate = None
             if basic:
-                UTILITY[city] = basic[0]["supplier"].removesuffix(BASIC_SUFFIX)
+                UTILITY[city] = short_utility(basic[0]["supplier"].removesuffix(BASIC_SUFFIX))
                 current = basic[0]
                 for r in basic:
                     period = parse_period(r["term"])

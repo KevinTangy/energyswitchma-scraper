@@ -63,7 +63,7 @@ def cheapest(offers):
 def describe(s):
     if not s["offers"]:
         return "no offers"
-    return f"{s['utility'] or 'no utility'}, {s['competing']} competing"
+    return f"{s['utility'] or 'no utility'}, {s['regular']} regular + {s['competing'] - s['regular']} town program"
 
 
 def main():
@@ -102,6 +102,18 @@ def main():
             seen.setdefault(fp, f"{zip_code} {city}")
         results.append(row)
         print(" | ".join(str(row[c]) for c in COLUMNS), flush=True)
+
+    # A ZIP that straddles both utilities gets the page the rest of its town
+    # uses, when the town's other ZIPs agree.
+    town = lambda c: c.split(" - ")[0]
+    for r in results:
+        if r["choice"] != "none" or "straddle" not in r["reason"]:
+            continue
+        others = {o["choice"] for o in results
+                  if o is not r and town(o["city"]) == town(r["city"]) and o["choice"] != "none"}
+        if len(others) == 1:
+            r["choice"] = others.pop()
+            r["reason"] += f"; rest of {town(r['city'])} uses page {r['choice']}"
 
     with open(args.out, "w", newline="") as f:
         w = csv.DictWriter(f, fieldnames=COLUMNS)

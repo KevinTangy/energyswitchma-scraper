@@ -101,33 +101,51 @@ def save_capture(raw_dir, today, captured, text):
 
 def summarize(offers):
     """What a compare page returned: the utility named on its basic service
-    record, and how many competing (non-utility) offers it lists."""
+    record, how many competing (non-utility) offers it lists, and how many of
+    those are regular supplier offers rather than the town's own electricity
+    program (municipal aggregation).
+
+    A town's program products show up on BOTH utilities' pages, so they say
+    nothing about which utility serves the town. Only the program's default
+    product carries municipalAggregationTown; its other products share the
+    supplier name, so every offer under that name counts as the program."""
     utilities = sorted({(o.get("supplierName") or "").strip()
                         for o in offers if o.get("isDistributionCompany")})
     competing = [o for o in offers if not o.get("isDistributionCompany")]
+    programs = {(o.get("supplierName") or "").strip()
+                for o in competing if o.get("municipalAggregationTown")}
+    regular = [o for o in competing if (o.get("supplierName") or "").strip() not in programs]
     return {"utility": " / ".join(utilities), "competing": len(competing),
-            "offers": len(offers)}
+            "regular": len(regular), "offers": len(offers)}
 
 
 def choose_compare_id(summaries):
     """Pick the compare page for a ZIP from {compare_id: summarize(...)}.
 
     A page counts only if it names a utility's basic service AND lists
-    competing offers. If exactly one page counts, use it. If both do (the
-    site may ignore the ID), use the one whose utility matches what that ID
-    stands for. Returns (compare_id or None, reason)."""
-    usable = {cid: s for cid, s in summaries.items() if s["utility"] and s["competing"]}
+    regular supplier offers (not just the town's own electricity program,
+    which appears on both pages). If exactly one page counts, use it. If both
+    do, use the one whose utility matches what that ID stands for; if that
+    doesn't settle it (a ZIP that straddles both utilities), return None.
+    Returns (compare_id or None, reason)."""
+    usable = {cid: s for cid, s in summaries.items()
+              if s["utility"] and s.get("regular", s["competing"])}
     if not usable:
         return None, "no competing offers on either page (municipal light plant, or not served)"
     if len(usable) == 1:
         (cid, s), = usable.items()
-        return cid, f"only page {cid} has offers ({s['utility']}, {s['competing']} competing)"
+        return cid, (f"only page {cid} has regular offers ({s['utility']}, "
+                     f"{s.get('regular', s['competing'])} regular, {s['competing']} competing)")
+    # Both pages have regular offers. The site names a utility on every page
+    # ("National Grid" on page 1 even for Eversource towns), so a name match
+    # only helps when the two pages name different utilities than expected.
     matching = [cid for cid, s in usable.items() if COMPARE_IDS[cid].lower() in s["utility"].lower()]
     if len(matching) == 1:
         cid = matching[0]
         return cid, f"both pages have offers; page {cid} names {usable[cid]['utility']}"
-    return None, "ambiguous: " + "; ".join(
-        f"page {cid} = {s['utility']} ({s['competing']} competing)" for cid, s in usable.items())
+    return None, "both pages have regular offers (ZIP may straddle both utilities): " + "; ".join(
+        f"page {cid} = {s['utility']} ({s.get('regular', s['competing'])} regular)"
+        for cid, s in usable.items())
 
 
 def save_gz(path, data):

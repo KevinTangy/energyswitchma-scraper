@@ -79,10 +79,17 @@ offers for them.
   captures the JSON responses.
 - Page URL: `https://energyswitchma.gov/#/compare/{compare_id}/1/{zip}//`,
   one page per utility: `1` = National Grid, `2` = Eversource. Each city
-  uses only the page for the utility that serves it and lists competing
-  offers. `choose_compare_id()` in `scrape.py` decides: a page counts only if
-  it names a utility's basic service AND has competing offers; if both pages
-  count, the one whose utility matches the ID wins.
+  uses only the page for the utility that serves it. `choose_compare_id()`
+  in `scrape.py` decides: a page counts only if it lists REGULAR supplier
+  offers. A town's own electricity program (municipal aggregation) shows up
+  on both pages, so it doesn't count. The site names a utility on every page
+  (page 1 always says National Grid), so the name alone proves nothing.
+- Site quirks seen in the Nov 18 check of 68 ZIPs: each utility page has
+  ~37 regular offers; towns with a program add 2-3; a few ZIPs that straddle
+  both utilities (Everett 02149, Medford 02155, Quincy 02169) show regular
+  offers on both pages and need a manual choice; and the site lists
+  Eversource offers for Wakefield and Belmont even though they're municipal
+  light plant towns. Treat the site's results as a hint, not proof.
 - The offer list comes from the JSON response at
   `https://energyswitchma.gov/consumers/compare`: a list with one object per
   offer. See `docs/data-source.md` for the fields.
@@ -172,9 +179,9 @@ See `docs/status.md` for details. In short:
   fired about 8 hours late, at 2:24 PM EST. The schedule was moved to
   6:11 AM EST; watch whether later runs are on time. Details in
   `docs/status.md`.
-- All 6 tracked cities return data on page 1 (National Grid); confirmed by
-  the Nov 18 runs. The Eversource page (2) hasn't been seen yet; run the
-  "Check which utility page each ZIP uses" workflow to confirm it.
+- All 6 tracked cities return data on page 1 (National Grid). The Eversource
+  page (2) works; its utility is named "NSTAR d/b/a Eversource Energy"
+  (shown as "Eversource" on charts).
 
 ## Conventions
 
