@@ -16,11 +16,14 @@ _As of Nov 18, 2026._
   months, the CSV migration, the missing-CSV case, and the YAML and city
   loop.
 
-## Open issue: scheduled run didn't fire
+## Open issue: scheduled run fired late
 
-The first scheduled run, on Nov 18, 2026 at 6:17 AM ET, did not trigger. The
-cause isn't known yet. Kevin hasn't reported back what the Actions tab shows.
-Things to check, in order:
+The first scheduled run, set for Nov 18, 2026 at 6:17 AM EST (11:17 UTC),
+didn't start until 2:24 PM EST (19:24 UTC), about 8 hours late. It succeeded.
+The schedule was then moved to 6:11 AM EST (`11 11 * * *`). Watch whether
+the next runs start near that time. GitHub only promises "best effort" for
+scheduled runs, and new schedules are often delayed at first. If runs keep
+coming in hours late, these are the things to check:
 
 1. Whether a "Scheduled" run happened late. GitHub can delay scheduled runs,
    or occasionally drop them.

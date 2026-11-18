@@ -109,8 +109,8 @@ Columns, in order: `date, zip, city, supplier, price_cents_per_kwh, term, fees`
 
 ## GitHub Actions
 
-- Schedule: `cron: "17 11 * * *"` is 11:17 UTC, which is 6:17 AM EST and
-  7:17 AM EDT. GitHub cron runs in UTC only. Also has `workflow_dispatch`
+- Schedule: `cron: "11 11 * * *"` is 11:11 UTC, which is 6:11 AM EST and
+  7:11 AM EDT. GitHub cron runs in UTC only. Also has `workflow_dispatch`
   for manual runs.
 - Steps: install Playwright and matplotlib, then scrape each city in a loop,
   then `make_charts.py`, then commit `data charts README.md` as `rate-bot`,
@@ -122,8 +122,9 @@ Columns, in order: `date, zip, city, supplier, price_cents_per_kwh, term, fees`
 See `docs/status.md` for details. In short:
 - The pipeline was built and checked with offline tests. The parsing was
   confirmed against a real Malden capture (42 offers, 43 rows).
-- **Open issue:** the first scheduled run (Nov 18, 2026, 6:17 AM) did not
-  fire. The cause isn't known yet. Troubleshooting steps are in
+- **Open issue:** the first scheduled run (Nov 18, 2026, set for 6:17 AM)
+  fired about 8 hours late, at 2:24 PM EST. The schedule was moved to
+  6:11 AM EST; watch whether later runs are on time. Details in
   `docs/status.md`.
 - Not yet confirmed: whether the 5 cities other than Malden return data with
   the same `/compare/1/1/` URL.

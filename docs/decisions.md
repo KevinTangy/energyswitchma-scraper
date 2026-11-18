@@ -56,5 +56,6 @@ In the order they were made (Nov 17–18, 2026).
     because they're real options for residents. This hasn't been finally
     decided; see `status.md`.
 
-16. **Cron at minute :17**, because GitHub delays scheduled jobs set for the
+16. **Cron at an off-the-hour minute** (now 11:11 UTC = 6:11 AM EST, moved
+    from :17 on Nov 18), because GitHub delays scheduled jobs set for the
     top of the hour.
