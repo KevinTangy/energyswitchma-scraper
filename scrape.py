@@ -2,14 +2,14 @@
 Daily scraper for EnergySwitch MA supplier offers.
 
 Usage:
-    python scrape.py 02148
     python scrape.py 02148 --city Malden
+    python scrape.py 02148 --city Malden --from-raw data/raw/02148/2026-11-18.json
 
 Opens the compare page for the given ZIP in headless Chromium, captures the
-JSON the site loads behind the scenes, and appends one row per offer to
-data/rates.csv (shared across all ZIPs, with zip and city columns).
-Raw captures are kept in data/raw/<zip>/ so nothing is lost if the
-field-matching below needs tuning after the first run.
+offer list the site loads from /consumers/compare, and appends one row per
+offer to data/rates.csv (shared across all ZIPs, with zip and city columns).
+The raw capture is kept in data/raw/<zip>/ so history can be re-processed.
+--from-raw skips the browser and re-reads a saved capture instead.
 """
 import argparse
 import csv
@@ -19,75 +19,30 @@ import re
 import sys
 from pathlib import Path
 
-from playwright.sync_api import sync_playwright
-
 URL_TEMPLATE = "https://energyswitchma.gov/#/compare/1/1/{zip}//"
+API_MARKER = "/consumers/compare"
 DATA = Path("data")
 CSV_PATH = DATA / "rates.csv"
-
-# Regexes used to pick useful columns out of whatever field names the API uses
-FIELD_PATTERNS = {
-    "supplier": r"supplier|company|vendor|provider",
-    "product": r"product|plan|offer.*name",
-    "price": r"price|rate|cents|kwh",
-    "term": r"term|month|length|duration",
-    "fees": r"fee|cancel|termination|enroll",
-    "renewable": r"renew|green|clean",
-    "price_type": r"fixed|variable|pricetype|ratetype",
-}
-CSV_COLUMNS = ["date", "zip", "city"] + list(FIELD_PATTERNS)
+CSV_COLUMNS = ["date", "zip", "city", "supplier", "price_cents_per_kwh", "term", "fees"]
 
 
 def parse_args():
     ap = argparse.ArgumentParser(description="Scrape EnergySwitch MA offers for a ZIP code.")
     ap.add_argument("zip", help="5-digit Massachusetts ZIP code, e.g. 02148")
     ap.add_argument("--city", default="", help="Optional city name to record in the CSV")
+    ap.add_argument("--from-raw", type=Path, help="Re-process a saved raw JSON capture instead of scraping")
+    ap.add_argument("--date", help="Date to record (YYYY-MM-DD); defaults to today")
     args = ap.parse_args()
     if not re.fullmatch(r"\d{5}", args.zip):
         ap.error(f"ZIP code must be exactly 5 digits, got {args.zip!r}")
     return args
 
 
-def walk(obj):
-    """Yield every list of dicts anywhere in a JSON structure."""
-    if isinstance(obj, list):
-        if obj and all(isinstance(x, dict) for x in obj):
-            yield obj
-        for x in obj:
-            yield from walk(x)
-    elif isinstance(obj, dict):
-        for v in obj.values():
-            yield from walk(v)
+def capture(zip_code, raw_dir, today):
+    """Load the page in headless Chromium and return all JSON responses."""
+    from playwright.sync_api import sync_playwright
 
-
-def flatten(d, prefix=""):
-    out = {}
-    for k, v in d.items():
-        key = f"{prefix}{k}"
-        if isinstance(v, dict):
-            out.update(flatten(v, key + "."))
-        elif not isinstance(v, list):
-            out[key] = v
-    return out
-
-
-def pick_columns(row):
-    picked = {}
-    for col, pat in FIELD_PATTERNS.items():
-        for k, v in row.items():
-            if re.search(pat, k, re.I) and v not in (None, ""):
-                picked[col] = v
-                break
-    return picked
-
-
-def scrape(zip_code, city):
-    today = dt.date.today().isoformat()
-    raw_dir = DATA / "raw" / zip_code
-    raw_dir.mkdir(parents=True, exist_ok=True)
-    url = URL_TEMPLATE.format(zip=zip_code)
     captured = []
-
     with sync_playwright() as p:
         browser = p.chromium.launch()
         page = browser.new_page()
@@ -100,43 +55,124 @@ def scrape(zip_code, city):
                     pass
 
         page.on("response", on_response)
-        page.goto(url, wait_until="networkidle", timeout=90_000)
+        page.goto(URL_TEMPLATE.format(zip=zip_code), wait_until="networkidle", timeout=90_000)
         page.wait_for_timeout(8_000)  # let the offer list finish loading
         (raw_dir / f"{today}.txt").write_text(page.inner_text("body"))
         browser.close()
 
     (raw_dir / f"{today}.json").write_text(json.dumps(captured, indent=1))
+    return captured
 
-    # Choose the biggest list of offer-like records across all responses
-    best, best_url = [], ""
+
+def find_offers(captured):
+    """Return the offer list from the /consumers/compare response."""
     for c in captured:
-        for lst in walk(c["body"]):
-            flat = [flatten(x) for x in lst]
-            offers = [r for r in flat if pick_columns(r).get("price")]
-            if len(offers) > len(best):
-                best, best_url = offers, c["url"]
+        body = c.get("body")
+        if API_MARKER in c.get("url", "") and isinstance(body, list):
+            return body
+    # Fallback: any list of records that carry supplierName
+    for c in captured:
+        body = c.get("body")
+        if isinstance(body, list) and body and isinstance(body[0], dict) and "supplierName" in body[0]:
+            return body
+    return []
 
-    label = f"{zip_code} {city}".strip()
-    if not best:
-        print(f"[{label}] No offer data found in JSON; see {raw_dir}/{today}.txt")
-        return False
 
-    print(f"[{label}] Found {len(best)} offers from {best_url}")
+def split_pipe(value):
+    """'a|b' -> ['a', 'b']; None -> ['']."""
+    return [part.strip() for part in (value or "").split("|")]
+
+
+def cents(price_text):
+    """'17.185 ¢/kWh' -> '17.185'."""
+    m = re.search(r"\d+(?:\.\d+)?", price_text or "")
+    return m.group(0) if m else ""
+
+
+def fees_text(offer):
+    parts = []
+    if offer.get("enrollmentFee"):
+        parts.append(f"Enrollment fee: {offer['enrollmentFee']}")
+    if offer.get("pricePerMonth"):
+        parts.append(f"Monthly charge: {offer['pricePerMonth']}")
+    parts.append(offer.get("earlyTerminationDetail") or "No cancellation fee")
+    return "; ".join(parts)
+
+
+def offer_rows(offer):
+    """One row per price period. Basic service lists two periods joined by '|'."""
+    prices = split_pipe(offer.get("pricePerUnit") or offer.get("fixedPrice"))
+    terms = split_pipe(offer.get("contractTerm"))
+    if len(terms) < len(prices):
+        terms += [terms[-1]] * (len(prices) - len(terms))
+    supplier = (offer.get("supplierName") or "").strip()
+    if offer.get("isDistributionCompany"):
+        supplier += " (Basic Service)"
+    fees = fees_text(offer)
+    return [
+        {"supplier": supplier, "price_cents_per_kwh": cents(p), "term": t, "fees": fees}
+        for p, t in zip(prices, terms)
+    ]
+
+
+def sort_rows(rows):
+    """Basic service rows first (in their original period order), then
+    everything else from cheapest to most expensive."""
+    basic = [r for r in rows if r["supplier"].endswith("(Basic Service)")]
+    others = [r for r in rows if not r["supplier"].endswith("(Basic Service)")]
+
+    def price_key(r):
+        try:
+            return (float(r["price_cents_per_kwh"]), r["supplier"])
+        except ValueError:
+            return (float("inf"), r["supplier"])  # missing price goes last
+
+    return basic + sorted(others, key=price_key)
+
+
+def write_rows(rows):
+    DATA.mkdir(parents=True, exist_ok=True)
+    if CSV_PATH.exists():
+        with CSV_PATH.open(newline="") as f:
+            header = next(csv.reader(f), [])
+        if header != CSV_COLUMNS:
+            legacy = DATA / "rates_old_format.csv"
+            CSV_PATH.rename(legacy)
+            print(f"Column layout changed; moved old file to {legacy}")
     new_file = not CSV_PATH.exists()
     with CSV_PATH.open("a", newline="") as f:
         w = csv.DictWriter(f, fieldnames=CSV_COLUMNS)
         if new_file:
             w.writeheader()
-        for r in best:
-            w.writerow({"date": today, "zip": zip_code, "city": city, **pick_columns(r)})
-    return True
+        w.writerows(rows)
 
 
 def main():
     args = parse_args()
-    ok = scrape(args.zip, args.city)
-    sys.exit(0 if ok else 1)
+    today = args.date or dt.date.today().isoformat()
+    label = f"{args.zip} {args.city}".strip()
+
+    if args.from_raw:
+        captured = json.loads(args.from_raw.read_text())
+    else:
+        raw_dir = DATA / "raw" / args.zip
+        raw_dir.mkdir(parents=True, exist_ok=True)
+        captured = capture(args.zip, raw_dir, today)
+
+    offers = find_offers(captured)
+    if not offers:
+        print(f"[{label}] No offer data found; check data/raw/{args.zip}/{today}.txt")
+        sys.exit(1)
+
+    rows = []
+    for offer in offers:
+        for r in offer_rows(offer):
+            rows.append({"date": today, "zip": args.zip, "city": args.city, **r})
+
+    write_rows(sort_rows(rows))
+    print(f"[{label}] Saved {len(rows)} rows from {len(offers)} offers")
 
 
 if __name__ == "__main__":
     main()
+
