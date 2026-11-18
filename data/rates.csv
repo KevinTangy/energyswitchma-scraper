@@ -1,244 +1,250 @@
-date,zip,city,supplier,product,price,term,fees,renewable,price_type
-2026-11-18,02148,Malden,198,999,17.185 ¢/kWh|16.077 ¢/kWh,Aug '26 through Jan '27 |Feb '27 through Jul '27 ,False,False,
-2026-11-18,02148,Malden,214,4270,13.76 ¢/kWh, through Dec '27,False,True,13.76 ¢/kWh
-2026-11-18,02148,Malden,43,4808,16.49 ¢/kWh,12 months,True,True,16.49 ¢/kWh
-2026-11-18,02148,Malden,214,4271,14.70 ¢/kWh, through Dec '27,False,True,14.70 ¢/kWh
-2026-11-18,02148,Malden,60,4448,17.27 ¢/kWh,10 months,False,True,17.27 ¢/kWh
-2026-11-18,02148,Malden,22,3205,16.39 ¢/kWh,36 months,True,True,16.39 ¢/kWh
-2026-11-18,02148,Malden,55,4974,18.78 ¢/kWh,6 months,False,True,18.78 ¢/kWh
-2026-11-18,02148,Malden,69,2923,19.00 ¢/kWh,24 months,False,True,19.00 ¢/kWh
-2026-11-18,02148,Malden,43,4881,18.29 ¢/kWh,18 months,True,True,18.29 ¢/kWh
-2026-11-18,02148,Malden,37,3722,15.20 ¢/kWh,12 months,False,True,15.20 ¢/kWh
-2026-11-18,02148,Malden,13,4866,17.09 ¢/kWh,9 months,False,True,17.09 ¢/kWh
-2026-11-18,02148,Malden,22,3006,16.29 ¢/kWh,24 months,True,True,16.29 ¢/kWh
-2026-11-18,02148,Malden,214,4272,13.35 ¢/kWh, through Dec '27,False,True,13.35 ¢/kWh
-2026-11-18,02148,Malden,60,4598,18.67 ¢/kWh,22 months,False,True,18.67 ¢/kWh
-2026-11-18,02148,Malden,13,3484,17.79 ¢/kWh,18 months,False,True,17.79 ¢/kWh
-2026-11-18,02148,Malden,12,374,16.39 ¢/kWh,12 months,True,True,16.39 ¢/kWh
-2026-11-18,02148,Malden,22,3243,16.99 ¢/kWh,18 months,True,True,16.99 ¢/kWh
-2026-11-18,02148,Malden,15,4057,16.59 ¢/kWh,24 months,True,True,16.59 ¢/kWh
-2026-11-18,02148,Malden,21,4950,19.29 ¢/kWh,25 months,True,False,19.29 ¢/kWh
-2026-11-18,02148,Malden,7,4321,17.29 ¢/kWh,24 months,False,True,17.29 ¢/kWh
-2026-11-18,02148,Malden,15,3916,17.29 ¢/kWh,18 months,True,True,17.29 ¢/kWh
-2026-11-18,02148,Malden,21,4949,18.99 ¢/kWh,25 months,True,False,18.99 ¢/kWh
-2026-11-18,02148,Malden,22,3203,16.29 ¢/kWh,12 months,True,True,16.29 ¢/kWh
-2026-11-18,02148,Malden,25,3867,20.20 ¢/kWh,12 months,False,True,20.20 ¢/kWh
-2026-11-18,02148,Malden,60,3555,19.97 ¢/kWh,6 months,False,True,19.97 ¢/kWh
-2026-11-18,02148,Malden,57,3704,18.10 ¢/kWh,12 months,False,True,18.10 ¢/kWh
-2026-11-18,02148,Malden,7,2743,18.59 ¢/kWh,18 months,False,True,18.59 ¢/kWh
-2026-11-18,02148,Malden,30,4911,18.99 ¢/kWh,25 months,True,False,18.99 ¢/kWh
-2026-11-18,02148,Malden,13,2988,16.79 ¢/kWh,24 months,False,True,16.79 ¢/kWh
-2026-11-18,02148,Malden,23,4919,18.99 ¢/kWh,25 months,True,False,18.99 ¢/kWh
-2026-11-18,02148,Malden,43,4883,18.49 ¢/kWh,9 months,True,True,18.49 ¢/kWh
-2026-11-18,02148,Malden,23,4918,19.69 ¢/kWh,25 months,True,False,19.69 ¢/kWh
-2026-11-18,02148,Malden,13,4969,16.19 ¢/kWh,13 months,False,True,16.19 ¢/kWh
-2026-11-18,02148,Malden,26,4981,15.87 ¢/kWh,12 months,False,True,15.87 ¢/kWh
-2026-11-18,02148,Malden,15,3912,16.59 ¢/kWh,12 months,True,True,16.59 ¢/kWh
-2026-11-18,02148,Malden,55,4973,21.52 ¢/kWh,6 months,False,True,21.52 ¢/kWh
-2026-11-18,02148,Malden,12,4539,16.79 ¢/kWh,12 months,True,True,16.79 ¢/kWh
-2026-11-18,02148,Malden,8,1230,16.99 ¢/kWh,12 months,False,True,16.99 ¢/kWh
-2026-11-18,02148,Malden,7,4237,16.99 ¢/kWh,11 months,False,True,16.99 ¢/kWh
-2026-11-18,02148,Malden,30,4910,18.79 ¢/kWh,25 months,True,False,18.79 ¢/kWh
-2026-11-18,02148,Malden,6,4843,15.99 ¢/kWh,12 months,True,True,15.99 ¢/kWh
-2026-11-18,02148,Malden,28,4925,18.89 ¢/kWh,25 months,True,False,18.89 ¢/kWh
-2026-11-18,02155,Medford,198,999,17.185 ¢/kWh|16.077 ¢/kWh,Aug '26 through Jan '27 |Feb '27 through Jul '27 ,False,False,
-2026-11-18,02155,Medford,185,2651,14.13 ¢/kWh, through Dec '27,False,True,14.13 ¢/kWh
-2026-11-18,02155,Medford,43,4808,16.49 ¢/kWh,12 months,True,True,16.49 ¢/kWh
-2026-11-18,02155,Medford,60,4448,17.27 ¢/kWh,10 months,False,True,17.27 ¢/kWh
-2026-11-18,02155,Medford,22,3205,16.39 ¢/kWh,36 months,True,True,16.39 ¢/kWh
-2026-11-18,02155,Medford,55,4974,18.78 ¢/kWh,6 months,False,True,18.78 ¢/kWh
-2026-11-18,02155,Medford,69,2923,19.00 ¢/kWh,24 months,False,True,19.00 ¢/kWh
-2026-11-18,02155,Medford,43,4881,18.29 ¢/kWh,18 months,True,True,18.29 ¢/kWh
-2026-11-18,02155,Medford,37,3722,15.20 ¢/kWh,12 months,False,True,15.20 ¢/kWh
-2026-11-18,02155,Medford,13,4866,17.09 ¢/kWh,9 months,False,True,17.09 ¢/kWh
-2026-11-18,02155,Medford,22,3006,16.29 ¢/kWh,24 months,True,True,16.29 ¢/kWh
-2026-11-18,02155,Medford,185,4314,13.72 ¢/kWh, through Dec '27,False,True,13.72 ¢/kWh
-2026-11-18,02155,Medford,60,4598,18.67 ¢/kWh,22 months,False,True,18.67 ¢/kWh
-2026-11-18,02155,Medford,13,3484,17.79 ¢/kWh,18 months,False,True,17.79 ¢/kWh
-2026-11-18,02155,Medford,12,374,16.39 ¢/kWh,12 months,True,True,16.39 ¢/kWh
-2026-11-18,02155,Medford,22,3243,16.99 ¢/kWh,18 months,True,True,16.99 ¢/kWh
-2026-11-18,02155,Medford,15,4057,16.59 ¢/kWh,24 months,True,True,16.59 ¢/kWh
-2026-11-18,02155,Medford,21,4950,19.29 ¢/kWh,25 months,True,False,19.29 ¢/kWh
-2026-11-18,02155,Medford,7,4321,17.29 ¢/kWh,24 months,False,True,17.29 ¢/kWh
-2026-11-18,02155,Medford,15,3916,17.29 ¢/kWh,18 months,True,True,17.29 ¢/kWh
-2026-11-18,02155,Medford,21,4949,18.99 ¢/kWh,25 months,True,False,18.99 ¢/kWh
-2026-11-18,02155,Medford,22,3203,16.29 ¢/kWh,12 months,True,True,16.29 ¢/kWh
-2026-11-18,02155,Medford,25,3867,20.20 ¢/kWh,12 months,False,True,20.20 ¢/kWh
-2026-11-18,02155,Medford,60,3555,19.97 ¢/kWh,6 months,False,True,19.97 ¢/kWh
-2026-11-18,02155,Medford,57,3704,18.10 ¢/kWh,12 months,False,True,18.10 ¢/kWh
-2026-11-18,02155,Medford,7,2743,18.59 ¢/kWh,18 months,False,True,18.59 ¢/kWh
-2026-11-18,02155,Medford,30,4911,18.99 ¢/kWh,25 months,True,False,18.99 ¢/kWh
-2026-11-18,02155,Medford,13,2988,16.79 ¢/kWh,24 months,False,True,16.79 ¢/kWh
-2026-11-18,02155,Medford,23,4919,18.99 ¢/kWh,25 months,True,False,18.99 ¢/kWh
-2026-11-18,02155,Medford,185,4313,16.62 ¢/kWh, through Dec '27,False,True,16.62 ¢/kWh
-2026-11-18,02155,Medford,43,4883,18.49 ¢/kWh,9 months,True,True,18.49 ¢/kWh
-2026-11-18,02155,Medford,23,4918,19.69 ¢/kWh,25 months,True,False,19.69 ¢/kWh
-2026-11-18,02155,Medford,13,4969,16.19 ¢/kWh,13 months,False,True,16.19 ¢/kWh
-2026-11-18,02155,Medford,26,4981,15.87 ¢/kWh,12 months,False,True,15.87 ¢/kWh
-2026-11-18,02155,Medford,15,3912,16.59 ¢/kWh,12 months,True,True,16.59 ¢/kWh
-2026-11-18,02155,Medford,55,4973,21.52 ¢/kWh,6 months,False,True,21.52 ¢/kWh
-2026-11-18,02155,Medford,12,4539,16.79 ¢/kWh,12 months,True,True,16.79 ¢/kWh
-2026-11-18,02155,Medford,8,1230,16.99 ¢/kWh,12 months,False,True,16.99 ¢/kWh
-2026-11-18,02155,Medford,7,4237,16.99 ¢/kWh,11 months,False,True,16.99 ¢/kWh
-2026-11-18,02155,Medford,30,4910,18.79 ¢/kWh,25 months,True,False,18.79 ¢/kWh
-2026-11-18,02155,Medford,6,4843,15.99 ¢/kWh,12 months,True,True,15.99 ¢/kWh
-2026-11-18,02155,Medford,28,4925,18.89 ¢/kWh,25 months,True,False,18.89 ¢/kWh
-2026-11-18,02176,Melrose,198,999,17.185 ¢/kWh|16.077 ¢/kWh,Aug '26 through Jan '27 |Feb '27 through Jul '27 ,False,False,
-2026-11-18,02176,Melrose,131,2512,14.72 ¢/kWh, through Dec '27,False,True,14.72 ¢/kWh
-2026-11-18,02176,Melrose,43,4808,16.49 ¢/kWh,12 months,True,True,16.49 ¢/kWh
-2026-11-18,02176,Melrose,60,4448,17.27 ¢/kWh,10 months,False,True,17.27 ¢/kWh
-2026-11-18,02176,Melrose,22,3205,16.39 ¢/kWh,36 months,True,True,16.39 ¢/kWh
-2026-11-18,02176,Melrose,55,4974,18.78 ¢/kWh,6 months,False,True,18.78 ¢/kWh
-2026-11-18,02176,Melrose,69,2923,19.00 ¢/kWh,24 months,False,True,19.00 ¢/kWh
-2026-11-18,02176,Melrose,43,4881,18.29 ¢/kWh,18 months,True,True,18.29 ¢/kWh
-2026-11-18,02176,Melrose,37,3722,15.20 ¢/kWh,12 months,False,True,15.20 ¢/kWh
-2026-11-18,02176,Melrose,13,4866,17.09 ¢/kWh,9 months,False,True,17.09 ¢/kWh
-2026-11-18,02176,Melrose,22,3006,16.29 ¢/kWh,24 months,True,True,16.29 ¢/kWh
-2026-11-18,02176,Melrose,60,4598,18.67 ¢/kWh,22 months,False,True,18.67 ¢/kWh
-2026-11-18,02176,Melrose,13,3484,17.79 ¢/kWh,18 months,False,True,17.79 ¢/kWh
-2026-11-18,02176,Melrose,12,374,16.39 ¢/kWh,12 months,True,True,16.39 ¢/kWh
-2026-11-18,02176,Melrose,22,3243,16.99 ¢/kWh,18 months,True,True,16.99 ¢/kWh
-2026-11-18,02176,Melrose,15,4057,16.59 ¢/kWh,24 months,True,True,16.59 ¢/kWh
-2026-11-18,02176,Melrose,131,2513,14.31 ¢/kWh, through Dec '27,False,True,14.31 ¢/kWh
-2026-11-18,02176,Melrose,21,4950,19.29 ¢/kWh,25 months,True,False,19.29 ¢/kWh
-2026-11-18,02176,Melrose,7,4321,17.29 ¢/kWh,24 months,False,True,17.29 ¢/kWh
-2026-11-18,02176,Melrose,15,3916,17.29 ¢/kWh,18 months,True,True,17.29 ¢/kWh
-2026-11-18,02176,Melrose,21,4949,18.99 ¢/kWh,25 months,True,False,18.99 ¢/kWh
-2026-11-18,02176,Melrose,22,3203,16.29 ¢/kWh,12 months,True,True,16.29 ¢/kWh
-2026-11-18,02176,Melrose,25,3867,20.20 ¢/kWh,12 months,False,True,20.20 ¢/kWh
-2026-11-18,02176,Melrose,60,3555,19.97 ¢/kWh,6 months,False,True,19.97 ¢/kWh
-2026-11-18,02176,Melrose,57,3704,18.10 ¢/kWh,12 months,False,True,18.10 ¢/kWh
-2026-11-18,02176,Melrose,7,2743,18.59 ¢/kWh,18 months,False,True,18.59 ¢/kWh
-2026-11-18,02176,Melrose,30,4911,18.99 ¢/kWh,25 months,True,False,18.99 ¢/kWh
-2026-11-18,02176,Melrose,13,2988,16.79 ¢/kWh,24 months,False,True,16.79 ¢/kWh
-2026-11-18,02176,Melrose,23,4919,18.99 ¢/kWh,25 months,True,False,18.99 ¢/kWh
-2026-11-18,02176,Melrose,43,4883,18.49 ¢/kWh,9 months,True,True,18.49 ¢/kWh
-2026-11-18,02176,Melrose,23,4918,19.69 ¢/kWh,25 months,True,False,19.69 ¢/kWh
-2026-11-18,02176,Melrose,13,4969,16.19 ¢/kWh,13 months,False,True,16.19 ¢/kWh
-2026-11-18,02176,Melrose,26,4981,15.87 ¢/kWh,12 months,False,True,15.87 ¢/kWh
-2026-11-18,02176,Melrose,15,3912,16.59 ¢/kWh,12 months,True,True,16.59 ¢/kWh
-2026-11-18,02176,Melrose,55,4973,21.52 ¢/kWh,6 months,False,True,21.52 ¢/kWh
-2026-11-18,02176,Melrose,12,4539,16.79 ¢/kWh,12 months,True,True,16.79 ¢/kWh
-2026-11-18,02176,Melrose,8,1230,16.99 ¢/kWh,12 months,False,True,16.99 ¢/kWh
-2026-11-18,02176,Melrose,7,4237,16.99 ¢/kWh,11 months,False,True,16.99 ¢/kWh
-2026-11-18,02176,Melrose,131,2514,15.60 ¢/kWh, through Dec '27,False,True,15.60 ¢/kWh
-2026-11-18,02176,Melrose,30,4910,18.79 ¢/kWh,25 months,True,False,18.79 ¢/kWh
-2026-11-18,02176,Melrose,6,4843,15.99 ¢/kWh,12 months,True,True,15.99 ¢/kWh
-2026-11-18,02176,Melrose,28,4925,18.89 ¢/kWh,25 months,True,False,18.89 ¢/kWh
-2026-11-18,02149,Everett,198,999,17.185 ¢/kWh|16.077 ¢/kWh,Aug '26 through Jan '27 |Feb '27 through Jul '27 ,False,False,
-2026-11-18,02149,Everett,43,4808,16.49 ¢/kWh,12 months,True,True,16.49 ¢/kWh
-2026-11-18,02149,Everett,60,4448,17.27 ¢/kWh,10 months,False,True,17.27 ¢/kWh
-2026-11-18,02149,Everett,22,3205,16.39 ¢/kWh,36 months,True,True,16.39 ¢/kWh
-2026-11-18,02149,Everett,55,4974,18.78 ¢/kWh,6 months,False,True,18.78 ¢/kWh
-2026-11-18,02149,Everett,69,2923,19.00 ¢/kWh,24 months,False,True,19.00 ¢/kWh
-2026-11-18,02149,Everett,43,4881,18.29 ¢/kWh,18 months,True,True,18.29 ¢/kWh
-2026-11-18,02149,Everett,37,3722,15.20 ¢/kWh,12 months,False,True,15.20 ¢/kWh
-2026-11-18,02149,Everett,13,4866,17.09 ¢/kWh,9 months,False,True,17.09 ¢/kWh
-2026-11-18,02149,Everett,22,3006,16.29 ¢/kWh,24 months,True,True,16.29 ¢/kWh
-2026-11-18,02149,Everett,60,4598,18.67 ¢/kWh,22 months,False,True,18.67 ¢/kWh
-2026-11-18,02149,Everett,13,3484,17.79 ¢/kWh,18 months,False,True,17.79 ¢/kWh
-2026-11-18,02149,Everett,12,374,16.39 ¢/kWh,12 months,True,True,16.39 ¢/kWh
-2026-11-18,02149,Everett,22,3243,16.99 ¢/kWh,18 months,True,True,16.99 ¢/kWh
-2026-11-18,02149,Everett,15,4057,16.59 ¢/kWh,24 months,True,True,16.59 ¢/kWh
-2026-11-18,02149,Everett,21,4950,19.29 ¢/kWh,25 months,True,False,19.29 ¢/kWh
-2026-11-18,02149,Everett,7,4321,17.29 ¢/kWh,24 months,False,True,17.29 ¢/kWh
-2026-11-18,02149,Everett,15,3916,17.29 ¢/kWh,18 months,True,True,17.29 ¢/kWh
-2026-11-18,02149,Everett,21,4949,18.99 ¢/kWh,25 months,True,False,18.99 ¢/kWh
-2026-11-18,02149,Everett,22,3203,16.29 ¢/kWh,12 months,True,True,16.29 ¢/kWh
-2026-11-18,02149,Everett,25,3867,20.20 ¢/kWh,12 months,False,True,20.20 ¢/kWh
-2026-11-18,02149,Everett,60,3555,19.97 ¢/kWh,6 months,False,True,19.97 ¢/kWh
-2026-11-18,02149,Everett,57,3704,18.10 ¢/kWh,12 months,False,True,18.10 ¢/kWh
-2026-11-18,02149,Everett,7,2743,18.59 ¢/kWh,18 months,False,True,18.59 ¢/kWh
-2026-11-18,02149,Everett,30,4911,18.99 ¢/kWh,25 months,True,False,18.99 ¢/kWh
-2026-11-18,02149,Everett,13,2988,16.79 ¢/kWh,24 months,False,True,16.79 ¢/kWh
-2026-11-18,02149,Everett,23,4919,18.99 ¢/kWh,25 months,True,False,18.99 ¢/kWh
-2026-11-18,02149,Everett,43,4883,18.49 ¢/kWh,9 months,True,True,18.49 ¢/kWh
-2026-11-18,02149,Everett,23,4918,19.69 ¢/kWh,25 months,True,False,19.69 ¢/kWh
-2026-11-18,02149,Everett,13,4969,16.19 ¢/kWh,13 months,False,True,16.19 ¢/kWh
-2026-11-18,02149,Everett,26,4981,15.87 ¢/kWh,12 months,False,True,15.87 ¢/kWh
-2026-11-18,02149,Everett,15,3912,16.59 ¢/kWh,12 months,True,True,16.59 ¢/kWh
-2026-11-18,02149,Everett,55,4973,21.52 ¢/kWh,6 months,False,True,21.52 ¢/kWh
-2026-11-18,02149,Everett,12,4539,16.79 ¢/kWh,12 months,True,True,16.79 ¢/kWh
-2026-11-18,02149,Everett,8,1230,16.99 ¢/kWh,12 months,False,True,16.99 ¢/kWh
-2026-11-18,02149,Everett,7,4237,16.99 ¢/kWh,11 months,False,True,16.99 ¢/kWh
-2026-11-18,02149,Everett,30,4910,18.79 ¢/kWh,25 months,True,False,18.79 ¢/kWh
-2026-11-18,02149,Everett,6,4843,15.99 ¢/kWh,12 months,True,True,15.99 ¢/kWh
-2026-11-18,02149,Everett,28,4925,18.89 ¢/kWh,25 months,True,False,18.89 ¢/kWh
-2026-11-18,02151,Revere,198,999,17.185 ¢/kWh|16.077 ¢/kWh,Aug '26 through Jan '27 |Feb '27 through Jul '27 ,False,False,
-2026-11-18,02151,Revere,43,4808,16.49 ¢/kWh,12 months,True,True,16.49 ¢/kWh
-2026-11-18,02151,Revere,60,4448,17.27 ¢/kWh,10 months,False,True,17.27 ¢/kWh
-2026-11-18,02151,Revere,22,3205,16.39 ¢/kWh,36 months,True,True,16.39 ¢/kWh
-2026-11-18,02151,Revere,55,4974,18.78 ¢/kWh,6 months,False,True,18.78 ¢/kWh
-2026-11-18,02151,Revere,69,2923,19.00 ¢/kWh,24 months,False,True,19.00 ¢/kWh
-2026-11-18,02151,Revere,43,4881,18.29 ¢/kWh,18 months,True,True,18.29 ¢/kWh
-2026-11-18,02151,Revere,37,3722,15.20 ¢/kWh,12 months,False,True,15.20 ¢/kWh
-2026-11-18,02151,Revere,13,4866,17.09 ¢/kWh,9 months,False,True,17.09 ¢/kWh
-2026-11-18,02151,Revere,22,3006,16.29 ¢/kWh,24 months,True,True,16.29 ¢/kWh
-2026-11-18,02151,Revere,60,4598,18.67 ¢/kWh,22 months,False,True,18.67 ¢/kWh
-2026-11-18,02151,Revere,13,3484,17.79 ¢/kWh,18 months,False,True,17.79 ¢/kWh
-2026-11-18,02151,Revere,12,374,16.39 ¢/kWh,12 months,True,True,16.39 ¢/kWh
-2026-11-18,02151,Revere,22,3243,16.99 ¢/kWh,18 months,True,True,16.99 ¢/kWh
-2026-11-18,02151,Revere,15,4057,16.59 ¢/kWh,24 months,True,True,16.59 ¢/kWh
-2026-11-18,02151,Revere,21,4950,19.29 ¢/kWh,25 months,True,False,19.29 ¢/kWh
-2026-11-18,02151,Revere,7,4321,17.29 ¢/kWh,24 months,False,True,17.29 ¢/kWh
-2026-11-18,02151,Revere,15,3916,17.29 ¢/kWh,18 months,True,True,17.29 ¢/kWh
-2026-11-18,02151,Revere,21,4949,18.99 ¢/kWh,25 months,True,False,18.99 ¢/kWh
-2026-11-18,02151,Revere,22,3203,16.29 ¢/kWh,12 months,True,True,16.29 ¢/kWh
-2026-11-18,02151,Revere,25,3867,20.20 ¢/kWh,12 months,False,True,20.20 ¢/kWh
-2026-11-18,02151,Revere,60,3555,19.97 ¢/kWh,6 months,False,True,19.97 ¢/kWh
-2026-11-18,02151,Revere,57,3704,18.10 ¢/kWh,12 months,False,True,18.10 ¢/kWh
-2026-11-18,02151,Revere,7,2743,18.59 ¢/kWh,18 months,False,True,18.59 ¢/kWh
-2026-11-18,02151,Revere,30,4911,18.99 ¢/kWh,25 months,True,False,18.99 ¢/kWh
-2026-11-18,02151,Revere,13,2988,16.79 ¢/kWh,24 months,False,True,16.79 ¢/kWh
-2026-11-18,02151,Revere,23,4919,18.99 ¢/kWh,25 months,True,False,18.99 ¢/kWh
-2026-11-18,02151,Revere,43,4883,18.49 ¢/kWh,9 months,True,True,18.49 ¢/kWh
-2026-11-18,02151,Revere,23,4918,19.69 ¢/kWh,25 months,True,False,19.69 ¢/kWh
-2026-11-18,02151,Revere,13,4969,16.19 ¢/kWh,13 months,False,True,16.19 ¢/kWh
-2026-11-18,02151,Revere,26,4981,15.87 ¢/kWh,12 months,False,True,15.87 ¢/kWh
-2026-11-18,02151,Revere,15,3912,16.59 ¢/kWh,12 months,True,True,16.59 ¢/kWh
-2026-11-18,02151,Revere,55,4973,21.52 ¢/kWh,6 months,False,True,21.52 ¢/kWh
-2026-11-18,02151,Revere,12,4539,16.79 ¢/kWh,12 months,True,True,16.79 ¢/kWh
-2026-11-18,02151,Revere,8,1230,16.99 ¢/kWh,12 months,False,True,16.99 ¢/kWh
-2026-11-18,02151,Revere,7,4237,16.99 ¢/kWh,11 months,False,True,16.99 ¢/kWh
-2026-11-18,02151,Revere,30,4910,18.79 ¢/kWh,25 months,True,False,18.79 ¢/kWh
-2026-11-18,02151,Revere,6,4843,15.99 ¢/kWh,12 months,True,True,15.99 ¢/kWh
-2026-11-18,02151,Revere,28,4925,18.89 ¢/kWh,25 months,True,False,18.89 ¢/kWh
-2026-11-18,01906,Saugus,198,999,17.185 ¢/kWh|16.077 ¢/kWh,Aug '26 through Jan '27 |Feb '27 through Jul '27 ,False,False,
-2026-11-18,01906,Saugus,43,4808,16.49 ¢/kWh,12 months,True,True,16.49 ¢/kWh
-2026-11-18,01906,Saugus,60,4448,17.27 ¢/kWh,10 months,False,True,17.27 ¢/kWh
-2026-11-18,01906,Saugus,22,3205,16.39 ¢/kWh,36 months,True,True,16.39 ¢/kWh
-2026-11-18,01906,Saugus,55,4974,18.78 ¢/kWh,6 months,False,True,18.78 ¢/kWh
-2026-11-18,01906,Saugus,69,2923,19.00 ¢/kWh,24 months,False,True,19.00 ¢/kWh
-2026-11-18,01906,Saugus,43,4881,18.29 ¢/kWh,18 months,True,True,18.29 ¢/kWh
-2026-11-18,01906,Saugus,37,3722,15.20 ¢/kWh,12 months,False,True,15.20 ¢/kWh
-2026-11-18,01906,Saugus,13,4866,17.09 ¢/kWh,9 months,False,True,17.09 ¢/kWh
-2026-11-18,01906,Saugus,22,3006,16.29 ¢/kWh,24 months,True,True,16.29 ¢/kWh
-2026-11-18,01906,Saugus,60,4598,18.67 ¢/kWh,22 months,False,True,18.67 ¢/kWh
-2026-11-18,01906,Saugus,13,3484,17.79 ¢/kWh,18 months,False,True,17.79 ¢/kWh
-2026-11-18,01906,Saugus,12,374,16.39 ¢/kWh,12 months,True,True,16.39 ¢/kWh
-2026-11-18,01906,Saugus,22,3243,16.99 ¢/kWh,18 months,True,True,16.99 ¢/kWh
-2026-11-18,01906,Saugus,15,4057,16.59 ¢/kWh,24 months,True,True,16.59 ¢/kWh
-2026-11-18,01906,Saugus,21,4950,19.29 ¢/kWh,25 months,True,False,19.29 ¢/kWh
-2026-11-18,01906,Saugus,7,4321,17.29 ¢/kWh,24 months,False,True,17.29 ¢/kWh
-2026-11-18,01906,Saugus,15,3916,17.29 ¢/kWh,18 months,True,True,17.29 ¢/kWh
-2026-11-18,01906,Saugus,21,4949,18.99 ¢/kWh,25 months,True,False,18.99 ¢/kWh
-2026-11-18,01906,Saugus,22,3203,16.29 ¢/kWh,12 months,True,True,16.29 ¢/kWh
-2026-11-18,01906,Saugus,25,3867,20.20 ¢/kWh,12 months,False,True,20.20 ¢/kWh
-2026-11-18,01906,Saugus,60,3555,19.97 ¢/kWh,6 months,False,True,19.97 ¢/kWh
-2026-11-18,01906,Saugus,57,3704,18.10 ¢/kWh,12 months,False,True,18.10 ¢/kWh
-2026-11-18,01906,Saugus,7,2743,18.59 ¢/kWh,18 months,False,True,18.59 ¢/kWh
-2026-11-18,01906,Saugus,30,4911,18.99 ¢/kWh,25 months,True,False,18.99 ¢/kWh
-2026-11-18,01906,Saugus,13,2988,16.79 ¢/kWh,24 months,False,True,16.79 ¢/kWh
-2026-11-18,01906,Saugus,23,4919,18.99 ¢/kWh,25 months,True,False,18.99 ¢/kWh
-2026-11-18,01906,Saugus,43,4883,18.49 ¢/kWh,9 months,True,True,18.49 ¢/kWh
-2026-11-18,01906,Saugus,23,4918,19.69 ¢/kWh,25 months,True,False,19.69 ¢/kWh
-2026-11-18,01906,Saugus,13,4969,16.19 ¢/kWh,13 months,False,True,16.19 ¢/kWh
-2026-11-18,01906,Saugus,26,4981,15.87 ¢/kWh,12 months,False,True,15.87 ¢/kWh
-2026-11-18,01906,Saugus,15,3912,16.59 ¢/kWh,12 months,True,True,16.59 ¢/kWh
-2026-11-18,01906,Saugus,55,4973,21.52 ¢/kWh,6 months,False,True,21.52 ¢/kWh
-2026-11-18,01906,Saugus,12,4539,16.79 ¢/kWh,12 months,True,True,16.79 ¢/kWh
-2026-11-18,01906,Saugus,8,1230,16.99 ¢/kWh,12 months,False,True,16.99 ¢/kWh
-2026-11-18,01906,Saugus,7,4237,16.99 ¢/kWh,11 months,False,True,16.99 ¢/kWh
-2026-11-18,01906,Saugus,30,4910,18.79 ¢/kWh,25 months,True,False,18.79 ¢/kWh
-2026-11-18,01906,Saugus,6,4843,15.99 ¢/kWh,12 months,True,True,15.99 ¢/kWh
-2026-11-18,01906,Saugus,28,4925,18.89 ¢/kWh,25 months,True,False,18.89 ¢/kWh
+date,zip,city,supplier,price_cents_per_kwh,term,fees
+2026-11-18,02148,Malden,National Grid (Basic Service),17.185,Aug '26 through Jan '27,No cancellation fee
+2026-11-18,02148,Malden,National Grid (Basic Service),16.077,Feb '27 through Jul '27,No cancellation fee
+2026-11-18,02148,Malden,Malden Community Electricity,13.345,through Dec '27,No cancellation fee
+2026-11-18,02148,Malden,Malden Community Electricity,13.758,through Dec '27,No cancellation fee
+2026-11-18,02148,Malden,Malden Community Electricity,14.696,through Dec '27,No cancellation fee
+2026-11-18,02148,Malden,CleanChoice Energy,15.200,12 months,No cancellation fee
+2026-11-18,02148,Malden,Town Square Energy,15.870,12 months,No cancellation fee
+2026-11-18,02148,Malden,Constellation New Energy,15.990,12 months,Cancellation fee: $150.00
+2026-11-18,02148,Malden,Inspire Clean Energy,16.190,13 months,No cancellation fee
+2026-11-18,02148,Malden,Public Power,16.290,24 months,Cancellation fee: $50.00
+2026-11-18,02148,Malden,Public Power,16.290,12 months,Cancellation fee: $50.00
+2026-11-18,02148,Malden,IGS Energy,16.390,12 months,Cancellation fee: $99.00
+2026-11-18,02148,Malden,Public Power,16.390,36 months,Cancellation fee: $50.00
+2026-11-18,02148,Malden,Clearview Energy,16.490,12 months,Cancellation fee: $150.00
+2026-11-18,02148,Malden,Massachusetts Gas & Electric,16.590,24 months,Cancellation fee: $50.00
+2026-11-18,02148,Malden,Massachusetts Gas & Electric,16.590,12 months,Cancellation fee: $50.00
+2026-11-18,02148,Malden,IGS Energy,16.790,12 months,Cancellation fee: $99.00
+2026-11-18,02148,Malden,Inspire Clean Energy,16.790,24 months,No cancellation fee
+2026-11-18,02148,Malden,Direct Energy Services,16.990,11 months,No cancellation fee
+2026-11-18,02148,Malden,Discount Power,16.990,12 months,No cancellation fee
+2026-11-18,02148,Malden,Public Power,16.990,18 months,Cancellation fee: $50.00
+2026-11-18,02148,Malden,Inspire Clean Energy,17.090,9 months,No cancellation fee
+2026-11-18,02148,Malden,Renaissance Power & Gas,17.270,10 months,No cancellation fee
+2026-11-18,02148,Malden,Direct Energy Services,17.290,24 months,No cancellation fee
+2026-11-18,02148,Malden,Massachusetts Gas & Electric,17.290,18 months,Cancellation fee: $50.00
+2026-11-18,02148,Malden,Inspire Clean Energy,17.790,18 months,No cancellation fee
+2026-11-18,02148,Malden,SmartEnergy,18.100,12 months,No cancellation fee
+2026-11-18,02148,Malden,Clearview Energy,18.290,18 months,Cancellation fee: $150.00
+2026-11-18,02148,Malden,Clearview Energy,18.490,9 months,Cancellation fee: $150.00
+2026-11-18,02148,Malden,Direct Energy Services,18.590,18 months,No cancellation fee
+2026-11-18,02148,Malden,Renaissance Power & Gas,18.670,22 months,No cancellation fee
+2026-11-18,02148,Malden,Residents Energy,18.780,6 months,No cancellation fee
+2026-11-18,02148,Malden,Major Energy Electric Services,18.790,25 months,Cancellation fee: $100.00
+2026-11-18,02148,Malden,Verde Energy USA,18.890,25 months,Cancellation fee: $100.00
+2026-11-18,02148,Malden,Major Energy Electric Services,18.990,25 months,Cancellation fee: $100.00
+2026-11-18,02148,Malden,Provider Power Mass,18.990,25 months,Cancellation fee: $100.00
+2026-11-18,02148,Malden,Spark Energy,18.990,25 months,Cancellation fee: $100.00
+2026-11-18,02148,Malden,Alpha Gas and Electric,19.000,24 months,No cancellation fee
+2026-11-18,02148,Malden,Provider Power Mass,19.290,25 months,Cancellation fee: $100.00
+2026-11-18,02148,Malden,Spark Energy,19.690,25 months,Cancellation fee: $100.00
+2026-11-18,02148,Malden,Renaissance Power & Gas,19.970,6 months,No cancellation fee
+2026-11-18,02148,Malden,Think Energy,20.200,12 months,No cancellation fee
+2026-11-18,02148,Malden,Residents Energy,21.520,6 months,No cancellation fee
+2026-11-18,02155,Medford,National Grid (Basic Service),17.185,Aug '26 through Jan '27,No cancellation fee
+2026-11-18,02155,Medford,National Grid (Basic Service),16.077,Feb '27 through Jul '27,No cancellation fee
+2026-11-18,02155,Medford,City of Medford Community Electricity Aggregation,13.720,through Dec '27,No cancellation fee
+2026-11-18,02155,Medford,City of Medford Community Electricity Aggregation,14.133,through Dec '27,No cancellation fee
+2026-11-18,02155,Medford,CleanChoice Energy,15.200,12 months,No cancellation fee
+2026-11-18,02155,Medford,Town Square Energy,15.870,12 months,No cancellation fee
+2026-11-18,02155,Medford,Constellation New Energy,15.990,12 months,Cancellation fee: $150.00
+2026-11-18,02155,Medford,Inspire Clean Energy,16.190,13 months,No cancellation fee
+2026-11-18,02155,Medford,Public Power,16.290,24 months,Cancellation fee: $50.00
+2026-11-18,02155,Medford,Public Power,16.290,12 months,Cancellation fee: $50.00
+2026-11-18,02155,Medford,IGS Energy,16.390,12 months,Cancellation fee: $99.00
+2026-11-18,02155,Medford,Public Power,16.390,36 months,Cancellation fee: $50.00
+2026-11-18,02155,Medford,Clearview Energy,16.490,12 months,Cancellation fee: $150.00
+2026-11-18,02155,Medford,Massachusetts Gas & Electric,16.590,24 months,Cancellation fee: $50.00
+2026-11-18,02155,Medford,Massachusetts Gas & Electric,16.590,12 months,Cancellation fee: $50.00
+2026-11-18,02155,Medford,City of Medford Community Electricity Aggregation,16.618,through Dec '27,No cancellation fee
+2026-11-18,02155,Medford,IGS Energy,16.790,12 months,Cancellation fee: $99.00
+2026-11-18,02155,Medford,Inspire Clean Energy,16.790,24 months,No cancellation fee
+2026-11-18,02155,Medford,Direct Energy Services,16.990,11 months,No cancellation fee
+2026-11-18,02155,Medford,Discount Power,16.990,12 months,No cancellation fee
+2026-11-18,02155,Medford,Public Power,16.990,18 months,Cancellation fee: $50.00
+2026-11-18,02155,Medford,Inspire Clean Energy,17.090,9 months,No cancellation fee
+2026-11-18,02155,Medford,Renaissance Power & Gas,17.270,10 months,No cancellation fee
+2026-11-18,02155,Medford,Direct Energy Services,17.290,24 months,No cancellation fee
+2026-11-18,02155,Medford,Massachusetts Gas & Electric,17.290,18 months,Cancellation fee: $50.00
+2026-11-18,02155,Medford,Inspire Clean Energy,17.790,18 months,No cancellation fee
+2026-11-18,02155,Medford,SmartEnergy,18.100,12 months,No cancellation fee
+2026-11-18,02155,Medford,Clearview Energy,18.290,18 months,Cancellation fee: $150.00
+2026-11-18,02155,Medford,Clearview Energy,18.490,9 months,Cancellation fee: $150.00
+2026-11-18,02155,Medford,Direct Energy Services,18.590,18 months,No cancellation fee
+2026-11-18,02155,Medford,Renaissance Power & Gas,18.670,22 months,No cancellation fee
+2026-11-18,02155,Medford,Residents Energy,18.780,6 months,No cancellation fee
+2026-11-18,02155,Medford,Major Energy Electric Services,18.790,25 months,Cancellation fee: $100.00
+2026-11-18,02155,Medford,Verde Energy USA,18.890,25 months,Cancellation fee: $100.00
+2026-11-18,02155,Medford,Major Energy Electric Services,18.990,25 months,Cancellation fee: $100.00
+2026-11-18,02155,Medford,Provider Power Mass,18.990,25 months,Cancellation fee: $100.00
+2026-11-18,02155,Medford,Spark Energy,18.990,25 months,Cancellation fee: $100.00
+2026-11-18,02155,Medford,Alpha Gas and Electric,19.000,24 months,No cancellation fee
+2026-11-18,02155,Medford,Provider Power Mass,19.290,25 months,Cancellation fee: $100.00
+2026-11-18,02155,Medford,Spark Energy,19.690,25 months,Cancellation fee: $100.00
+2026-11-18,02155,Medford,Renaissance Power & Gas,19.970,6 months,No cancellation fee
+2026-11-18,02155,Medford,Think Energy,20.200,12 months,No cancellation fee
+2026-11-18,02155,Medford,Residents Energy,21.520,6 months,No cancellation fee
+2026-11-18,02176,Melrose,National Grid (Basic Service),17.185,Aug '26 through Jan '27,No cancellation fee
+2026-11-18,02176,Melrose,National Grid (Basic Service),16.077,Feb '27 through Jul '27,No cancellation fee
+2026-11-18,02176,Melrose,City of Melrose Community Power,14.310,through Dec '27,No cancellation fee
+2026-11-18,02176,Melrose,City of Melrose Community Power,14.723,through Dec '27,No cancellation fee
+2026-11-18,02176,Melrose,CleanChoice Energy,15.200,12 months,No cancellation fee
+2026-11-18,02176,Melrose,City of Melrose Community Power,15.599,through Dec '27,No cancellation fee
+2026-11-18,02176,Melrose,Town Square Energy,15.870,12 months,No cancellation fee
+2026-11-18,02176,Melrose,Constellation New Energy,15.990,12 months,Cancellation fee: $150.00
+2026-11-18,02176,Melrose,Inspire Clean Energy,16.190,13 months,No cancellation fee
+2026-11-18,02176,Melrose,Public Power,16.290,24 months,Cancellation fee: $50.00
+2026-11-18,02176,Melrose,Public Power,16.290,12 months,Cancellation fee: $50.00
+2026-11-18,02176,Melrose,IGS Energy,16.390,12 months,Cancellation fee: $99.00
+2026-11-18,02176,Melrose,Public Power,16.390,36 months,Cancellation fee: $50.00
+2026-11-18,02176,Melrose,Clearview Energy,16.490,12 months,Cancellation fee: $150.00
+2026-11-18,02176,Melrose,Massachusetts Gas & Electric,16.590,24 months,Cancellation fee: $50.00
+2026-11-18,02176,Melrose,Massachusetts Gas & Electric,16.590,12 months,Cancellation fee: $50.00
+2026-11-18,02176,Melrose,IGS Energy,16.790,12 months,Cancellation fee: $99.00
+2026-11-18,02176,Melrose,Inspire Clean Energy,16.790,24 months,No cancellation fee
+2026-11-18,02176,Melrose,Direct Energy Services,16.990,11 months,No cancellation fee
+2026-11-18,02176,Melrose,Discount Power,16.990,12 months,No cancellation fee
+2026-11-18,02176,Melrose,Public Power,16.990,18 months,Cancellation fee: $50.00
+2026-11-18,02176,Melrose,Inspire Clean Energy,17.090,9 months,No cancellation fee
+2026-11-18,02176,Melrose,Renaissance Power & Gas,17.270,10 months,No cancellation fee
+2026-11-18,02176,Melrose,Direct Energy Services,17.290,24 months,No cancellation fee
+2026-11-18,02176,Melrose,Massachusetts Gas & Electric,17.290,18 months,Cancellation fee: $50.00
+2026-11-18,02176,Melrose,Inspire Clean Energy,17.790,18 months,No cancellation fee
+2026-11-18,02176,Melrose,SmartEnergy,18.100,12 months,No cancellation fee
+2026-11-18,02176,Melrose,Clearview Energy,18.290,18 months,Cancellation fee: $150.00
+2026-11-18,02176,Melrose,Clearview Energy,18.490,9 months,Cancellation fee: $150.00
+2026-11-18,02176,Melrose,Direct Energy Services,18.590,18 months,No cancellation fee
+2026-11-18,02176,Melrose,Renaissance Power & Gas,18.670,22 months,No cancellation fee
+2026-11-18,02176,Melrose,Residents Energy,18.780,6 months,No cancellation fee
+2026-11-18,02176,Melrose,Major Energy Electric Services,18.790,25 months,Cancellation fee: $100.00
+2026-11-18,02176,Melrose,Verde Energy USA,18.890,25 months,Cancellation fee: $100.00
+2026-11-18,02176,Melrose,Major Energy Electric Services,18.990,25 months,Cancellation fee: $100.00
+2026-11-18,02176,Melrose,Provider Power Mass,18.990,25 months,Cancellation fee: $100.00
+2026-11-18,02176,Melrose,Spark Energy,18.990,25 months,Cancellation fee: $100.00
+2026-11-18,02176,Melrose,Alpha Gas and Electric,19.000,24 months,No cancellation fee
+2026-11-18,02176,Melrose,Provider Power Mass,19.290,25 months,Cancellation fee: $100.00
+2026-11-18,02176,Melrose,Spark Energy,19.690,25 months,Cancellation fee: $100.00
+2026-11-18,02176,Melrose,Renaissance Power & Gas,19.970,6 months,No cancellation fee
+2026-11-18,02176,Melrose,Think Energy,20.200,12 months,No cancellation fee
+2026-11-18,02176,Melrose,Residents Energy,21.520,6 months,No cancellation fee
+2026-11-18,02149,Everett,National Grid (Basic Service),17.185,Aug '26 through Jan '27,No cancellation fee
+2026-11-18,02149,Everett,National Grid (Basic Service),16.077,Feb '27 through Jul '27,No cancellation fee
+2026-11-18,02149,Everett,CleanChoice Energy,15.200,12 months,No cancellation fee
+2026-11-18,02149,Everett,Town Square Energy,15.870,12 months,No cancellation fee
+2026-11-18,02149,Everett,Constellation New Energy,15.990,12 months,Cancellation fee: $150.00
+2026-11-18,02149,Everett,Inspire Clean Energy,16.190,13 months,No cancellation fee
+2026-11-18,02149,Everett,Public Power,16.290,24 months,Cancellation fee: $50.00
+2026-11-18,02149,Everett,Public Power,16.290,12 months,Cancellation fee: $50.00
+2026-11-18,02149,Everett,IGS Energy,16.390,12 months,Cancellation fee: $99.00
+2026-11-18,02149,Everett,Public Power,16.390,36 months,Cancellation fee: $50.00
+2026-11-18,02149,Everett,Clearview Energy,16.490,12 months,Cancellation fee: $150.00
+2026-11-18,02149,Everett,Massachusetts Gas & Electric,16.590,24 months,Cancellation fee: $50.00
+2026-11-18,02149,Everett,Massachusetts Gas & Electric,16.590,12 months,Cancellation fee: $50.00
+2026-11-18,02149,Everett,IGS Energy,16.790,12 months,Cancellation fee: $99.00
+2026-11-18,02149,Everett,Inspire Clean Energy,16.790,24 months,No cancellation fee
+2026-11-18,02149,Everett,Direct Energy Services,16.990,11 months,No cancellation fee
+2026-11-18,02149,Everett,Discount Power,16.990,12 months,No cancellation fee
+2026-11-18,02149,Everett,Public Power,16.990,18 months,Cancellation fee: $50.00
+2026-11-18,02149,Everett,Inspire Clean Energy,17.090,9 months,No cancellation fee
+2026-11-18,02149,Everett,Renaissance Power & Gas,17.270,10 months,No cancellation fee
+2026-11-18,02149,Everett,Direct Energy Services,17.290,24 months,No cancellation fee
+2026-11-18,02149,Everett,Massachusetts Gas & Electric,17.290,18 months,Cancellation fee: $50.00
+2026-11-18,02149,Everett,Inspire Clean Energy,17.790,18 months,No cancellation fee
+2026-11-18,02149,Everett,SmartEnergy,18.100,12 months,No cancellation fee
+2026-11-18,02149,Everett,Clearview Energy,18.290,18 months,Cancellation fee: $150.00
+2026-11-18,02149,Everett,Clearview Energy,18.490,9 months,Cancellation fee: $150.00
+2026-11-18,02149,Everett,Direct Energy Services,18.590,18 months,No cancellation fee
+2026-11-18,02149,Everett,Renaissance Power & Gas,18.670,22 months,No cancellation fee
+2026-11-18,02149,Everett,Residents Energy,18.780,6 months,No cancellation fee
+2026-11-18,02149,Everett,Major Energy Electric Services,18.790,25 months,Cancellation fee: $100.00
+2026-11-18,02149,Everett,Verde Energy USA,18.890,25 months,Cancellation fee: $100.00
+2026-11-18,02149,Everett,Major Energy Electric Services,18.990,25 months,Cancellation fee: $100.00
+2026-11-18,02149,Everett,Provider Power Mass,18.990,25 months,Cancellation fee: $100.00
+2026-11-18,02149,Everett,Spark Energy,18.990,25 months,Cancellation fee: $100.00
+2026-11-18,02149,Everett,Alpha Gas and Electric,19.000,24 months,No cancellation fee
+2026-11-18,02149,Everett,Provider Power Mass,19.290,25 months,Cancellation fee: $100.00
+2026-11-18,02149,Everett,Spark Energy,19.690,25 months,Cancellation fee: $100.00
+2026-11-18,02149,Everett,Renaissance Power & Gas,19.970,6 months,No cancellation fee
+2026-11-18,02149,Everett,Think Energy,20.200,12 months,No cancellation fee
+2026-11-18,02149,Everett,Residents Energy,21.520,6 months,No cancellation fee
+2026-11-18,02151,Revere,National Grid (Basic Service),17.185,Aug '26 through Jan '27,No cancellation fee
+2026-11-18,02151,Revere,National Grid (Basic Service),16.077,Feb '27 through Jul '27,No cancellation fee
+2026-11-18,02151,Revere,CleanChoice Energy,15.200,12 months,No cancellation fee
+2026-11-18,02151,Revere,Town Square Energy,15.870,12 months,No cancellation fee
+2026-11-18,02151,Revere,Constellation New Energy,15.990,12 months,Cancellation fee: $150.00
+2026-11-18,02151,Revere,Inspire Clean Energy,16.190,13 months,No cancellation fee
+2026-11-18,02151,Revere,Public Power,16.290,24 months,Cancellation fee: $50.00
+2026-11-18,02151,Revere,Public Power,16.290,12 months,Cancellation fee: $50.00
+2026-11-18,02151,Revere,IGS Energy,16.390,12 months,Cancellation fee: $99.00
+2026-11-18,02151,Revere,Public Power,16.390,36 months,Cancellation fee: $50.00
+2026-11-18,02151,Revere,Clearview Energy,16.490,12 months,Cancellation fee: $150.00
+2026-11-18,02151,Revere,Massachusetts Gas & Electric,16.590,24 months,Cancellation fee: $50.00
+2026-11-18,02151,Revere,Massachusetts Gas & Electric,16.590,12 months,Cancellation fee: $50.00
+2026-11-18,02151,Revere,IGS Energy,16.790,12 months,Cancellation fee: $99.00
+2026-11-18,02151,Revere,Inspire Clean Energy,16.790,24 months,No cancellation fee
+2026-11-18,02151,Revere,Direct Energy Services,16.990,11 months,No cancellation fee
+2026-11-18,02151,Revere,Discount Power,16.990,12 months,No cancellation fee
+2026-11-18,02151,Revere,Public Power,16.990,18 months,Cancellation fee: $50.00
+2026-11-18,02151,Revere,Inspire Clean Energy,17.090,9 months,No cancellation fee
+2026-11-18,02151,Revere,Renaissance Power & Gas,17.270,10 months,No cancellation fee
+2026-11-18,02151,Revere,Direct Energy Services,17.290,24 months,No cancellation fee
+2026-11-18,02151,Revere,Massachusetts Gas & Electric,17.290,18 months,Cancellation fee: $50.00
+2026-11-18,02151,Revere,Inspire Clean Energy,17.790,18 months,No cancellation fee
+2026-11-18,02151,Revere,SmartEnergy,18.100,12 months,No cancellation fee
+2026-11-18,02151,Revere,Clearview Energy,18.290,18 months,Cancellation fee: $150.00
+2026-11-18,02151,Revere,Clearview Energy,18.490,9 months,Cancellation fee: $150.00
+2026-11-18,02151,Revere,Direct Energy Services,18.590,18 months,No cancellation fee
+2026-11-18,02151,Revere,Renaissance Power & Gas,18.670,22 months,No cancellation fee
+2026-11-18,02151,Revere,Residents Energy,18.780,6 months,No cancellation fee
+2026-11-18,02151,Revere,Major Energy Electric Services,18.790,25 months,Cancellation fee: $100.00
+2026-11-18,02151,Revere,Verde Energy USA,18.890,25 months,Cancellation fee: $100.00
+2026-11-18,02151,Revere,Major Energy Electric Services,18.990,25 months,Cancellation fee: $100.00
+2026-11-18,02151,Revere,Provider Power Mass,18.990,25 months,Cancellation fee: $100.00
+2026-11-18,02151,Revere,Spark Energy,18.990,25 months,Cancellation fee: $100.00
+2026-11-18,02151,Revere,Alpha Gas and Electric,19.000,24 months,No cancellation fee
+2026-11-18,02151,Revere,Provider Power Mass,19.290,25 months,Cancellation fee: $100.00
+2026-11-18,02151,Revere,Spark Energy,19.690,25 months,Cancellation fee: $100.00
+2026-11-18,02151,Revere,Renaissance Power & Gas,19.970,6 months,No cancellation fee
+2026-11-18,02151,Revere,Think Energy,20.200,12 months,No cancellation fee
+2026-11-18,02151,Revere,Residents Energy,21.520,6 months,No cancellation fee
+2026-11-18,01906,Saugus,National Grid (Basic Service),17.185,Aug '26 through Jan '27,No cancellation fee
+2026-11-18,01906,Saugus,National Grid (Basic Service),16.077,Feb '27 through Jul '27,No cancellation fee
+2026-11-18,01906,Saugus,CleanChoice Energy,15.200,12 months,No cancellation fee
+2026-11-18,01906,Saugus,Town Square Energy,15.870,12 months,No cancellation fee
+2026-11-18,01906,Saugus,Constellation New Energy,15.990,12 months,Cancellation fee: $150.00
+2026-11-18,01906,Saugus,Inspire Clean Energy,16.190,13 months,No cancellation fee
+2026-11-18,01906,Saugus,Public Power,16.290,24 months,Cancellation fee: $50.00
+2026-11-18,01906,Saugus,Public Power,16.290,12 months,Cancellation fee: $50.00
+2026-11-18,01906,Saugus,IGS Energy,16.390,12 months,Cancellation fee: $99.00
+2026-11-18,01906,Saugus,Public Power,16.390,36 months,Cancellation fee: $50.00
+2026-11-18,01906,Saugus,Clearview Energy,16.490,12 months,Cancellation fee: $150.00
+2026-11-18,01906,Saugus,Massachusetts Gas & Electric,16.590,24 months,Cancellation fee: $50.00
+2026-11-18,01906,Saugus,Massachusetts Gas & Electric,16.590,12 months,Cancellation fee: $50.00
+2026-11-18,01906,Saugus,IGS Energy,16.790,12 months,Cancellation fee: $99.00
+2026-11-18,01906,Saugus,Inspire Clean Energy,16.790,24 months,No cancellation fee
+2026-11-18,01906,Saugus,Direct Energy Services,16.990,11 months,No cancellation fee
+2026-11-18,01906,Saugus,Discount Power,16.990,12 months,No cancellation fee
+2026-11-18,01906,Saugus,Public Power,16.990,18 months,Cancellation fee: $50.00
+2026-11-18,01906,Saugus,Inspire Clean Energy,17.090,9 months,No cancellation fee
+2026-11-18,01906,Saugus,Renaissance Power & Gas,17.270,10 months,No cancellation fee
+2026-11-18,01906,Saugus,Direct Energy Services,17.290,24 months,No cancellation fee
+2026-11-18,01906,Saugus,Massachusetts Gas & Electric,17.290,18 months,Cancellation fee: $50.00
+2026-11-18,01906,Saugus,Inspire Clean Energy,17.790,18 months,No cancellation fee
+2026-11-18,01906,Saugus,SmartEnergy,18.100,12 months,No cancellation fee
+2026-11-18,01906,Saugus,Clearview Energy,18.290,18 months,Cancellation fee: $150.00
+2026-11-18,01906,Saugus,Clearview Energy,18.490,9 months,Cancellation fee: $150.00
+2026-11-18,01906,Saugus,Direct Energy Services,18.590,18 months,No cancellation fee
+2026-11-18,01906,Saugus,Renaissance Power & Gas,18.670,22 months,No cancellation fee
+2026-11-18,01906,Saugus,Residents Energy,18.780,6 months,No cancellation fee
+2026-11-18,01906,Saugus,Major Energy Electric Services,18.790,25 months,Cancellation fee: $100.00
+2026-11-18,01906,Saugus,Verde Energy USA,18.890,25 months,Cancellation fee: $100.00
+2026-11-18,01906,Saugus,Major Energy Electric Services,18.990,25 months,Cancellation fee: $100.00
+2026-11-18,01906,Saugus,Provider Power Mass,18.990,25 months,Cancellation fee: $100.00
+2026-11-18,01906,Saugus,Spark Energy,18.990,25 months,Cancellation fee: $100.00
+2026-11-18,01906,Saugus,Alpha Gas and Electric,19.000,24 months,No cancellation fee
+2026-11-18,01906,Saugus,Provider Power Mass,19.290,25 months,Cancellation fee: $100.00
+2026-11-18,01906,Saugus,Spark Energy,19.690,25 months,Cancellation fee: $100.00
+2026-11-18,01906,Saugus,Renaissance Power & Gas,19.970,6 months,No cancellation fee
+2026-11-18,01906,Saugus,Think Energy,20.200,12 months,No cancellation fee
+2026-11-18,01906,Saugus,Residents Energy,21.520,6 months,No cancellation fee
