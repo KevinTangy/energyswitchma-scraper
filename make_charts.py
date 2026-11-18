@@ -173,14 +173,24 @@ def draw(city, points, theme_name, path):
     ax.set_ylabel("¢ per kWh", color=t["muted"], fontsize=9.5)
     ax.yaxis.set_major_locator(plt.MaxNLocator(nbins=6, steps=[1, 2, 2.5, 5, 10]))
     ax.yaxis.set_major_formatter(plt.FuncFormatter(lambda v, _: f"{v:g}¢"))
-    locator = mdates.AutoDateLocator(minticks=3, maxticks=8)
-    ax.xaxis.set_major_locator(locator)
-    ax.xaxis.set_major_formatter(mdates.ConciseDateFormatter(locator))
+    span = (days[-1] - days[0]).days
+    if span <= 14:
+        # Daily data: one tick per day, never hour ticks like "12:00".
+        ax.xaxis.set_major_locator(mdates.DayLocator(interval=1 if span <= 7 else 2))
+        ax.xaxis.set_major_formatter(mdates.DateFormatter("%b %-d"))
+    else:
+        locator = mdates.AutoDateLocator(minticks=3, maxticks=8)
+        locator.intervald[mdates.HOURLY] = [24]  # no sub-day ticks
+        ax.xaxis.set_major_locator(locator)
+        ax.xaxis.set_major_formatter(mdates.ConciseDateFormatter(locator))
     if len(days) == 1:
         ax.set_xlim(days[0] - dt.timedelta(days=3), days[0] + dt.timedelta(days=3))
     else:
-        span = (days[-1] - days[0]).days
-        ax.set_xlim(days[0], days[-1] + dt.timedelta(days=max(1, span * 0.08)))
+        # Small margin on the left so the first point isn't clipped; more on
+        # the right for the latest-value labels.
+        # (Plain date objects drop fractions of a day, so use day numbers.)
+        first, last = mdates.date2num(days[0]), mdates.date2num(days[-1])
+        ax.set_xlim(first - max(0.15, span * 0.02), last + max(0.35, span * 0.08))
 
     ax.grid(axis="y", color=t["grid"], lw=0.8)
     ax.set_axisbelow(True)

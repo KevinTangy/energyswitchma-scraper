@@ -59,3 +59,11 @@ In the order they were made (Nov 17–18, 2026).
 16. **Cron at an off-the-hour minute** (now 11:11 UTC = 6:11 AM EST, moved
     from :17 on Nov 18), because GitHub delays scheduled jobs set for the
     top of the hour.
+
+17. **Replace, don't append, a day's rows** (Nov 18). A re-run on the same
+    date replaces that date+ZIP batch, keeping the latest capture, which
+    matches the raw JSON file (also overwritten per day). Older days are
+    never touched, so chart history is kept.
+
+18. **Dates in Massachusetts time** (Nov 18). GitHub runners use UTC, which
+    labeled evening runs with the next day.

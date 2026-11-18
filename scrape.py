@@ -8,6 +8,8 @@ Usage:
 Opens the compare page for the given ZIP in headless Chromium, captures the
 offer list the site loads from /consumers/compare, and appends one row per
 offer to data/rates.csv (shared across all ZIPs, with zip and city columns).
+Re-running for a ZIP on the same date replaces that day's rows for the ZIP
+instead of adding them again; earlier days are never touched.
 The raw capture is kept in data/raw/<zip>/ so history can be re-processed.
 --from-raw skips the browser and re-reads a saved capture instead.
 """
@@ -18,12 +20,16 @@ import json
 import re
 import sys
 from pathlib import Path
+from zoneinfo import ZoneInfo
 
 URL_TEMPLATE = "https://energyswitchma.gov/#/compare/1/1/{zip}//"
 API_MARKER = "/consumers/compare"
 DATA = Path("data")
 CSV_PATH = DATA / "rates.csv"
 CSV_COLUMNS = ["date", "zip", "city", "supplier", "price_cents_per_kwh", "term", "fees"]
+# Dates are recorded in Massachusetts time. GitHub runners use UTC, so an
+# evening run would otherwise be labeled with the next day's date.
+LOCAL_TZ = ZoneInfo("America/New_York")
 
 
 def parse_args():
@@ -139,17 +145,31 @@ def write_rows(rows):
             legacy = DATA / "rates_old_format.csv"
             CSV_PATH.rename(legacy)
             print(f"Column layout changed; moved old file to {legacy}")
-    new_file = not CSV_PATH.exists()
-    with CSV_PATH.open("a", newline="") as f:
+    # Keep every existing row except this ZIP's rows for the same date, so a
+    # second run on one day replaces that day's data rather than duplicating it.
+    replaced = {(r["date"], r["zip"]) for r in rows}
+    kept, dropped = [], 0
+    if CSV_PATH.exists():
+        with CSV_PATH.open(newline="") as f:
+            for r in csv.DictReader(f):
+                if (r["date"], r["zip"]) in replaced:
+                    dropped += 1
+                else:
+                    kept.append(r)
+    tmp = CSV_PATH.with_suffix(".csv.tmp")
+    with tmp.open("w", newline="") as f:
         w = csv.DictWriter(f, fieldnames=CSV_COLUMNS)
-        if new_file:
-            w.writeheader()
-        w.writerows(rows)
+        w.writeheader()
+        # Stable sort by date: keeps each batch's row order and the file in
+        # date order even when an earlier day is re-run.
+        w.writerows(sorted(kept + rows, key=lambda r: r["date"]))
+    tmp.replace(CSV_PATH)  # atomic: a crash never leaves a half-written CSV
+    return dropped
 
 
 def main():
     args = parse_args()
-    today = args.date or dt.date.today().isoformat()
+    today = args.date or dt.datetime.now(LOCAL_TZ).date().isoformat()
     label = f"{args.zip} {args.city}".strip()
 
     if args.from_raw:
@@ -169,8 +189,9 @@ def main():
         for r in offer_rows(offer):
             rows.append({"date": today, "zip": args.zip, "city": args.city, **r})
 
-    write_rows(sort_rows(rows))
-    print(f"[{label}] Saved {len(rows)} rows from {len(offers)} offers")
+    dropped = write_rows(sort_rows(rows))
+    note = f" (replaced {dropped} rows already saved for {today})" if dropped else ""
+    print(f"[{label}] Saved {len(rows)} rows from {len(offers)} offers{note}")
 
 
 if __name__ == "__main__":

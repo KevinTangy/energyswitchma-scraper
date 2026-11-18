@@ -58,9 +58,14 @@ scheduler (cron-job.org, a local cron job, etc.) through the
 
 ## Known limitations and ideas
 
-- **No de-duplication:** running the workflow twice in one day adds that
-  day's rows twice. Possible fix: in `write_rows()`, drop existing rows with
-  the same `date` and `zip` before adding.
+- **Duplicates fixed (Nov 18):** running twice in one day used to add that
+  day's rows again. `write_rows()` now replaces the rows for the same date
+  and ZIP. The duplicate rows from Nov 18 were cleaned up.
+- **Dates fixed (Nov 18):** dates were taken from the runner's UTC clock, so
+  the manual runs on the evening of Nov 17 (EST) were saved as Nov 18. Dates
+  are now in America/New_York. Nov 17 was rebuilt from that evening's raw
+  capture (saved as `data/raw/<zip>/2026-11-17.json`), so the charts start
+  on Nov 17.
 - The same supplier can show up on several rows (different products). Could
   bring back `supplierProductId` or the renewable % to tell them apart.
 - Try calling `/consumers/compare` directly to replace Playwright.

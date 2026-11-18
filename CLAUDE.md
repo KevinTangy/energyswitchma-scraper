@@ -36,9 +36,11 @@ python make_charts.py                          # rebuild charts + README
 python scrape.py 02148 --city Malden --from-raw data/raw/02148/2026-11-18.json --date 2026-11-18
 ```
 
-`scrape.py` always APPENDS to `data/rates.csv` in the current directory.
-When testing with `--from-raw`, run it from a scratch directory (or back up
-the CSV) so you don't add duplicate rows to the real dataset.
+`scrape.py` writes to `data/rates.csv` in the current directory. Re-running a
+ZIP for a date it already has REPLACES that ZIP's rows for that date (no
+duplicates); other days and ZIPs are kept. Dates default to today in
+America/New_York, not UTC. When testing with `--from-raw`, still run it from
+a scratch directory (or back up the CSV) so you don't overwrite real data.
 
 ## Cities tracked (set in the workflow)
 
@@ -84,6 +86,8 @@ Columns, in order: `date, zip, city, supplier, price_cents_per_kwh, term, fees`
 - **Sort order within each date+city batch:** the two basic service rows
   first (earlier period first), then all other offers from cheapest to most
   expensive. Ties are broken by supplier name.
+- **One batch per date+ZIP.** A second run on the same day replaces that
+  day's rows for the ZIP. The file is kept in date order.
 - If the header of an existing CSV doesn't match these columns, `scrape.py`
   renames the old file to `data/rates_old_format.csv` and starts a new one.
 
@@ -97,6 +101,8 @@ Columns, in order: `date, zip, city, supplier, price_cents_per_kwh, term, fees`
      labeled with the supplier name when the cheapest supplier changes. Runs
      of a day or two and labels too close together are skipped; the latest
      supplier is always labeled.
+- The charts are rebuilt from every date in `data/rates.csv` on each run, so
+  history builds up one point per day. Don't trim old rows from the CSV.
 - The latest value is printed at the right end of each line.
 - Light and dark SVGs, shown through `<picture>` with
   `prefers-color-scheme`. Colors come from a colorblind-safe palette that
