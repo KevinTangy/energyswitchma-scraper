@@ -491,3 +491,545 @@ date,zip,city,supplier,price_cents_per_kwh,term,fees
 2026-11-18,01906,Saugus,Renaissance Power & Gas,19.970,6 months,No cancellation fee
 2026-11-18,01906,Saugus,Think Energy,20.200,12 months,No cancellation fee
 2026-11-18,01906,Saugus,Residents Energy,21.520,6 months,No cancellation fee
+2026-11-18,02152,Winthrop,National Grid (Basic Service),17.185,Aug '26 through Jan '27,No cancellation fee
+2026-11-18,02152,Winthrop,National Grid (Basic Service),16.077,Feb '27 through Jul '27,No cancellation fee
+2026-11-18,02152,Winthrop,Town of Winthrop Community Electricity,12.910,through Dec '27,No cancellation fee
+2026-11-18,02152,Winthrop,Town of Winthrop Community Electricity,13.340,through Dec '27,No cancellation fee
+2026-11-18,02152,Winthrop,Town of Winthrop Community Electricity,14.220,through Dec '27,No cancellation fee
+2026-11-18,02152,Winthrop,CleanChoice Energy,15.200,12 months,No cancellation fee
+2026-11-18,02152,Winthrop,Inspire Clean Energy,15.790,12 months,No cancellation fee
+2026-11-18,02152,Winthrop,Town Square Energy,15.870,12 months,No cancellation fee
+2026-11-18,02152,Winthrop,Constellation New Energy,15.990,12 months,Cancellation fee: $150.00
+2026-11-18,02152,Winthrop,Inspire Clean Energy,16.190,24 months,No cancellation fee
+2026-11-18,02152,Winthrop,Public Power,16.290,24 months,Cancellation fee: $50.00
+2026-11-18,02152,Winthrop,Public Power,16.290,12 months,Cancellation fee: $50.00
+2026-11-18,02152,Winthrop,IGS Energy,16.390,12 months,Cancellation fee: $99.00
+2026-11-18,02152,Winthrop,Public Power,16.390,36 months,Cancellation fee: $50.00
+2026-11-18,02152,Winthrop,Clearview Energy,16.590,12 months,Cancellation fee: $150.00
+2026-11-18,02152,Winthrop,Massachusetts Gas & Electric,16.590,24 months,Cancellation fee: $50.00
+2026-11-18,02152,Winthrop,Massachusetts Gas & Electric,16.590,12 months,Cancellation fee: $50.00
+2026-11-18,02152,Winthrop,IGS Energy,16.790,12 months,Cancellation fee: $99.00
+2026-11-18,02152,Winthrop,Direct Energy Services,16.990,11 months,No cancellation fee
+2026-11-18,02152,Winthrop,Discount Power,16.990,12 months,No cancellation fee
+2026-11-18,02152,Winthrop,Public Power,16.990,18 months,Cancellation fee: $50.00
+2026-11-18,02152,Winthrop,Clearview Energy,17.090,24 months,Cancellation fee: $150.00
+2026-11-18,02152,Winthrop,Inspire Clean Energy,17.090,9 months,No cancellation fee
+2026-11-18,02152,Winthrop,Renaissance Power & Gas,17.270,10 months,No cancellation fee
+2026-11-18,02152,Winthrop,Direct Energy Services,17.290,24 months,No cancellation fee
+2026-11-18,02152,Winthrop,Massachusetts Gas & Electric,17.290,18 months,Cancellation fee: $50.00
+2026-11-18,02152,Winthrop,Inspire Clean Energy,17.790,18 months,No cancellation fee
+2026-11-18,02152,Winthrop,SmartEnergy,18.100,12 months,No cancellation fee
+2026-11-18,02152,Winthrop,Direct Energy Services,18.590,18 months,No cancellation fee
+2026-11-18,02152,Winthrop,Renaissance Power & Gas,18.670,22 months,No cancellation fee
+2026-11-18,02152,Winthrop,Residents Energy,18.780,6 months,No cancellation fee
+2026-11-18,02152,Winthrop,Major Energy Electric Services,18.790,25 months,Cancellation fee: $100.00
+2026-11-18,02152,Winthrop,Verde Energy USA,18.890,25 months,Cancellation fee: $100.00
+2026-11-18,02152,Winthrop,Major Energy Electric Services,18.990,25 months,Cancellation fee: $100.00
+2026-11-18,02152,Winthrop,Provider Power Mass,18.990,25 months,Cancellation fee: $100.00
+2026-11-18,02152,Winthrop,Spark Energy,18.990,25 months,Cancellation fee: $100.00
+2026-11-18,02152,Winthrop,Alpha Gas and Electric,19.000,24 months,No cancellation fee
+2026-11-18,02152,Winthrop,Provider Power Mass,19.290,25 months,Cancellation fee: $100.00
+2026-11-18,02152,Winthrop,Spark Energy,19.690,25 months,Cancellation fee: $100.00
+2026-11-18,02152,Winthrop,Renaissance Power & Gas,19.970,6 months,No cancellation fee
+2026-11-18,02152,Winthrop,Think Energy,20.200,12 months,No cancellation fee
+2026-11-18,02152,Winthrop,Residents Energy,21.520,6 months,No cancellation fee
+2026-11-18,02170,Quincy,National Grid (Basic Service),17.185,Aug '26 through Jan '27,No cancellation fee
+2026-11-18,02170,Quincy,National Grid (Basic Service),16.077,Feb '27 through Jul '27,No cancellation fee
+2026-11-18,02170,Quincy,City of Quincy Community Electricity,13.394,through Dec '27,No cancellation fee
+2026-11-18,02170,Quincy,City of Quincy Community Electricity,13.804,through Dec '27,No cancellation fee
+2026-11-18,02170,Quincy,City of Quincy Community Electricity,14.737,through Dec '27,No cancellation fee
+2026-11-18,02170,Quincy,CleanChoice Energy,15.200,12 months,No cancellation fee
+2026-11-18,02170,Quincy,Inspire Clean Energy,15.790,12 months,No cancellation fee
+2026-11-18,02170,Quincy,Town Square Energy,15.870,12 months,No cancellation fee
+2026-11-18,02170,Quincy,Constellation New Energy,15.990,12 months,Cancellation fee: $150.00
+2026-11-18,02170,Quincy,Inspire Clean Energy,16.190,24 months,No cancellation fee
+2026-11-18,02170,Quincy,Public Power,16.290,24 months,Cancellation fee: $50.00
+2026-11-18,02170,Quincy,Public Power,16.290,12 months,Cancellation fee: $50.00
+2026-11-18,02170,Quincy,IGS Energy,16.390,12 months,Cancellation fee: $99.00
+2026-11-18,02170,Quincy,Public Power,16.390,36 months,Cancellation fee: $50.00
+2026-11-18,02170,Quincy,Clearview Energy,16.590,12 months,Cancellation fee: $150.00
+2026-11-18,02170,Quincy,Massachusetts Gas & Electric,16.590,12 months,Cancellation fee: $50.00
+2026-11-18,02170,Quincy,Massachusetts Gas & Electric,16.590,24 months,Cancellation fee: $50.00
+2026-11-18,02170,Quincy,IGS Energy,16.790,12 months,Cancellation fee: $99.00
+2026-11-18,02170,Quincy,Direct Energy Services,16.990,11 months,No cancellation fee
+2026-11-18,02170,Quincy,Discount Power,16.990,12 months,No cancellation fee
+2026-11-18,02170,Quincy,Public Power,16.990,18 months,Cancellation fee: $50.00
+2026-11-18,02170,Quincy,Clearview Energy,17.090,24 months,Cancellation fee: $150.00
+2026-11-18,02170,Quincy,Inspire Clean Energy,17.090,9 months,No cancellation fee
+2026-11-18,02170,Quincy,Renaissance Power & Gas,17.270,10 months,No cancellation fee
+2026-11-18,02170,Quincy,Direct Energy Services,17.290,24 months,No cancellation fee
+2026-11-18,02170,Quincy,Massachusetts Gas & Electric,17.290,18 months,Cancellation fee: $50.00
+2026-11-18,02170,Quincy,Inspire Clean Energy,17.790,18 months,No cancellation fee
+2026-11-18,02170,Quincy,SmartEnergy,18.100,12 months,No cancellation fee
+2026-11-18,02170,Quincy,Direct Energy Services,18.590,18 months,No cancellation fee
+2026-11-18,02170,Quincy,Renaissance Power & Gas,18.670,22 months,No cancellation fee
+2026-11-18,02170,Quincy,Residents Energy,18.780,6 months,No cancellation fee
+2026-11-18,02170,Quincy,Major Energy Electric Services,18.790,25 months,Cancellation fee: $100.00
+2026-11-18,02170,Quincy,Verde Energy USA,18.890,25 months,Cancellation fee: $100.00
+2026-11-18,02170,Quincy,Major Energy Electric Services,18.990,25 months,Cancellation fee: $100.00
+2026-11-18,02170,Quincy,Provider Power Mass,18.990,25 months,Cancellation fee: $100.00
+2026-11-18,02170,Quincy,Spark Energy,18.990,25 months,Cancellation fee: $100.00
+2026-11-18,02170,Quincy,Alpha Gas and Electric,19.000,24 months,No cancellation fee
+2026-11-18,02170,Quincy,Provider Power Mass,19.290,25 months,Cancellation fee: $100.00
+2026-11-18,02170,Quincy,Spark Energy,19.690,25 months,Cancellation fee: $100.00
+2026-11-18,02170,Quincy,Renaissance Power & Gas,19.970,6 months,No cancellation fee
+2026-11-18,02170,Quincy,Think Energy,20.200,12 months,No cancellation fee
+2026-11-18,02170,Quincy,Residents Energy,21.520,6 months,No cancellation fee
+2026-11-18,02150,Chelsea,NSTAR d/b/a Eversource Energy (Basic Service),17.323,Aug '26 through Jan '27,No cancellation fee
+2026-11-18,02150,Chelsea,NSTAR d/b/a Eversource Energy (Basic Service),,Feb '27 through Jul '27,No cancellation fee
+2026-11-18,02150,Chelsea,Chelsea Electricity Choice,14.860,through Dec '28,No cancellation fee
+2026-11-18,02150,Chelsea,CleanChoice Energy,15.100,12 months,No cancellation fee
+2026-11-18,02150,Chelsea,Chelsea Electricity Choice,15.233,through Dec '28,No cancellation fee
+2026-11-18,02150,Chelsea,Inspire Clean Energy,15.690,12 months,No cancellation fee
+2026-11-18,02150,Chelsea,Inspire Clean Energy,15.790,24 months,No cancellation fee
+2026-11-18,02150,Chelsea,Public Power,15.790,12 months,Cancellation fee: $50.00
+2026-11-18,02150,Chelsea,Chelsea Electricity Choice,15.853,through Dec '28,No cancellation fee
+2026-11-18,02150,Chelsea,Public Power,15.890,24 months,Cancellation fee: $50.00
+2026-11-18,02150,Chelsea,IGS Energy,15.990,12 months,Cancellation fee: $99.00
+2026-11-18,02150,Chelsea,Public Power,15.990,36 months,Cancellation fee: $50.00
+2026-11-18,02150,Chelsea,Massachusetts Gas & Electric,16.090,12 months,Cancellation fee: $50.00
+2026-11-18,02150,Chelsea,Massachusetts Gas & Electric,16.190,24 months,Cancellation fee: $50.00
+2026-11-18,02150,Chelsea,Clearview Energy,16.290,12 months,Cancellation fee: $150.00
+2026-11-18,02150,Chelsea,Constellation New Energy,16.290,12 months,Cancellation fee: $150.00
+2026-11-18,02150,Chelsea,IGS Energy,16.290,12 months,Cancellation fee: $99.00
+2026-11-18,02150,Chelsea,Direct Energy Services,16.390,11 months,No cancellation fee
+2026-11-18,02150,Chelsea,Direct Energy Services,16.590,24 months,No cancellation fee
+2026-11-18,02150,Chelsea,Public Power,16.590,18 months,Cancellation fee: $50.00
+2026-11-18,02150,Chelsea,Clearview Energy,16.690,9 months,Cancellation fee: $150.00
+2026-11-18,02150,Chelsea,Inspire Clean Energy,16.890,9 months,No cancellation fee
+2026-11-18,02150,Chelsea,Massachusetts Gas & Electric,16.890,18 months,Cancellation fee: $50.00
+2026-11-18,02150,Chelsea,Town Square Energy,16.970,12 months,No cancellation fee
+2026-11-18,02150,Chelsea,Discount Power,16.990,12 months,No cancellation fee
+2026-11-18,02150,Chelsea,Renaissance Power & Gas,17.270,10 months,No cancellation fee
+2026-11-18,02150,Chelsea,SmartEnergy,17.500,12 months,No cancellation fee
+2026-11-18,02150,Chelsea,Inspire Clean Energy,17.590,18 months,No cancellation fee
+2026-11-18,02150,Chelsea,Direct Energy Services,17.890,18 months,No cancellation fee
+2026-11-18,02150,Chelsea,Major Energy Electric Services,17.990,25 months,Cancellation fee: $100.00
+2026-11-18,02150,Chelsea,Provider Power Mass,17.990,25 months,Cancellation fee: $100.00
+2026-11-18,02150,Chelsea,Spark Energy,17.990,25 months,Cancellation fee: $100.00
+2026-11-18,02150,Chelsea,Verde Energy USA,17.990,25 months,Cancellation fee: $100.00
+2026-11-18,02150,Chelsea,Major Energy Electric Services,18.290,25 months,Cancellation fee: $100.00
+2026-11-18,02150,Chelsea,Provider Power Mass,18.290,25 months,Cancellation fee: $100.00
+2026-11-18,02150,Chelsea,Spark Energy,18.290,25 months,Cancellation fee: $100.00
+2026-11-18,02150,Chelsea,Renaissance Power & Gas,18.670,22 months,No cancellation fee
+2026-11-18,02150,Chelsea,Residents Energy,19.200,6 months,No cancellation fee
+2026-11-18,02150,Chelsea,Think Energy,19.500,12 months,No cancellation fee
+2026-11-18,02150,Chelsea,Alpha Gas and Electric,19.900,24 months,No cancellation fee
+2026-11-18,02150,Chelsea,Renaissance Power & Gas,19.970,6 months,No cancellation fee
+2026-11-18,02150,Chelsea,Residents Energy,21.940,6 months,No cancellation fee
+2026-11-18,02130,Boston,NSTAR d/b/a Eversource Energy (Basic Service),17.323,Aug '26 through Jan '27,No cancellation fee
+2026-11-18,02130,Boston,NSTAR d/b/a Eversource Energy (Basic Service),,Feb '27 through Jul '27,No cancellation fee
+2026-11-18,02130,Boston,City of Boston Community Choice Electricity Program,13.644,through Dec '27,No cancellation fee
+2026-11-18,02130,Boston,City of Boston Community Choice Electricity Program,14.214,through Dec '27,No cancellation fee
+2026-11-18,02130,Boston,CleanChoice Energy,15.100,12 months,No cancellation fee
+2026-11-18,02130,Boston,Inspire Clean Energy,15.690,12 months,No cancellation fee
+2026-11-18,02130,Boston,Inspire Clean Energy,15.790,24 months,No cancellation fee
+2026-11-18,02130,Boston,Public Power,15.790,12 months,Cancellation fee: $50.00
+2026-11-18,02130,Boston,Public Power,15.890,24 months,Cancellation fee: $50.00
+2026-11-18,02130,Boston,IGS Energy,15.990,12 months,Cancellation fee: $99.00
+2026-11-18,02130,Boston,Public Power,15.990,36 months,Cancellation fee: $50.00
+2026-11-18,02130,Boston,Massachusetts Gas & Electric,16.090,12 months,Cancellation fee: $50.00
+2026-11-18,02130,Boston,Massachusetts Gas & Electric,16.190,24 months,Cancellation fee: $50.00
+2026-11-18,02130,Boston,City of Boston Community Choice Electricity Program,16.231,through Dec '27,No cancellation fee
+2026-11-18,02130,Boston,Clearview Energy,16.290,12 months,Cancellation fee: $150.00
+2026-11-18,02130,Boston,Constellation New Energy,16.290,12 months,Cancellation fee: $150.00
+2026-11-18,02130,Boston,IGS Energy,16.290,12 months,Cancellation fee: $99.00
+2026-11-18,02130,Boston,Direct Energy Services,16.390,11 months,No cancellation fee
+2026-11-18,02130,Boston,Direct Energy Services,16.590,24 months,No cancellation fee
+2026-11-18,02130,Boston,Public Power,16.590,18 months,Cancellation fee: $50.00
+2026-11-18,02130,Boston,Clearview Energy,16.690,9 months,Cancellation fee: $150.00
+2026-11-18,02130,Boston,Inspire Clean Energy,16.890,9 months,No cancellation fee
+2026-11-18,02130,Boston,Massachusetts Gas & Electric,16.890,18 months,Cancellation fee: $50.00
+2026-11-18,02130,Boston,Town Square Energy,16.970,12 months,No cancellation fee
+2026-11-18,02130,Boston,Discount Power,16.990,12 months,No cancellation fee
+2026-11-18,02130,Boston,Renaissance Power & Gas,17.270,10 months,No cancellation fee
+2026-11-18,02130,Boston,SmartEnergy,17.500,12 months,No cancellation fee
+2026-11-18,02130,Boston,Inspire Clean Energy,17.590,18 months,No cancellation fee
+2026-11-18,02130,Boston,Direct Energy Services,17.890,18 months,No cancellation fee
+2026-11-18,02130,Boston,Major Energy Electric Services,17.990,25 months,Cancellation fee: $100.00
+2026-11-18,02130,Boston,Provider Power Mass,17.990,25 months,Cancellation fee: $100.00
+2026-11-18,02130,Boston,Spark Energy,17.990,25 months,Cancellation fee: $100.00
+2026-11-18,02130,Boston,Verde Energy USA,17.990,25 months,Cancellation fee: $100.00
+2026-11-18,02130,Boston,Major Energy Electric Services,18.290,25 months,Cancellation fee: $100.00
+2026-11-18,02130,Boston,Provider Power Mass,18.290,25 months,Cancellation fee: $100.00
+2026-11-18,02130,Boston,Spark Energy,18.290,25 months,Cancellation fee: $100.00
+2026-11-18,02130,Boston,Renaissance Power & Gas,18.670,22 months,No cancellation fee
+2026-11-18,02130,Boston,Residents Energy,19.200,6 months,No cancellation fee
+2026-11-18,02130,Boston,Think Energy,19.500,12 months,No cancellation fee
+2026-11-18,02130,Boston,Alpha Gas and Electric,19.900,24 months,No cancellation fee
+2026-11-18,02130,Boston,Renaissance Power & Gas,19.970,6 months,No cancellation fee
+2026-11-18,02130,Boston,Residents Energy,21.940,6 months,No cancellation fee
+2026-11-18,02143,Somerville,NSTAR d/b/a Eversource Energy (Basic Service),17.323,Aug '26 through Jan '27,No cancellation fee
+2026-11-18,02143,Somerville,NSTAR d/b/a Eversource Energy (Basic Service),,Feb '27 through Jul '27,No cancellation fee
+2026-11-18,02143,Somerville,City of Somerville Community Choice Electricity,13.220,through Nov '27,No cancellation fee
+2026-11-18,02143,Somerville,City of Somerville Community Choice Electricity,14.840,through Nov '27,No cancellation fee
+2026-11-18,02143,Somerville,CleanChoice Energy,15.100,12 months,No cancellation fee
+2026-11-18,02143,Somerville,Inspire Clean Energy,15.690,12 months,No cancellation fee
+2026-11-18,02143,Somerville,Inspire Clean Energy,15.790,24 months,No cancellation fee
+2026-11-18,02143,Somerville,Public Power,15.790,12 months,Cancellation fee: $50.00
+2026-11-18,02143,Somerville,Public Power,15.890,24 months,Cancellation fee: $50.00
+2026-11-18,02143,Somerville,IGS Energy,15.990,12 months,Cancellation fee: $99.00
+2026-11-18,02143,Somerville,Public Power,15.990,36 months,Cancellation fee: $50.00
+2026-11-18,02143,Somerville,Massachusetts Gas & Electric,16.090,12 months,Cancellation fee: $50.00
+2026-11-18,02143,Somerville,Massachusetts Gas & Electric,16.190,24 months,Cancellation fee: $50.00
+2026-11-18,02143,Somerville,Clearview Energy,16.290,12 months,Cancellation fee: $150.00
+2026-11-18,02143,Somerville,Constellation New Energy,16.290,12 months,Cancellation fee: $150.00
+2026-11-18,02143,Somerville,IGS Energy,16.290,12 months,Cancellation fee: $99.00
+2026-11-18,02143,Somerville,Direct Energy Services,16.390,11 months,No cancellation fee
+2026-11-18,02143,Somerville,Direct Energy Services,16.590,24 months,No cancellation fee
+2026-11-18,02143,Somerville,Public Power,16.590,18 months,Cancellation fee: $50.00
+2026-11-18,02143,Somerville,Clearview Energy,16.690,9 months,Cancellation fee: $150.00
+2026-11-18,02143,Somerville,Inspire Clean Energy,16.890,9 months,No cancellation fee
+2026-11-18,02143,Somerville,Massachusetts Gas & Electric,16.890,18 months,Cancellation fee: $50.00
+2026-11-18,02143,Somerville,Town Square Energy,16.970,12 months,No cancellation fee
+2026-11-18,02143,Somerville,Discount Power,16.990,12 months,No cancellation fee
+2026-11-18,02143,Somerville,Renaissance Power & Gas,17.270,10 months,No cancellation fee
+2026-11-18,02143,Somerville,SmartEnergy,17.500,12 months,No cancellation fee
+2026-11-18,02143,Somerville,Inspire Clean Energy,17.590,18 months,No cancellation fee
+2026-11-18,02143,Somerville,Direct Energy Services,17.890,18 months,No cancellation fee
+2026-11-18,02143,Somerville,Major Energy Electric Services,17.990,25 months,Cancellation fee: $100.00
+2026-11-18,02143,Somerville,Provider Power Mass,17.990,25 months,Cancellation fee: $100.00
+2026-11-18,02143,Somerville,Spark Energy,17.990,25 months,Cancellation fee: $100.00
+2026-11-18,02143,Somerville,Verde Energy USA,17.990,25 months,Cancellation fee: $100.00
+2026-11-18,02143,Somerville,Major Energy Electric Services,18.290,25 months,Cancellation fee: $100.00
+2026-11-18,02143,Somerville,Provider Power Mass,18.290,25 months,Cancellation fee: $100.00
+2026-11-18,02143,Somerville,Spark Energy,18.290,25 months,Cancellation fee: $100.00
+2026-11-18,02143,Somerville,Renaissance Power & Gas,18.670,22 months,No cancellation fee
+2026-11-18,02143,Somerville,Residents Energy,19.200,6 months,No cancellation fee
+2026-11-18,02143,Somerville,Think Energy,19.500,12 months,No cancellation fee
+2026-11-18,02143,Somerville,Alpha Gas and Electric,19.900,24 months,No cancellation fee
+2026-11-18,02143,Somerville,Renaissance Power & Gas,19.970,6 months,No cancellation fee
+2026-11-18,02143,Somerville,Residents Energy,21.940,6 months,No cancellation fee
+2026-11-18,02139,Cambridge,NSTAR d/b/a Eversource Energy (Basic Service),17.323,Aug '26 through Jan '27,No cancellation fee
+2026-11-18,02139,Cambridge,NSTAR d/b/a Eversource Energy (Basic Service),,Feb '27 through Jul '27,No cancellation fee
+2026-11-18,02139,Cambridge,Cambridge Community Electricity,13.770,through Jan '29,No cancellation fee
+2026-11-18,02139,Cambridge,Cambridge Community Electricity,14.480,through Jan '29,No cancellation fee
+2026-11-18,02139,Cambridge,CleanChoice Energy,15.100,12 months,No cancellation fee
+2026-11-18,02139,Cambridge,Inspire Clean Energy,15.690,12 months,No cancellation fee
+2026-11-18,02139,Cambridge,Inspire Clean Energy,15.790,24 months,No cancellation fee
+2026-11-18,02139,Cambridge,Public Power,15.790,12 months,Cancellation fee: $50.00
+2026-11-18,02139,Cambridge,Public Power,15.890,24 months,Cancellation fee: $50.00
+2026-11-18,02139,Cambridge,IGS Energy,15.990,12 months,Cancellation fee: $99.00
+2026-11-18,02139,Cambridge,Public Power,15.990,36 months,Cancellation fee: $50.00
+2026-11-18,02139,Cambridge,Massachusetts Gas & Electric,16.090,12 months,Cancellation fee: $50.00
+2026-11-18,02139,Cambridge,Massachusetts Gas & Electric,16.190,24 months,Cancellation fee: $50.00
+2026-11-18,02139,Cambridge,Clearview Energy,16.290,12 months,Cancellation fee: $150.00
+2026-11-18,02139,Cambridge,Constellation New Energy,16.290,12 months,Cancellation fee: $150.00
+2026-11-18,02139,Cambridge,IGS Energy,16.290,12 months,Cancellation fee: $99.00
+2026-11-18,02139,Cambridge,Direct Energy Services,16.390,11 months,No cancellation fee
+2026-11-18,02139,Cambridge,Direct Energy Services,16.590,24 months,No cancellation fee
+2026-11-18,02139,Cambridge,Public Power,16.590,18 months,Cancellation fee: $50.00
+2026-11-18,02139,Cambridge,Clearview Energy,16.690,9 months,Cancellation fee: $150.00
+2026-11-18,02139,Cambridge,Inspire Clean Energy,16.890,9 months,No cancellation fee
+2026-11-18,02139,Cambridge,Massachusetts Gas & Electric,16.890,18 months,Cancellation fee: $50.00
+2026-11-18,02139,Cambridge,Town Square Energy,16.970,12 months,No cancellation fee
+2026-11-18,02139,Cambridge,Discount Power,16.990,12 months,No cancellation fee
+2026-11-18,02139,Cambridge,Renaissance Power & Gas,17.270,10 months,No cancellation fee
+2026-11-18,02139,Cambridge,SmartEnergy,17.500,12 months,No cancellation fee
+2026-11-18,02139,Cambridge,Inspire Clean Energy,17.590,18 months,No cancellation fee
+2026-11-18,02139,Cambridge,Direct Energy Services,17.890,18 months,No cancellation fee
+2026-11-18,02139,Cambridge,Major Energy Electric Services,17.990,25 months,Cancellation fee: $100.00
+2026-11-18,02139,Cambridge,Provider Power Mass,17.990,25 months,Cancellation fee: $100.00
+2026-11-18,02139,Cambridge,Spark Energy,17.990,25 months,Cancellation fee: $100.00
+2026-11-18,02139,Cambridge,Verde Energy USA,17.990,25 months,Cancellation fee: $100.00
+2026-11-18,02139,Cambridge,Major Energy Electric Services,18.290,25 months,Cancellation fee: $100.00
+2026-11-18,02139,Cambridge,Provider Power Mass,18.290,25 months,Cancellation fee: $100.00
+2026-11-18,02139,Cambridge,Spark Energy,18.290,25 months,Cancellation fee: $100.00
+2026-11-18,02139,Cambridge,Renaissance Power & Gas,18.670,22 months,No cancellation fee
+2026-11-18,02139,Cambridge,Residents Energy,19.200,6 months,No cancellation fee
+2026-11-18,02139,Cambridge,Think Energy,19.500,12 months,No cancellation fee
+2026-11-18,02139,Cambridge,Alpha Gas and Electric,19.900,24 months,No cancellation fee
+2026-11-18,02139,Cambridge,Renaissance Power & Gas,19.970,6 months,No cancellation fee
+2026-11-18,02139,Cambridge,Residents Energy,21.940,6 months,No cancellation fee
+2026-11-18,02474,Arlington,NSTAR d/b/a Eversource Energy (Basic Service),17.323,Aug '26 through Jan '27,No cancellation fee
+2026-11-18,02474,Arlington,NSTAR d/b/a Eversource Energy (Basic Service),,Feb '27 through Jul '27,No cancellation fee
+2026-11-18,02474,Arlington,Town of Arlington Community Electricity,13.380,through Dec '27,No cancellation fee
+2026-11-18,02474,Arlington,CleanChoice Energy,15.100,12 months,No cancellation fee
+2026-11-18,02474,Arlington,Inspire Clean Energy,15.690,12 months,No cancellation fee
+2026-11-18,02474,Arlington,Inspire Clean Energy,15.790,24 months,No cancellation fee
+2026-11-18,02474,Arlington,Public Power,15.790,12 months,Cancellation fee: $50.00
+2026-11-18,02474,Arlington,Public Power,15.890,24 months,Cancellation fee: $50.00
+2026-11-18,02474,Arlington,IGS Energy,15.990,12 months,Cancellation fee: $99.00
+2026-11-18,02474,Arlington,Public Power,15.990,36 months,Cancellation fee: $50.00
+2026-11-18,02474,Arlington,Massachusetts Gas & Electric,16.090,12 months,Cancellation fee: $50.00
+2026-11-18,02474,Arlington,Massachusetts Gas & Electric,16.190,24 months,Cancellation fee: $50.00
+2026-11-18,02474,Arlington,Town of Arlington Community Electricity,16.230,through Nov '27,No cancellation fee
+2026-11-18,02474,Arlington,Clearview Energy,16.290,12 months,Cancellation fee: $150.00
+2026-11-18,02474,Arlington,Constellation New Energy,16.290,12 months,Cancellation fee: $150.00
+2026-11-18,02474,Arlington,IGS Energy,16.290,12 months,Cancellation fee: $99.00
+2026-11-18,02474,Arlington,Direct Energy Services,16.390,11 months,No cancellation fee
+2026-11-18,02474,Arlington,Direct Energy Services,16.590,24 months,No cancellation fee
+2026-11-18,02474,Arlington,Public Power,16.590,18 months,Cancellation fee: $50.00
+2026-11-18,02474,Arlington,Clearview Energy,16.690,9 months,Cancellation fee: $150.00
+2026-11-18,02474,Arlington,Inspire Clean Energy,16.890,9 months,No cancellation fee
+2026-11-18,02474,Arlington,Massachusetts Gas & Electric,16.890,18 months,Cancellation fee: $50.00
+2026-11-18,02474,Arlington,Town Square Energy,16.970,12 months,No cancellation fee
+2026-11-18,02474,Arlington,Discount Power,16.990,12 months,No cancellation fee
+2026-11-18,02474,Arlington,Renaissance Power & Gas,17.270,10 months,No cancellation fee
+2026-11-18,02474,Arlington,SmartEnergy,17.500,12 months,No cancellation fee
+2026-11-18,02474,Arlington,Inspire Clean Energy,17.590,18 months,No cancellation fee
+2026-11-18,02474,Arlington,Direct Energy Services,17.890,18 months,No cancellation fee
+2026-11-18,02474,Arlington,Major Energy Electric Services,17.990,25 months,Cancellation fee: $100.00
+2026-11-18,02474,Arlington,Provider Power Mass,17.990,25 months,Cancellation fee: $100.00
+2026-11-18,02474,Arlington,Spark Energy,17.990,25 months,Cancellation fee: $100.00
+2026-11-18,02474,Arlington,Verde Energy USA,17.990,25 months,Cancellation fee: $100.00
+2026-11-18,02474,Arlington,Major Energy Electric Services,18.290,25 months,Cancellation fee: $100.00
+2026-11-18,02474,Arlington,Provider Power Mass,18.290,25 months,Cancellation fee: $100.00
+2026-11-18,02474,Arlington,Spark Energy,18.290,25 months,Cancellation fee: $100.00
+2026-11-18,02474,Arlington,Renaissance Power & Gas,18.670,22 months,No cancellation fee
+2026-11-18,02474,Arlington,Residents Energy,19.200,6 months,No cancellation fee
+2026-11-18,02474,Arlington,Think Energy,19.500,12 months,No cancellation fee
+2026-11-18,02474,Arlington,Alpha Gas and Electric,19.900,24 months,No cancellation fee
+2026-11-18,02474,Arlington,Renaissance Power & Gas,19.970,6 months,No cancellation fee
+2026-11-18,02474,Arlington,Residents Energy,21.940,6 months,No cancellation fee
+2026-11-18,02446,Brookline,NSTAR d/b/a Eversource Energy (Basic Service),17.323,Aug '26 through Jan '27,No cancellation fee
+2026-11-18,02446,Brookline,NSTAR d/b/a Eversource Energy (Basic Service),,Feb '27 through Jul '27,No cancellation fee
+2026-11-18,02446,Brookline,Town of Brookline Green Electricity,13.400,through Nov '27,No cancellation fee
+2026-11-18,02446,Brookline,Town of Brookline Green Electricity,14.681,through Nov '27,No cancellation fee
+2026-11-18,02446,Brookline,CleanChoice Energy,15.100,12 months,No cancellation fee
+2026-11-18,02446,Brookline,Inspire Clean Energy,15.690,12 months,No cancellation fee
+2026-11-18,02446,Brookline,Inspire Clean Energy,15.790,24 months,No cancellation fee
+2026-11-18,02446,Brookline,Public Power,15.790,12 months,Cancellation fee: $50.00
+2026-11-18,02446,Brookline,Public Power,15.890,24 months,Cancellation fee: $50.00
+2026-11-18,02446,Brookline,IGS Energy,15.990,12 months,Cancellation fee: $99.00
+2026-11-18,02446,Brookline,Public Power,15.990,36 months,Cancellation fee: $50.00
+2026-11-18,02446,Brookline,Massachusetts Gas & Electric,16.090,12 months,Cancellation fee: $50.00
+2026-11-18,02446,Brookline,Massachusetts Gas & Electric,16.190,24 months,Cancellation fee: $50.00
+2026-11-18,02446,Brookline,Clearview Energy,16.290,12 months,Cancellation fee: $150.00
+2026-11-18,02446,Brookline,Constellation New Energy,16.290,12 months,Cancellation fee: $150.00
+2026-11-18,02446,Brookline,IGS Energy,16.290,12 months,Cancellation fee: $99.00
+2026-11-18,02446,Brookline,Direct Energy Services,16.390,11 months,No cancellation fee
+2026-11-18,02446,Brookline,Direct Energy Services,16.590,24 months,No cancellation fee
+2026-11-18,02446,Brookline,Public Power,16.590,18 months,Cancellation fee: $50.00
+2026-11-18,02446,Brookline,Clearview Energy,16.690,9 months,Cancellation fee: $150.00
+2026-11-18,02446,Brookline,Inspire Clean Energy,16.890,9 months,No cancellation fee
+2026-11-18,02446,Brookline,Massachusetts Gas & Electric,16.890,18 months,Cancellation fee: $50.00
+2026-11-18,02446,Brookline,Town Square Energy,16.970,12 months,No cancellation fee
+2026-11-18,02446,Brookline,Discount Power,16.990,12 months,No cancellation fee
+2026-11-18,02446,Brookline,Renaissance Power & Gas,17.270,10 months,No cancellation fee
+2026-11-18,02446,Brookline,SmartEnergy,17.500,12 months,No cancellation fee
+2026-11-18,02446,Brookline,Inspire Clean Energy,17.590,18 months,No cancellation fee
+2026-11-18,02446,Brookline,Direct Energy Services,17.890,18 months,No cancellation fee
+2026-11-18,02446,Brookline,Major Energy Electric Services,17.990,25 months,Cancellation fee: $100.00
+2026-11-18,02446,Brookline,Provider Power Mass,17.990,25 months,Cancellation fee: $100.00
+2026-11-18,02446,Brookline,Spark Energy,17.990,25 months,Cancellation fee: $100.00
+2026-11-18,02446,Brookline,Verde Energy USA,17.990,25 months,Cancellation fee: $100.00
+2026-11-18,02446,Brookline,Major Energy Electric Services,18.290,25 months,Cancellation fee: $100.00
+2026-11-18,02446,Brookline,Provider Power Mass,18.290,25 months,Cancellation fee: $100.00
+2026-11-18,02446,Brookline,Spark Energy,18.290,25 months,Cancellation fee: $100.00
+2026-11-18,02446,Brookline,Renaissance Power & Gas,18.670,22 months,No cancellation fee
+2026-11-18,02446,Brookline,Residents Energy,19.200,6 months,No cancellation fee
+2026-11-18,02446,Brookline,Think Energy,19.500,12 months,No cancellation fee
+2026-11-18,02446,Brookline,Alpha Gas and Electric,19.900,24 months,No cancellation fee
+2026-11-18,02446,Brookline,Renaissance Power & Gas,19.970,6 months,No cancellation fee
+2026-11-18,02446,Brookline,Residents Energy,21.940,6 months,No cancellation fee
+2026-11-18,02180,Stoneham,NSTAR d/b/a Eversource Energy (Basic Service),17.323,Aug '26 through Jan '27,No cancellation fee
+2026-11-18,02180,Stoneham,NSTAR d/b/a Eversource Energy (Basic Service),,Feb '27 through Jul '27,No cancellation fee
+2026-11-18,02180,Stoneham,Town of Stoneham Community Electricity Aggregation,13.360,through Dec '29,No cancellation fee
+2026-11-18,02180,Stoneham,Town of Stoneham Community Electricity Aggregation,13.560,through Dec '29,No cancellation fee
+2026-11-18,02180,Stoneham,Town of Stoneham Community Electricity Aggregation,14.240,through Dec '29,No cancellation fee
+2026-11-18,02180,Stoneham,CleanChoice Energy,15.100,12 months,No cancellation fee
+2026-11-18,02180,Stoneham,Inspire Clean Energy,15.690,12 months,No cancellation fee
+2026-11-18,02180,Stoneham,Inspire Clean Energy,15.790,24 months,No cancellation fee
+2026-11-18,02180,Stoneham,Public Power,15.790,12 months,Cancellation fee: $50.00
+2026-11-18,02180,Stoneham,Public Power,15.890,24 months,Cancellation fee: $50.00
+2026-11-18,02180,Stoneham,IGS Energy,15.990,12 months,Cancellation fee: $99.00
+2026-11-18,02180,Stoneham,Public Power,15.990,36 months,Cancellation fee: $50.00
+2026-11-18,02180,Stoneham,Massachusetts Gas & Electric,16.090,12 months,Cancellation fee: $50.00
+2026-11-18,02180,Stoneham,Massachusetts Gas & Electric,16.190,24 months,Cancellation fee: $50.00
+2026-11-18,02180,Stoneham,Clearview Energy,16.290,12 months,Cancellation fee: $150.00
+2026-11-18,02180,Stoneham,Constellation New Energy,16.290,12 months,Cancellation fee: $150.00
+2026-11-18,02180,Stoneham,IGS Energy,16.290,12 months,Cancellation fee: $99.00
+2026-11-18,02180,Stoneham,Direct Energy Services,16.390,11 months,No cancellation fee
+2026-11-18,02180,Stoneham,Direct Energy Services,16.590,24 months,No cancellation fee
+2026-11-18,02180,Stoneham,Public Power,16.590,18 months,Cancellation fee: $50.00
+2026-11-18,02180,Stoneham,Clearview Energy,16.690,9 months,Cancellation fee: $150.00
+2026-11-18,02180,Stoneham,Inspire Clean Energy,16.890,9 months,No cancellation fee
+2026-11-18,02180,Stoneham,Massachusetts Gas & Electric,16.890,18 months,Cancellation fee: $50.00
+2026-11-18,02180,Stoneham,Town Square Energy,16.970,12 months,No cancellation fee
+2026-11-18,02180,Stoneham,Discount Power,16.990,12 months,No cancellation fee
+2026-11-18,02180,Stoneham,Renaissance Power & Gas,17.270,10 months,No cancellation fee
+2026-11-18,02180,Stoneham,SmartEnergy,17.500,12 months,No cancellation fee
+2026-11-18,02180,Stoneham,Inspire Clean Energy,17.590,18 months,No cancellation fee
+2026-11-18,02180,Stoneham,Direct Energy Services,17.890,18 months,No cancellation fee
+2026-11-18,02180,Stoneham,Major Energy Electric Services,17.990,25 months,Cancellation fee: $100.00
+2026-11-18,02180,Stoneham,Provider Power Mass,17.990,25 months,Cancellation fee: $100.00
+2026-11-18,02180,Stoneham,Spark Energy,17.990,25 months,Cancellation fee: $100.00
+2026-11-18,02180,Stoneham,Verde Energy USA,17.990,25 months,Cancellation fee: $100.00
+2026-11-18,02180,Stoneham,Major Energy Electric Services,18.290,25 months,Cancellation fee: $100.00
+2026-11-18,02180,Stoneham,Provider Power Mass,18.290,25 months,Cancellation fee: $100.00
+2026-11-18,02180,Stoneham,Spark Energy,18.290,25 months,Cancellation fee: $100.00
+2026-11-18,02180,Stoneham,Renaissance Power & Gas,18.670,22 months,No cancellation fee
+2026-11-18,02180,Stoneham,Residents Energy,19.200,6 months,No cancellation fee
+2026-11-18,02180,Stoneham,Think Energy,19.500,12 months,No cancellation fee
+2026-11-18,02180,Stoneham,Alpha Gas and Electric,19.900,24 months,No cancellation fee
+2026-11-18,02180,Stoneham,Renaissance Power & Gas,19.970,6 months,No cancellation fee
+2026-11-18,02180,Stoneham,Residents Energy,21.940,6 months,No cancellation fee
+2026-11-18,01890,Winchester,NSTAR d/b/a Eversource Energy (Basic Service),17.323,Aug '26 through Jan '27,No cancellation fee
+2026-11-18,01890,Winchester,NSTAR d/b/a Eversource Energy (Basic Service),,Feb '27 through Jul '27,No cancellation fee
+2026-11-18,01890,Winchester,Town of Winchester: WinPower,13.120,through Dec '27,No cancellation fee
+2026-11-18,01890,Winchester,Town of Winchester: WinPower,14.151,through Dec '27,No cancellation fee
+2026-11-18,01890,Winchester,Town of Winchester: WinPower,14.403,through Dec '27,No cancellation fee
+2026-11-18,01890,Winchester,CleanChoice Energy,15.100,12 months,No cancellation fee
+2026-11-18,01890,Winchester,Inspire Clean Energy,15.690,12 months,No cancellation fee
+2026-11-18,01890,Winchester,Inspire Clean Energy,15.790,24 months,No cancellation fee
+2026-11-18,01890,Winchester,Public Power,15.790,12 months,Cancellation fee: $50.00
+2026-11-18,01890,Winchester,Public Power,15.890,24 months,Cancellation fee: $50.00
+2026-11-18,01890,Winchester,IGS Energy,15.990,12 months,Cancellation fee: $99.00
+2026-11-18,01890,Winchester,Public Power,15.990,36 months,Cancellation fee: $50.00
+2026-11-18,01890,Winchester,Massachusetts Gas & Electric,16.090,12 months,Cancellation fee: $50.00
+2026-11-18,01890,Winchester,Massachusetts Gas & Electric,16.190,24 months,Cancellation fee: $50.00
+2026-11-18,01890,Winchester,Clearview Energy,16.290,12 months,Cancellation fee: $150.00
+2026-11-18,01890,Winchester,Constellation New Energy,16.290,12 months,Cancellation fee: $150.00
+2026-11-18,01890,Winchester,IGS Energy,16.290,12 months,Cancellation fee: $99.00
+2026-11-18,01890,Winchester,Direct Energy Services,16.390,11 months,No cancellation fee
+2026-11-18,01890,Winchester,Direct Energy Services,16.590,24 months,No cancellation fee
+2026-11-18,01890,Winchester,Public Power,16.590,18 months,Cancellation fee: $50.00
+2026-11-18,01890,Winchester,Clearview Energy,16.690,9 months,Cancellation fee: $150.00
+2026-11-18,01890,Winchester,Inspire Clean Energy,16.890,9 months,No cancellation fee
+2026-11-18,01890,Winchester,Massachusetts Gas & Electric,16.890,18 months,Cancellation fee: $50.00
+2026-11-18,01890,Winchester,Town Square Energy,16.970,12 months,No cancellation fee
+2026-11-18,01890,Winchester,Discount Power,16.990,12 months,No cancellation fee
+2026-11-18,01890,Winchester,Renaissance Power & Gas,17.270,10 months,No cancellation fee
+2026-11-18,01890,Winchester,SmartEnergy,17.500,12 months,No cancellation fee
+2026-11-18,01890,Winchester,Inspire Clean Energy,17.590,18 months,No cancellation fee
+2026-11-18,01890,Winchester,Direct Energy Services,17.890,18 months,No cancellation fee
+2026-11-18,01890,Winchester,Major Energy Electric Services,17.990,25 months,Cancellation fee: $100.00
+2026-11-18,01890,Winchester,Provider Power Mass,17.990,25 months,Cancellation fee: $100.00
+2026-11-18,01890,Winchester,Spark Energy,17.990,25 months,Cancellation fee: $100.00
+2026-11-18,01890,Winchester,Verde Energy USA,17.990,25 months,Cancellation fee: $100.00
+2026-11-18,01890,Winchester,Major Energy Electric Services,18.290,25 months,Cancellation fee: $100.00
+2026-11-18,01890,Winchester,Provider Power Mass,18.290,25 months,Cancellation fee: $100.00
+2026-11-18,01890,Winchester,Spark Energy,18.290,25 months,Cancellation fee: $100.00
+2026-11-18,01890,Winchester,Renaissance Power & Gas,18.670,22 months,No cancellation fee
+2026-11-18,01890,Winchester,Residents Energy,19.200,6 months,No cancellation fee
+2026-11-18,01890,Winchester,Think Energy,19.500,12 months,No cancellation fee
+2026-11-18,01890,Winchester,Alpha Gas and Electric,19.900,24 months,No cancellation fee
+2026-11-18,01890,Winchester,Renaissance Power & Gas,19.970,6 months,No cancellation fee
+2026-11-18,01890,Winchester,Residents Energy,21.940,6 months,No cancellation fee
+2026-11-18,01801,Woburn,NSTAR d/b/a Eversource Energy (Basic Service),17.323,Aug '26 through Jan '27,No cancellation fee
+2026-11-18,01801,Woburn,NSTAR d/b/a Eversource Energy (Basic Service),,Feb '27 through Jul '27,No cancellation fee
+2026-11-18,01801,Woburn,City of Woburn Community Electricity,13.495,through Dec '29,No cancellation fee
+2026-11-18,01801,Woburn,City of Woburn Community Electricity,13.891,through Dec '29,No cancellation fee
+2026-11-18,01801,Woburn,City of Woburn Community Electricity,14.414,through Dec '29,No cancellation fee
+2026-11-18,01801,Woburn,CleanChoice Energy,15.100,12 months,No cancellation fee
+2026-11-18,01801,Woburn,Inspire Clean Energy,15.690,12 months,No cancellation fee
+2026-11-18,01801,Woburn,Inspire Clean Energy,15.790,24 months,No cancellation fee
+2026-11-18,01801,Woburn,Public Power,15.790,12 months,Cancellation fee: $50.00
+2026-11-18,01801,Woburn,Public Power,15.890,24 months,Cancellation fee: $50.00
+2026-11-18,01801,Woburn,IGS Energy,15.990,12 months,Cancellation fee: $99.00
+2026-11-18,01801,Woburn,Public Power,15.990,36 months,Cancellation fee: $50.00
+2026-11-18,01801,Woburn,Massachusetts Gas & Electric,16.090,12 months,Cancellation fee: $50.00
+2026-11-18,01801,Woburn,Massachusetts Gas & Electric,16.190,24 months,Cancellation fee: $50.00
+2026-11-18,01801,Woburn,Clearview Energy,16.290,12 months,Cancellation fee: $150.00
+2026-11-18,01801,Woburn,Constellation New Energy,16.290,12 months,Cancellation fee: $150.00
+2026-11-18,01801,Woburn,IGS Energy,16.290,12 months,Cancellation fee: $99.00
+2026-11-18,01801,Woburn,Direct Energy Services,16.390,11 months,No cancellation fee
+2026-11-18,01801,Woburn,Direct Energy Services,16.590,24 months,No cancellation fee
+2026-11-18,01801,Woburn,Public Power,16.590,18 months,Cancellation fee: $50.00
+2026-11-18,01801,Woburn,Clearview Energy,16.690,9 months,Cancellation fee: $150.00
+2026-11-18,01801,Woburn,Inspire Clean Energy,16.890,9 months,No cancellation fee
+2026-11-18,01801,Woburn,Massachusetts Gas & Electric,16.890,18 months,Cancellation fee: $50.00
+2026-11-18,01801,Woburn,Town Square Energy,16.970,12 months,No cancellation fee
+2026-11-18,01801,Woburn,Discount Power,16.990,12 months,No cancellation fee
+2026-11-18,01801,Woburn,Renaissance Power & Gas,17.270,10 months,No cancellation fee
+2026-11-18,01801,Woburn,SmartEnergy,17.500,12 months,No cancellation fee
+2026-11-18,01801,Woburn,Inspire Clean Energy,17.590,18 months,No cancellation fee
+2026-11-18,01801,Woburn,Direct Energy Services,17.890,18 months,No cancellation fee
+2026-11-18,01801,Woburn,Major Energy Electric Services,17.990,25 months,Cancellation fee: $100.00
+2026-11-18,01801,Woburn,Provider Power Mass,17.990,25 months,Cancellation fee: $100.00
+2026-11-18,01801,Woburn,Spark Energy,17.990,25 months,Cancellation fee: $100.00
+2026-11-18,01801,Woburn,Verde Energy USA,17.990,25 months,Cancellation fee: $100.00
+2026-11-18,01801,Woburn,Major Energy Electric Services,18.290,25 months,Cancellation fee: $100.00
+2026-11-18,01801,Woburn,Provider Power Mass,18.290,25 months,Cancellation fee: $100.00
+2026-11-18,01801,Woburn,Spark Energy,18.290,25 months,Cancellation fee: $100.00
+2026-11-18,01801,Woburn,Renaissance Power & Gas,18.670,22 months,No cancellation fee
+2026-11-18,01801,Woburn,Residents Energy,19.200,6 months,No cancellation fee
+2026-11-18,01801,Woburn,Think Energy,19.500,12 months,No cancellation fee
+2026-11-18,01801,Woburn,Alpha Gas and Electric,19.900,24 months,No cancellation fee
+2026-11-18,01801,Woburn,Renaissance Power & Gas,19.970,6 months,No cancellation fee
+2026-11-18,01801,Woburn,Residents Energy,21.940,6 months,No cancellation fee
+2026-11-18,01803,Burlington,NSTAR d/b/a Eversource Energy (Basic Service),17.323,Aug '26 through Jan '27,No cancellation fee
+2026-11-18,01803,Burlington,NSTAR d/b/a Eversource Energy (Basic Service),,Feb '27 through Jul '27,No cancellation fee
+2026-11-18,01803,Burlington,CleanChoice Energy,15.100,12 months,No cancellation fee
+2026-11-18,01803,Burlington,Burlington Community Choice Power Supply Program,15.646,through Oct '28,No cancellation fee
+2026-11-18,01803,Burlington,Inspire Clean Energy,15.690,12 months,No cancellation fee
+2026-11-18,01803,Burlington,Inspire Clean Energy,15.790,24 months,No cancellation fee
+2026-11-18,01803,Burlington,Public Power,15.790,12 months,Cancellation fee: $50.00
+2026-11-18,01803,Burlington,Burlington Community Choice Power Supply Program,15.846,through Oct '28,No cancellation fee
+2026-11-18,01803,Burlington,Public Power,15.890,24 months,Cancellation fee: $50.00
+2026-11-18,01803,Burlington,IGS Energy,15.990,12 months,Cancellation fee: $99.00
+2026-11-18,01803,Burlington,Public Power,15.990,36 months,Cancellation fee: $50.00
+2026-11-18,01803,Burlington,Massachusetts Gas & Electric,16.090,12 months,Cancellation fee: $50.00
+2026-11-18,01803,Burlington,Massachusetts Gas & Electric,16.190,24 months,Cancellation fee: $50.00
+2026-11-18,01803,Burlington,Clearview Energy,16.290,12 months,Cancellation fee: $150.00
+2026-11-18,01803,Burlington,Constellation New Energy,16.290,12 months,Cancellation fee: $150.00
+2026-11-18,01803,Burlington,IGS Energy,16.290,12 months,Cancellation fee: $99.00
+2026-11-18,01803,Burlington,Direct Energy Services,16.390,11 months,No cancellation fee
+2026-11-18,01803,Burlington,Direct Energy Services,16.590,24 months,No cancellation fee
+2026-11-18,01803,Burlington,Public Power,16.590,18 months,Cancellation fee: $50.00
+2026-11-18,01803,Burlington,Burlington Community Choice Power Supply Program,16.646,through Oct '28,No cancellation fee
+2026-11-18,01803,Burlington,Clearview Energy,16.690,9 months,Cancellation fee: $150.00
+2026-11-18,01803,Burlington,Inspire Clean Energy,16.890,9 months,No cancellation fee
+2026-11-18,01803,Burlington,Massachusetts Gas & Electric,16.890,18 months,Cancellation fee: $50.00
+2026-11-18,01803,Burlington,Town Square Energy,16.970,12 months,No cancellation fee
+2026-11-18,01803,Burlington,Discount Power,16.990,12 months,No cancellation fee
+2026-11-18,01803,Burlington,Renaissance Power & Gas,17.270,10 months,No cancellation fee
+2026-11-18,01803,Burlington,SmartEnergy,17.500,12 months,No cancellation fee
+2026-11-18,01803,Burlington,Inspire Clean Energy,17.590,18 months,No cancellation fee
+2026-11-18,01803,Burlington,Direct Energy Services,17.890,18 months,No cancellation fee
+2026-11-18,01803,Burlington,Major Energy Electric Services,17.990,25 months,Cancellation fee: $100.00
+2026-11-18,01803,Burlington,Provider Power Mass,17.990,25 months,Cancellation fee: $100.00
+2026-11-18,01803,Burlington,Spark Energy,17.990,25 months,Cancellation fee: $100.00
+2026-11-18,01803,Burlington,Verde Energy USA,17.990,25 months,Cancellation fee: $100.00
+2026-11-18,01803,Burlington,Major Energy Electric Services,18.290,25 months,Cancellation fee: $100.00
+2026-11-18,01803,Burlington,Provider Power Mass,18.290,25 months,Cancellation fee: $100.00
+2026-11-18,01803,Burlington,Spark Energy,18.290,25 months,Cancellation fee: $100.00
+2026-11-18,01803,Burlington,Renaissance Power & Gas,18.670,22 months,No cancellation fee
+2026-11-18,01803,Burlington,Residents Energy,19.200,6 months,No cancellation fee
+2026-11-18,01803,Burlington,Think Energy,19.500,12 months,No cancellation fee
+2026-11-18,01803,Burlington,Alpha Gas and Electric,19.900,24 months,No cancellation fee
+2026-11-18,01803,Burlington,Renaissance Power & Gas,19.970,6 months,No cancellation fee
+2026-11-18,01803,Burlington,Residents Energy,21.940,6 months,No cancellation fee
+2026-11-18,02453,Waltham,NSTAR d/b/a Eversource Energy (Basic Service),17.323,Aug '26 through Jan '27,No cancellation fee
+2026-11-18,02453,Waltham,NSTAR d/b/a Eversource Energy (Basic Service),,Feb '27 through Jul '27,No cancellation fee
+2026-11-18,02453,Waltham,Town of Waltham Community Electricity,13.200,through Dec '29,No cancellation fee
+2026-11-18,02453,Waltham,Town of Waltham Community Electricity,13.599,through Dec '29,No cancellation fee
+2026-11-18,02453,Waltham,Town of Waltham Community Electricity,14.080,through Dec '29,No cancellation fee
+2026-11-18,02453,Waltham,CleanChoice Energy,15.100,12 months,No cancellation fee
+2026-11-18,02453,Waltham,Inspire Clean Energy,15.690,12 months,No cancellation fee
+2026-11-18,02453,Waltham,Inspire Clean Energy,15.790,24 months,No cancellation fee
+2026-11-18,02453,Waltham,Public Power,15.790,12 months,Cancellation fee: $50.00
+2026-11-18,02453,Waltham,Public Power,15.890,24 months,Cancellation fee: $50.00
+2026-11-18,02453,Waltham,IGS Energy,15.990,12 months,Cancellation fee: $99.00
+2026-11-18,02453,Waltham,Public Power,15.990,36 months,Cancellation fee: $50.00
+2026-11-18,02453,Waltham,Massachusetts Gas & Electric,16.090,12 months,Cancellation fee: $50.00
+2026-11-18,02453,Waltham,Massachusetts Gas & Electric,16.190,24 months,Cancellation fee: $50.00
+2026-11-18,02453,Waltham,Clearview Energy,16.290,12 months,Cancellation fee: $150.00
+2026-11-18,02453,Waltham,Constellation New Energy,16.290,12 months,Cancellation fee: $150.00
+2026-11-18,02453,Waltham,IGS Energy,16.290,12 months,Cancellation fee: $99.00
+2026-11-18,02453,Waltham,Direct Energy Services,16.390,11 months,No cancellation fee
+2026-11-18,02453,Waltham,Direct Energy Services,16.590,24 months,No cancellation fee
+2026-11-18,02453,Waltham,Public Power,16.590,18 months,Cancellation fee: $50.00
+2026-11-18,02453,Waltham,Clearview Energy,16.690,9 months,Cancellation fee: $150.00
+2026-11-18,02453,Waltham,Inspire Clean Energy,16.890,9 months,No cancellation fee
+2026-11-18,02453,Waltham,Massachusetts Gas & Electric,16.890,18 months,Cancellation fee: $50.00
+2026-11-18,02453,Waltham,Town Square Energy,16.970,12 months,No cancellation fee
+2026-11-18,02453,Waltham,Discount Power,16.990,12 months,No cancellation fee
+2026-11-18,02453,Waltham,Renaissance Power & Gas,17.270,10 months,No cancellation fee
+2026-11-18,02453,Waltham,SmartEnergy,17.500,12 months,No cancellation fee
+2026-11-18,02453,Waltham,Inspire Clean Energy,17.590,18 months,No cancellation fee
+2026-11-18,02453,Waltham,Direct Energy Services,17.890,18 months,No cancellation fee
+2026-11-18,02453,Waltham,Major Energy Electric Services,17.990,25 months,Cancellation fee: $100.00
+2026-11-18,02453,Waltham,Provider Power Mass,17.990,25 months,Cancellation fee: $100.00
+2026-11-18,02453,Waltham,Spark Energy,17.990,25 months,Cancellation fee: $100.00
+2026-11-18,02453,Waltham,Verde Energy USA,17.990,25 months,Cancellation fee: $100.00
+2026-11-18,02453,Waltham,Major Energy Electric Services,18.290,25 months,Cancellation fee: $100.00
+2026-11-18,02453,Waltham,Provider Power Mass,18.290,25 months,Cancellation fee: $100.00
+2026-11-18,02453,Waltham,Spark Energy,18.290,25 months,Cancellation fee: $100.00
+2026-11-18,02453,Waltham,Renaissance Power & Gas,18.670,22 months,No cancellation fee
+2026-11-18,02453,Waltham,Residents Energy,19.200,6 months,No cancellation fee
+2026-11-18,02453,Waltham,Think Energy,19.500,12 months,No cancellation fee
+2026-11-18,02453,Waltham,Alpha Gas and Electric,19.900,24 months,No cancellation fee
+2026-11-18,02453,Waltham,Renaissance Power & Gas,19.970,6 months,No cancellation fee
+2026-11-18,02453,Waltham,Residents Energy,21.940,6 months,No cancellation fee
