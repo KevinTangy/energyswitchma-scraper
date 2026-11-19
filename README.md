@@ -11,29 +11,29 @@ Daily electricity supply rates from [EnergySwitch MA](https://energyswitchma.gov
   <img src="charts/savings.svg" alt="Bar chart: how many cents per kWh less the cheapest supplier offer costs than the utility's basic service in each city today">
 </picture>
 
-| City | Utility | Basic service | Cheapest offer | Cheapest supplier | Savings |
-|---|---|---:|---:|---|---:|
-| Winthrop | National Grid | 17.185¢ | 12.910¢ | Town of Winthrop Community Electricity | 4.275¢ |
-| Winchester | Eversource | 17.323¢ | 13.120¢ | Town of Winchester: WinPower | 4.203¢ |
-| Waltham | Eversource | 17.323¢ | 13.200¢ | Town of Waltham Community Electricity | 4.123¢ |
-| Somerville | Eversource | 17.323¢ | 13.220¢ | City of Somerville Community Choice Electricity | 4.103¢ |
-| Stoneham | Eversource | 17.323¢ | 13.360¢ | Town of Stoneham Community Electricity Aggregation | 3.963¢ |
-| Arlington | Eversource | 17.323¢ | 13.380¢ | Town of Arlington Community Electricity | 3.943¢ |
-| Brookline | Eversource | 17.323¢ | 13.400¢ | Town of Brookline Green Electricity | 3.923¢ |
-| Malden | National Grid | 17.185¢ | 13.345¢ | Malden Community Electricity | 3.840¢ |
-| Woburn | Eversource | 17.323¢ | 13.495¢ | City of Woburn Community Electricity | 3.828¢ |
-| Quincy | National Grid | 17.185¢ | 13.394¢ | City of Quincy Community Electricity | 3.791¢ |
-| Boston | Eversource | 17.323¢ | 13.644¢ | City of Boston Community Choice Electricity Program | 3.679¢ |
-| Cambridge | Eversource | 17.323¢ | 13.770¢ | Cambridge Community Electricity | 3.553¢ |
-| Medford | National Grid | 17.185¢ | 13.720¢ | City of Medford Community Electricity Aggregation | 3.465¢ |
-| Melrose | National Grid | 17.185¢ | 14.310¢ | City of Melrose Community Power | 2.875¢ |
-| Burlington | Eversource | 17.323¢ | 14.800¢ | CleanChoice Energy | 2.523¢ |
-| Chelsea | Eversource | 17.323¢ | 14.800¢ | CleanChoice Energy | 2.523¢ |
-| Everett | National Grid | 17.185¢ | 14.900¢ | CleanChoice Energy | 2.285¢ |
-| Revere | National Grid | 17.185¢ | 14.900¢ | CleanChoice Energy | 2.285¢ |
-| Saugus | National Grid | 17.185¢ | 14.900¢ | CleanChoice Energy | 2.285¢ |
+| City | Utility | Basic service | Cheapest offer | Cheapest supplier | Savings | Cheapest non-town-program offer | Supplier | Savings |
+|---|---|---:|---:|---|---:|---:|---|---:|
+| Winthrop | National Grid | 17.185¢ | 12.910¢ | Town of Winthrop Community Electricity | 4.275¢ | 14.900¢ | CleanChoice Energy | 2.285¢ |
+| Winchester | Eversource | 17.323¢ | 13.120¢ | Town of Winchester: WinPower | 4.203¢ | 14.800¢ | CleanChoice Energy | 2.523¢ |
+| Waltham | Eversource | 17.323¢ | 13.200¢ | Town of Waltham Community Electricity | 4.123¢ | 14.800¢ | CleanChoice Energy | 2.523¢ |
+| Somerville | Eversource | 17.323¢ | 13.220¢ | City of Somerville Community Choice Electricity | 4.103¢ | 14.800¢ | CleanChoice Energy | 2.523¢ |
+| Stoneham | Eversource | 17.323¢ | 13.360¢ | Town of Stoneham Community Electricity Aggregation | 3.963¢ | 14.800¢ | CleanChoice Energy | 2.523¢ |
+| Arlington | Eversource | 17.323¢ | 13.380¢ | Town of Arlington Community Electricity | 3.943¢ | 14.800¢ | CleanChoice Energy | 2.523¢ |
+| Brookline | Eversource | 17.323¢ | 13.400¢ | Town of Brookline Green Electricity | 3.923¢ | 14.800¢ | CleanChoice Energy | 2.523¢ |
+| Malden | National Grid | 17.185¢ | 13.345¢ | Malden Community Electricity | 3.840¢ | 14.900¢ | CleanChoice Energy | 2.285¢ |
+| Woburn | Eversource | 17.323¢ | 13.495¢ | City of Woburn Community Electricity | 3.828¢ | 14.800¢ | CleanChoice Energy | 2.523¢ |
+| Quincy | National Grid | 17.185¢ | 13.394¢ | City of Quincy Community Electricity | 3.791¢ | 14.900¢ | CleanChoice Energy | 2.285¢ |
+| Boston | Eversource | 17.323¢ | 13.644¢ | City of Boston Community Choice Electricity Program | 3.679¢ | 14.800¢ | CleanChoice Energy | 2.523¢ |
+| Cambridge | Eversource | 17.323¢ | 13.770¢ | Cambridge Community Electricity | 3.553¢ | 14.800¢ | CleanChoice Energy | 2.523¢ |
+| Medford | National Grid | 17.185¢ | 13.720¢ | City of Medford Community Electricity Aggregation | 3.465¢ | 14.900¢ | CleanChoice Energy | 2.285¢ |
+| Melrose | National Grid | 17.185¢ | 14.310¢ | City of Melrose Community Power | 2.875¢ | 14.900¢ | CleanChoice Energy | 2.285¢ |
+| Burlington | Eversource | 17.323¢ | 14.800¢ | CleanChoice Energy | 2.523¢ | 14.800¢ | CleanChoice Energy | 2.523¢ |
+| Chelsea | Eversource | 17.323¢ | 14.800¢ | CleanChoice Energy | 2.523¢ | 14.800¢ | CleanChoice Energy | 2.523¢ |
+| Everett | National Grid | 17.185¢ | 14.900¢ | CleanChoice Energy | 2.285¢ | 14.900¢ | CleanChoice Energy | 2.285¢ |
+| Revere | National Grid | 17.185¢ | 14.900¢ | CleanChoice Energy | 2.285¢ | 14.900¢ | CleanChoice Energy | 2.285¢ |
+| Saugus | National Grid | 17.185¢ | 14.900¢ | CleanChoice Energy | 2.285¢ | 14.900¢ | CleanChoice Energy | 2.285¢ |
 
-Rates are in cents per kWh. Savings is basic service minus the cheapest offer; a negative number would mean basic service is cheaper.
+Rates are in cents per kWh. Savings is basic service minus the offer; a negative number would mean basic service is cheaper. The non-town-program columns leave out the town's own electricity program (municipal aggregation), showing the best deal from a regular supplier.
 
 ## Rate history
 

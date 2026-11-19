@@ -125,3 +125,12 @@ In the order they were made (Nov 17–18, 2026).
     costs nothing (public repo) and can't duplicate data because a re-run
     replaces the day's rows. Trade-off: on days both run, the saved rates
     are from early afternoon rather than the morning.
+
+28. **Third series: cheapest offer that isn't the town program** (Nov 19).
+    Town programs are often the cheapest, so this shows the best deal from a
+    regular supplier for comparison. Program suppliers are recorded in a
+    separate `data/town_programs.csv` rather than a new `rates.csv` column,
+    because changing that file's columns would trigger the old-format
+    migration and move the history aside. Drawn dashed in aqua (third
+    palette slot, validated together with blue and orange) and only when it
+    differs from the cheapest offer.

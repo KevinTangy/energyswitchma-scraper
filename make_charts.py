@@ -6,6 +6,11 @@ For each city and each day it tracks:
      period that covers that day
   2. the cheapest supplier offer, labeled with the supplier's name
 
+A third series, the cheapest offer that ISN'T the town's own electricity
+program (municipal aggregation), is drawn when it differs from the cheapest
+offer. Program suppliers per ZIP come from data/town_programs.csv, which
+scrape.py maintains.
+
 Charts are written to charts/<city>.svg (light) and charts/<city>-dark.svg
 (dark). The README shows whichever matches the reader's GitHub theme.
 GitHub Actions runs this after each daily scrape, so README.md is
@@ -31,14 +36,17 @@ import matplotlib.dates as mdates  # noqa: E402
 import matplotlib.pyplot as plt  # noqa: E402
 
 CSV_PATH = Path("data/rates.csv")
+PROGRAMS_PATH = Path("data/town_programs.csv")
 CHART_DIR = Path("charts")
 README = Path("README.md")
 
 THEMES = {
     "light": {"surface": "#fcfcfb", "text": "#0b0b0b", "muted": "#52514e",
-              "grid": "#e4e3df", "basic": "#2a78d6", "cheap": "#eb6834"},
+              "grid": "#e4e3df", "basic": "#2a78d6", "cheap": "#eb6834",
+              "regular": "#1baf7a"},
     "dark": {"surface": "#1a1a19", "text": "#f0efec", "muted": "#c3c2b7",
-             "grid": "#33332f", "basic": "#3987e5", "cheap": "#d95926"},
+             "grid": "#33332f", "basic": "#3987e5", "cheap": "#d95926",
+              "regular": "#199e70"},
 }
 
 MONTHS = {m: i for i, m in enumerate(
@@ -79,8 +87,24 @@ def short_utility(name):
     return "Eversource" if "eversource" in name.lower() else name
 
 
+REGULAR_LABEL = "Cheapest non-town-program offer"
+
+
+def load_programs():
+    """{zip: {supplier names that are that town's electricity program}}."""
+    programs = defaultdict(set)
+    if PROGRAMS_PATH.exists():
+        with PROGRAMS_PATH.open(newline="") as f:
+            for r in csv.DictReader(f):
+                programs[r["zip"]].add(r["supplier"])
+    return programs
+
+
 def load_series():
-    """Return {city: [(date, basic_rate, cheapest_rate, cheapest_supplier), ...]}."""
+    """Return {city: [(date, basic_rate, cheapest_rate, cheapest_supplier,
+    cheapest_regular_rate, cheapest_regular_supplier), ...]}, where "regular"
+    leaves out the town's own electricity program."""
+    programs = load_programs()
     by_city_day = OrderedDict()
     with CSV_PATH.open(newline="") as f:
         for row in csv.DictReader(f):
@@ -112,7 +136,13 @@ def load_series():
                 best = min(offers, key=lambda r: (price(r), r["supplier"]))
                 cheap_rate, cheap_supplier = price(best), best["supplier"]
 
-            points.append((day, basic_rate, cheap_rate, cheap_supplier))
+            regular = [r for r in offers if r["supplier"] not in programs[r["zip"]]]
+            reg_rate = reg_supplier = None
+            if regular:
+                best = min(regular, key=lambda r: (price(r), r["supplier"]))
+                reg_rate, reg_supplier = price(best), best["supplier"]
+
+            points.append((day, basic_rate, cheap_rate, cheap_supplier, reg_rate, reg_supplier))
         series[city] = points
     return series
 
@@ -152,6 +182,32 @@ def style_time_axes(ax, days, t, labelsize=9, show_year=True):
     ax.tick_params(colors=t["muted"], labelsize=labelsize, length=0)
 
 
+def label_offsets(values, lo, hi, plot_pts, min_gap=10):
+    """Vertical offsets (points) for end-of-line labels so none overlap.
+    values: label y-values (None allowed); lo/hi: y-axis range; plot_pts:
+    approximate plot height in points."""
+    idx = sorted((i for i, v in enumerate(values) if v is not None), key=lambda i: values[i])
+    pos = {i: (values[i] - lo) / ((hi - lo) or 1) * plot_pts for i in idx}
+    placed = {}
+    for i in idx:  # bottom to top: push each label up past the one below
+        y = pos[i]
+        below = [placed[j] for j in placed]
+        if below and y - max(below) < min_gap:
+            y = max(below) + min_gap
+        placed[i] = y
+    if idx:  # re-centre the group so labels stay near their lines
+        shift = (sum(placed[i] - pos[i] for i in idx)) / len(idx)
+        for i in idx:
+            placed[i] -= shift
+    return [placed[i] - pos[i] if i in placed else 0 for i in range(len(values))]
+
+
+def has_regular_line(points):
+    """Draw the non-program line only if it differs from the cheapest offer
+    on some day (in towns without a program they're identical)."""
+    return any(p[4] is not None and p[4] != p[2] for p in points)
+
+
 def draw(city, points, theme_name, path):
     t = THEMES[theme_name]
     fig, ax = plt.subplots(figsize=(9, 4.2), dpi=100)
@@ -162,6 +218,8 @@ def draw(city, points, theme_name, path):
     basic = [p[1] for p in points]
     cheap = [p[2] for p in points]
     suppliers = [p[3] for p in points]
+    regular = [p[4] for p in points]
+    show_regular = has_regular_line(points)
     marker = "o" if len(points) < 40 else None
 
     ax.plot(days, basic, color=t["basic"], lw=2, marker=marker, ms=6,
@@ -169,6 +227,9 @@ def draw(city, points, theme_name, path):
             label=f"{UTILITY.get(city, 'Utility')} basic service", drawstyle="steps-post" if len(points) > 1 else "default")
     ax.plot(days, cheap, color=t["cheap"], lw=2, marker=marker, ms=6,
             markeredgecolor=t["surface"], markeredgewidth=1.5, label="Cheapest supplier offer")
+    if show_regular:
+        ax.plot(days, regular, color=t["regular"], lw=2, ls=(0, (4, 2)), marker=marker, ms=6,
+                markeredgecolor=t["surface"], markeredgewidth=1.5, label=REGULAR_LABEL)
 
     # Label the cheapest line where the cheapest supplier changes. Brief
     # one- or two-day flips and labels too close together are skipped so the
@@ -202,18 +263,23 @@ def draw(city, points, theme_name, path):
         ax.annotate(s, (days[i], cheap[i]), xytext=(0, -12), textcoords="offset points",
                     ha=align, va="top", fontsize=8.5, color=t["muted"])
 
-    # Latest values at the right end of each line
-    for values, color in ((basic, t["basic"]), (cheap, t["cheap"])):
-        if values and values[-1] is not None:
-            ax.annotate(f"{values[-1]:.2f}¢", (days[-1], values[-1]), xytext=(8, 0),
-                        textcoords="offset points", va="center", fontsize=9.5,
-                        color=t["text"], fontweight="bold")
-
-    all_vals = [v for v in basic + cheap if v is not None]
+    all_vals = [v for v in basic + cheap + (regular if show_regular else []) if v is not None]
     if all_vals:
         lo, hi = min(all_vals), max(all_vals)
         pad = max((hi - lo) * 0.2, 0.75)
         ax.set_ylim(lo - pad * 1.4, hi + pad)  # extra room below for supplier labels
+
+    # Latest values at the right end of each line, pushed apart if close
+    lines_end = [basic, cheap] + ([regular] if show_regular else [])
+    ends = [v[-1] for v in lines_end]
+    if all_vals:
+        y0, y1 = ax.get_ylim()
+        offsets = label_offsets(ends, y0, y1, plot_pts=3.0 * 72, min_gap=12)
+        for v, dy in zip(ends, offsets):
+            if v is not None:
+                ax.annotate(f"{v:.2f}¢", (days[-1], v), xytext=(8, dy),
+                            textcoords="offset points", va="center", fontsize=9.5,
+                            color=t["text"], fontweight="bold")
 
     ax.set_title(city, loc="left", fontsize=14, fontweight="bold", color=t["text"], pad=12)
     ax.set_ylabel("¢ per kWh", color=t["muted"], fontsize=9.5)
@@ -221,7 +287,7 @@ def draw(city, points, theme_name, path):
     ax.yaxis.set_major_formatter(plt.FuncFormatter(lambda v, _: f"{v:g}¢"))
     style_time_axes(ax, days, t)
 
-    leg = ax.legend(loc="upper left", bbox_to_anchor=(0, 1.0), ncol=2, frameon=False,
+    leg = ax.legend(loc="upper left", bbox_to_anchor=(0, 1.0), ncol=3, frameon=False,
                     fontsize=9, labelcolor=t["text"], handlelength=1.6)
     leg.set_zorder(5)
 
@@ -238,7 +304,7 @@ def latest_savings(series):
     for city, points in series.items():
         if not points:
             continue
-        _, basic, cheap, supplier = points[-1]
+        _, basic, cheap, supplier = points[-1][:4]
         if basic is not None and cheap is not None:
             rows.append((city, basic - cheap, supplier))
     return sorted(rows, key=lambda r: (-r[1], r[0]))
@@ -341,7 +407,7 @@ def draw_grid(series, theme_name, path):
     fig.patch.set_facecolor(t["surface"])
 
     all_days = [p[0] for c in cities for p in series[c]]
-    all_vals = [v for c in cities for p in series[c] for v in (p[1], p[2]) if v is not None]
+    all_vals = [v for c in cities for p in series[c] for v in (p[1], p[2], p[4]) if v is not None]
     days_range = sorted(set(all_days))
     lo, hi = min(all_vals), max(all_vals)
     pad = max((hi - lo) * 0.15, 0.5)
@@ -356,22 +422,20 @@ def draw_grid(series, theme_name, path):
         days = [p[0] for p in points]
         basic = [p[1] for p in points]
         cheap = [p[2] for p in points]
+        regular = [p[4] for p in points]
+        show_regular = has_regular_line(points)
         marker = "o" if len(days_range) < 40 else None
         common = dict(lw=2, marker=marker, ms=4.5, markeredgecolor=t["surface"],
                       markeredgewidth=1.2, solid_capstyle="round", solid_joinstyle="round")
         ax.plot(days, basic, color=t["basic"], drawstyle="steps-post" if len(days) > 1 else "default",
                 label="Utility basic service", **common)
         ax.plot(days, cheap, color=t["cheap"], label="Cheapest supplier offer", **common)
+        if show_regular:
+            ax.plot(days, regular, color=t["regular"], ls=(0, (4, 2)), label=REGULAR_LABEL,
+                    **common)
         # Latest values at the line ends, pushed apart when the lines are close.
-        ends = [v[-1] for v in (basic, cheap)]
-        nudge = [0, 0]
-        if None not in ends:
-            panel_pts = 1.55 * 72  # approximate plot height of one panel
-            gap_pts = abs(ends[0] - ends[1]) / ((hi + pad) - (lo - pad)) * panel_pts
-            if gap_pts < 10:
-                push = (10 - gap_pts) / 2
-                upper = 0 if ends[0] >= ends[1] else 1
-                nudge[upper], nudge[1 - upper] = push, -push
+        ends = [v[-1] for v in ([basic, cheap] + ([regular] if show_regular else []))]
+        nudge = label_offsets(ends, lo - pad, hi + pad, plot_pts=1.55 * 72, min_gap=10)
         for v, dy in zip(ends, nudge):
             if v is not None:
                 ax.annotate(f"{v:.2f}¢", (days[-1], v), xytext=(5, dy),
@@ -397,8 +461,13 @@ def draw_grid(series, theme_name, path):
         if ax.get_visible():
             ax.xaxis.set_tick_params(labelbottom=True)
 
-    handles, labels = ax0.get_legend_handles_labels()
-    fig.legend(handles, labels, loc="upper left", bbox_to_anchor=(0.008, 1.0), ncol=2,
+    from matplotlib.lines import Line2D
+    handles = [Line2D([], [], color=t["basic"], lw=2, marker="o", ms=4.5),
+               Line2D([], [], color=t["cheap"], lw=2, marker="o", ms=4.5),
+               Line2D([], [], color=t["regular"], lw=2, ls=(0, (4, 2)), marker="o", ms=4.5)]
+    labels = ["Utility basic service", "Cheapest supplier offer",
+              REGULAR_LABEL + " (when different)"]
+    fig.legend(handles, labels, loc="upper left", bbox_to_anchor=(0.008, 1.0), ncol=3,
                frameon=False, fontsize=9.5, labelcolor=t["text"], handlelength=1.6)
     fig.tight_layout(rect=(0, 0, 1, 1 - 0.5 / fig.get_figheight()), h_pad=1.6, w_pad=1.2)
     fig.savefig(path, format="svg", facecolor=t["surface"], metadata=SVG_META)
@@ -437,18 +506,24 @@ def write_readme(series):
         picture("savings", "Bar chart: how many cents per kWh less the cheapest supplier offer "
                 "costs than the utility's basic service in each city today"),
         "",
-        "| City | Utility | Basic service | Cheapest offer | Cheapest supplier | Savings |",
-        "|---|---|---:|---:|---|---:|",
+        "| City | Utility | Basic service | Cheapest offer | Cheapest supplier | Savings "
+        "| Cheapest non-town-program offer | Supplier | Savings |",
+        "|---|---|---:|---:|---|---:|---:|---|---:|",
     ]
     for city in city_order(series):
-        _, basic, cheap, supplier = series[city][-1]
+        _, basic, cheap, supplier, reg, reg_supplier = series[city][-1]
         saving = f"{basic - cheap:.3f}¢" if basic is not None and cheap is not None else "n/a"
-        lines.append(f"| {city} | {UTILITY.get(city, 'n/a')} | {fmt(basic)} | {fmt(cheap)} | {supplier or 'n/a'} | {saving} |")
+        reg_saving = f"{basic - reg:.3f}¢" if basic is not None and reg is not None else "n/a"
+        lines.append(f"| {city} | {UTILITY.get(city, 'n/a')} | {fmt(basic)} | {fmt(cheap)} "
+                     f"| {supplier or 'n/a'} | {saving} | {fmt(reg)} | {reg_supplier or 'n/a'} "
+                     f"| {reg_saving} |")
 
     lines += [
         "",
-        "Rates are in cents per kWh. Savings is basic service minus the cheapest offer; "
-        "a negative number would mean basic service is cheaper.",
+        "Rates are in cents per kWh. Savings is basic service minus the offer; "
+        "a negative number would mean basic service is cheaper. The non-town-program "
+        "columns leave out the town's own electricity program (municipal aggregation), "
+        "showing the best deal from a regular supplier.",
         "",
         "## Rate history",
         "",

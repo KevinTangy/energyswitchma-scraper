@@ -39,6 +39,12 @@ API_MARKER = "/consumers/compare"
 DATA = Path("data")
 CSV_PATH = DATA / "rates.csv"
 CSV_COLUMNS = ["date", "zip", "city", "supplier", "price_cents_per_kwh", "term", "fees"]
+# Which suppliers are a town's own electricity program (municipal
+# aggregation), per ZIP. Kept beside rates.csv so that file's columns don't
+# change; make_charts.py uses it for "cheapest offer that isn't the town
+# program".
+PROGRAMS_PATH = DATA / "town_programs.csv"
+PROGRAMS_COLUMNS = ["zip", "city", "supplier"]
 # Dates are recorded in Massachusetts time. GitHub runners use UTC, so an
 # evening run would otherwise be labeled with the next day's date.
 LOCAL_TZ = ZoneInfo("America/New_York")
@@ -112,11 +118,38 @@ def summarize(offers):
     utilities = sorted({(o.get("supplierName") or "").strip()
                         for o in offers if o.get("isDistributionCompany")})
     competing = [o for o in offers if not o.get("isDistributionCompany")]
-    programs = {(o.get("supplierName") or "").strip()
-                for o in competing if o.get("municipalAggregationTown")}
+    programs = program_suppliers(offers)
     regular = [o for o in competing if (o.get("supplierName") or "").strip() not in programs]
     return {"utility": " / ".join(utilities), "competing": len(competing),
             "regular": len(regular), "offers": len(offers)}
+
+
+def program_suppliers(offers):
+    """Supplier names that are the town's own electricity program. Only the
+    program's default product carries municipalAggregationTown; its other
+    products share the supplier name, so the name identifies them all."""
+    return {(o.get("supplierName") or "").strip() for o in offers
+            if o.get("municipalAggregationTown") and not o.get("isDistributionCompany")}
+
+
+def update_programs(zip_code, city, names):
+    """Add this ZIP's program supplier names to data/town_programs.csv.
+    Names are only added, never removed, so older days keep their meaning."""
+    rows = []
+    if PROGRAMS_PATH.exists():
+        with PROGRAMS_PATH.open(newline="") as f:
+            rows = list(csv.DictReader(f))
+    known = {(r["zip"], r["supplier"]) for r in rows}
+    new = [{"zip": zip_code, "city": city, "supplier": n}
+           for n in sorted(names) if (zip_code, n) not in known]
+    if not new:
+        return 0
+    DATA.mkdir(parents=True, exist_ok=True)
+    with PROGRAMS_PATH.open("w", newline="") as f:
+        w = csv.DictWriter(f, fieldnames=PROGRAMS_COLUMNS)
+        w.writeheader()
+        w.writerows(sorted(rows + new, key=lambda r: (r["zip"], r["supplier"])))
+    return len(new)
 
 
 def choose_compare_id(summaries):
@@ -300,6 +333,7 @@ def main():
             rows.append({"date": today, "zip": args.zip, "city": args.city, **r})
 
     dropped = write_rows(sort_rows(rows))
+    update_programs(args.zip, args.city, program_suppliers(offers))
     note = f" (replaced {dropped} rows already saved for {today})" if dropped else ""
     print(f"[{label}] Saved {len(rows)} rows from {len(offers)} offers{note}")
 

@@ -20,6 +20,7 @@ make_charts.py                # data/rates.csv -> charts/*.svg + README.md
 .github/workflows/scrape.yml  # Daily job: scrape cities.csv, build charts, commit
 .github/workflows/check-utilities.yml  # Manual: run probe.py on GitHub
 data/rates.csv                # The running dataset (all cities, all days)
+data/town_programs.csv        # Which suppliers are each ZIP's town program (zip,city,supplier)
 data/raw/<zip>/<date>.json.gz # Raw JSON captured from the site each day (gzip)
 data/raw/<zip>/<date>.txt.gz  # Page text, for debugging when JSON is missing
 charts/savings.svg            # Today's savings bar chart (README); -dark.svg variant
@@ -143,6 +144,18 @@ Columns, in order: `date, zip, city, supplier, price_cents_per_kwh, term, fees`
   day's rows for the ZIP. The file is kept in date order.
 - If the header of an existing CSV doesn't match these columns, `scrape.py`
   renames the old file to `data/rates_old_format.csv` and starts a new one.
+  So don't add columns casually: that would move the whole history aside.
+
+## data/town_programs.csv
+
+Which supplier names are a town's own electricity program (municipal
+aggregation), per ZIP: `zip,city,supplier`. `scrape.py` adds to it on every
+run (`program_suppliers()` + `update_programs()`); names are only added,
+never removed. It's kept beside `rates.csv` so that file's required columns
+don't change. Identification: the program's default product has
+`municipalAggregationTown` set; its other products share the supplier name.
+Backfilled Nov 19 from all raw captures: 16 towns have a program; Everett,
+Revere and Saugus don't.
 
 ## README and charts (make_charts.py)
 
@@ -161,7 +174,7 @@ The README shows two images, and both scale as cities are added:
 The larger per-city charts (`draw`) are still generated and linked from the
 README. Each has:
 
-- Two series:
+- Three series:
   1. **Utility basic service** (National Grid or Eversource, named from the
      `(Basic Service)` rows): the rate for whichever period covers
      that day, found by parsing terms like `Aug '26 through Jan '27`. Drawn
@@ -170,16 +183,26 @@ README. Each has:
      labeled with the supplier name when the cheapest supplier changes. Runs
      of a day or two and labels too close together are skipped; the latest
      supplier is always labeled.
+  3. **Cheapest non-town-program offer:** the lowest-priced regular
+     supplier, leaving out the town's program (from `town_programs.csv`).
+     Aqua `#1baf7a` / `#199e70`, dashed. Drawn only when it differs from
+     the cheapest offer on some day (in towns without a program they're
+     identical). The same three series appear in each grid panel.
 - The charts are rebuilt from every date in `data/rates.csv` on each run, so
   history builds up one point per day. Don't trim old rows from the CSV.
 - The latest value is printed at the right end of each line.
 - Light and dark SVGs, shown through `<picture>` with
   `prefers-color-scheme`. Colors come from a colorblind-safe palette that
   was checked with a palette-checking tool: blue `#2a78d6` / `#3987e5` for
-  basic service, orange `#eb6834` / `#d95926` for the cheapest offer.
+  basic service, orange `#eb6834` / `#d95926` for the cheapest offer, aqua
+  `#1baf7a` / `#199e70` for the cheapest non-town-program offer (all three
+  checked together; light aqua is under 3:1 contrast, so lines always carry
+  value labels and the table repeats the numbers).
 - The README also has a "Today's savings" table with utility, basic, cheapest,
   supplier and savings (basic minus cheapest, positive = cheaper than basic),
-  in ¢ to 3 decimals, sorted by savings.
+  plus the cheapest non-town-program offer, its supplier and its savings, in
+  ¢ to 3 decimals, sorted by savings. The savings bar chart still uses the
+  overall cheapest offer.
 - If `data/rates.csv` doesn't exist, the script exits cleanly so the commit
   step still runs.
 
