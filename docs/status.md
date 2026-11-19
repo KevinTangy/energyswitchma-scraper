@@ -20,7 +20,10 @@ _As of Nov 18, 2026._
 
 The first scheduled run, set for Nov 18, 2026 at 6:17 AM EST (11:17 UTC),
 didn't start until 2:24 PM EST (19:24 UTC), about 8 hours late. It succeeded.
-The schedule was then moved to 6:11 AM EST (`11 11 * * *`). Watch whether
+The schedule was then moved to 6:11 AM EST (`11 11 * * *`), and on Nov 19
+to `11 6 * * *` with `timezone: "America/New_York"`. The Nov 19 run hadn't
+started by 9:55 AM even though the workflow is active on `main`; GitHub's
+docs say scheduled runs can be delayed or dropped under load. Watch whether
 the next runs start near that time. GitHub only promises "best effort" for
 scheduled runs, and new schedules are often delayed at first. If runs keep
 coming in hours late, these are the things to check:

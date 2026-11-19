@@ -56,8 +56,8 @@ In the order they were made (Nov 17–18, 2026).
     because they're real options for residents. This hasn't been finally
     decided; see `status.md`.
 
-16. **Cron at an off-the-hour minute** (now 11:11 UTC = 6:11 AM EST, moved
-    from :17 on Nov 18), because GitHub delays scheduled jobs set for the
+16. **Cron at an off-the-hour minute** (now 6:11 AM America/New_York via
+    the `timezone` key, Nov 19; was 11:11 UTC, and :17 before that), because GitHub delays scheduled jobs set for the
     top of the hour.
 
 17. **Replace, don't append, a day's rows** (Nov 18). A re-run on the same
@@ -114,3 +114,8 @@ In the order they were made (Nov 17–18, 2026).
     from town to town; towns without a program would duplicate existing
     charts. Daily run grows from 6 to 19 cities (about 10 minutes with the
     15-second pause; free on a public repo).
+
+26. **Timezone-aware schedule** (Nov 19). The workflow comments said GitHub
+    cron is UTC only; that was outdated. GitHub's docs now support an IANA
+    `timezone` next to `cron`, so the job runs at 6:11 AM Eastern all year
+    instead of shifting to 7:11 AM during daylight saving time.

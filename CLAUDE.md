@@ -185,9 +185,11 @@ README. Each has:
 
 ## GitHub Actions
 
-- Schedule: `cron: "11 11 * * *"` is 11:11 UTC, which is 6:11 AM EST and
-  7:11 AM EDT. GitHub cron runs in UTC only. Also has `workflow_dispatch`
-  for manual runs.
+- Schedule: `cron: "11 6 * * *"` with `timezone: "America/New_York"`, so
+  6:11 AM Eastern all year (daylight saving included). Without `timezone`,
+  GitHub reads cron as UTC. GitHub's docs warn scheduled runs can be delayed
+  or dropped under load; Nov 18's ran 8 hours late and Nov 19's didn't run
+  by 10 AM. Also has `workflow_dispatch` for manual runs.
 - Steps: install Playwright and matplotlib, then scrape each city in
   `cities.csv` in a loop, passing its `compare_id`
   (with a 15-second pause between cities, `PAUSE_SECONDS`, to go easy on the
@@ -200,10 +202,10 @@ README. Each has:
 See `docs/status.md` for details. In short:
 - The pipeline was built and checked with offline tests. The parsing was
   confirmed against a real Malden capture (42 offers, 43 rows).
-- **Open issue:** the first scheduled run (Nov 18, 2026, set for 6:17 AM)
-  fired about 8 hours late, at 2:24 PM EST. The schedule was moved to
-  6:11 AM EST; watch whether later runs are on time. Details in
-  `docs/status.md`.
+- **Open issue:** scheduled runs are unreliable. Nov 18's (set for 6:17 AM)
+  fired about 8 hours late, at 2:24 PM EST; Nov 19's (6:11 AM) hadn't run by
+  9:55 AM. The workflow is active and on `main`, so this is GitHub delaying
+  or dropping runs. Schedule switched to a timezone-aware cron on Nov 19.
 - The original 6 cities return data on page 1 (National Grid). The Eversource
   page (2) works; its utility is named "NSTAR d/b/a Eversource Energy"
   (shown as "Eversource" on charts). 13 towns with their own city programs
