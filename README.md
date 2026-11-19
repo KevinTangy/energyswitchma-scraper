@@ -2,7 +2,7 @@
 
 Daily electricity supply rates from [EnergySwitch MA](https://energyswitchma.gov), comparing each city's utility basic service rate (National Grid or Eversource) with the cheapest supplier offer.
 
-**Last updated:** November 18, 2026
+**Last updated:** November 19, 2026
 
 ## Today's savings
 
@@ -27,11 +27,11 @@ Daily electricity supply rates from [EnergySwitch MA](https://energyswitchma.gov
 | Cambridge | Eversource | 17.323¢ | 13.770¢ | Cambridge Community Electricity | 3.553¢ |
 | Medford | National Grid | 17.185¢ | 13.720¢ | City of Medford Community Electricity Aggregation | 3.465¢ |
 | Melrose | National Grid | 17.185¢ | 14.310¢ | City of Melrose Community Power | 2.875¢ |
-| Chelsea | Eversource | 17.323¢ | 14.860¢ | Chelsea Electricity Choice | 2.463¢ |
-| Burlington | Eversource | 17.323¢ | 15.100¢ | CleanChoice Energy | 2.223¢ |
-| Everett | National Grid | 17.185¢ | 15.200¢ | CleanChoice Energy | 1.985¢ |
-| Revere | National Grid | 17.185¢ | 15.200¢ | CleanChoice Energy | 1.985¢ |
-| Saugus | National Grid | 17.185¢ | 15.200¢ | CleanChoice Energy | 1.985¢ |
+| Burlington | Eversource | 17.323¢ | 14.800¢ | CleanChoice Energy | 2.523¢ |
+| Chelsea | Eversource | 17.323¢ | 14.800¢ | CleanChoice Energy | 2.523¢ |
+| Everett | National Grid | 17.185¢ | 14.900¢ | CleanChoice Energy | 2.285¢ |
+| Revere | National Grid | 17.185¢ | 14.900¢ | CleanChoice Energy | 2.285¢ |
+| Saugus | National Grid | 17.185¢ | 14.900¢ | CleanChoice Energy | 2.285¢ |
 
 Rates are in cents per kWh. Savings is basic service minus the cheapest offer; a negative number would mean basic service is cheaper.
 
@@ -42,7 +42,7 @@ Rates are in cents per kWh. Savings is basic service minus the cheapest offer; a
   <img src="charts/all-cities.svg" alt="Small charts, one per city, of the utility basic service rate and the cheapest supplier rate over time">
 </picture>
 
-Larger chart for one city: [Winthrop](charts/winthrop.svg) · [Winchester](charts/winchester.svg) · [Waltham](charts/waltham.svg) · [Somerville](charts/somerville.svg) · [Stoneham](charts/stoneham.svg) · [Arlington](charts/arlington.svg) · [Brookline](charts/brookline.svg) · [Malden](charts/malden.svg) · [Woburn](charts/woburn.svg) · [Quincy](charts/quincy.svg) · [Boston](charts/boston.svg) · [Cambridge](charts/cambridge.svg) · [Medford](charts/medford.svg) · [Melrose](charts/melrose.svg) · [Chelsea](charts/chelsea.svg) · [Burlington](charts/burlington.svg) · [Everett](charts/everett.svg) · [Revere](charts/revere.svg) · [Saugus](charts/saugus.svg)
+Larger chart for one city: [Winthrop](charts/winthrop.svg) · [Winchester](charts/winchester.svg) · [Waltham](charts/waltham.svg) · [Somerville](charts/somerville.svg) · [Stoneham](charts/stoneham.svg) · [Arlington](charts/arlington.svg) · [Brookline](charts/brookline.svg) · [Malden](charts/malden.svg) · [Woburn](charts/woburn.svg) · [Quincy](charts/quincy.svg) · [Boston](charts/boston.svg) · [Cambridge](charts/cambridge.svg) · [Medford](charts/medford.svg) · [Melrose](charts/melrose.svg) · [Burlington](charts/burlington.svg) · [Chelsea](charts/chelsea.svg) · [Everett](charts/everett.svg) · [Revere](charts/revere.svg) · [Saugus](charts/saugus.svg)
 
 ## How this works
 
