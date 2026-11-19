@@ -186,7 +186,11 @@ README. Each has:
 ## GitHub Actions
 
 - Schedule: `cron: "11 6 * * *"` with `timezone: "America/New_York"`, so
-  6:11 AM Eastern all year (daylight saving included). Without `timezone`,
+  6:11 AM Eastern all year (daylight saving included), plus a backup run at
+  12:41 PM Eastern (`41 12 * * *`) in case the morning run is dropped. The
+  backup replaces the day's rows, so it never duplicates. `concurrency`
+  makes overlapping runs wait for each other, and the commit step does
+  `git pull --rebase` before pushing. Without `timezone`,
   GitHub reads cron as UTC. GitHub's docs warn scheduled runs can be delayed
   or dropped under load; Nov 18's ran 8 hours late and Nov 19's didn't run
   by 10 AM. Also has `workflow_dispatch` for manual runs.

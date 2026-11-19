@@ -119,3 +119,9 @@ In the order they were made (Nov 17–18, 2026).
     cron is UTC only; that was outdated. GitHub's docs now support an IANA
     `timezone` next to `cron`, so the job runs at 6:11 AM Eastern all year
     instead of shifting to 7:11 AM during daylight saving time.
+
+27. **Backup run at 12:41 PM Eastern** (Nov 19). GitHub dropped the Nov 19
+    morning run, and delayed Nov 18's by 8 hours. A second daily schedule
+    costs nothing (public repo) and can't duplicate data because a re-run
+    replaces the day's rows. Trade-off: on days both run, the saved rates
+    are from early afternoon rather than the morning.

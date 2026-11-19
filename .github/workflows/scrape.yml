@@ -8,10 +8,20 @@ on:
     # start late; workflow_dispatch below is the manual fallback.
     - cron: "11 6 * * *"
       timezone: "America/New_York"
+    # Backup at 12:41 PM Eastern in case the morning run is dropped. If the
+    # morning run worked, this just replaces the day's rows (no duplicates).
+    - cron: "41 12 * * *"
+      timezone: "America/New_York"
   workflow_dispatch:         # lets you run it manually from the Actions tab
 
 permissions:
   contents: write
+
+# One run at a time: a run that starts while another is going waits for it,
+# so two runs never push data at the same moment.
+concurrency:
+  group: daily-scrape
+  cancel-in-progress: false
 
 jobs:
   scrape:
@@ -58,6 +68,7 @@ jobs:
           git config user.email "rate-bot@users.noreply.github.com"
           git add data charts README.md
           git diff --cached --quiet || git commit -m "Rates for $(TZ=America/New_York date +%F)"
+          git pull --rebase   # in case main changed while this run was scraping
           git push
 
       - name: Report failures
