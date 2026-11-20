@@ -143,3 +143,9 @@ In the order they were made (Nov 17–18, 2026).
     replacing 6:11 AM + 12:41 PM. Both use the `timezone` key; both are off
     the top of the hour. When both run, the 11:11 AM data is what's kept
     for the day.
+
+31. **Actions on Node 24** (Nov 20). GitHub warned that checkout@v4 and
+    setup-python@v5 run on deprecated Node 20. Moved to checkout@v7,
+    setup-python@v7 and upload-artifact@v7 (all `using: node24` in their
+    action.yml). checkout v6+ stores the token in a separate file, but
+    `git push` in the commit step still works without changes.
