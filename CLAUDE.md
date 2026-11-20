@@ -188,8 +188,10 @@ README. Each has:
      Aqua `#1baf7a` / `#199e70`, dashed. Drawn only when it differs from
      the cheapest offer on some day (in towns without a program they're
      identical). The same three series appear in each grid panel.
-- The charts are rebuilt from every date in `data/rates.csv` on each run, so
-  history builds up one point per day. Don't trim old rows from the CSV.
+- The charts are rebuilt from `data/rates.csv` on each run, so history
+  builds up one point per day. They start at `CHART_START` (Nov 18, 2026):
+  Nov 17 only had the first 6 cities, so it's hidden from charts and the
+  README but kept in the CSV. Don't trim old rows from the CSV.
 - The latest value is printed at the right end of each line.
 - Light and dark SVGs, shown through `<picture>` with
   `prefers-color-scheme`. Colors come from a colorblind-safe palette that

@@ -134,3 +134,7 @@ In the order they were made (Nov 17–18, 2026).
     migration and move the history aside. Drawn dashed in aqua (third
     palette slot, validated together with blue and orange) and only when it
     differs from the cheapest offer.
+
+29. **Charts start Nov 18** (Nov 20). Nov 17 only has data for the first 6
+    cities (the other 13 were added Nov 18), so `CHART_START` in
+    `make_charts.py` hides it. The rows stay in `data/rates.csv`.

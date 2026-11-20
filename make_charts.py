@@ -37,6 +37,10 @@ import matplotlib.pyplot as plt  # noqa: E402
 
 CSV_PATH = Path("data/rates.csv")
 PROGRAMS_PATH = Path("data/town_programs.csv")
+# Charts and the README start on this date. Nov 17 is left out because only
+# the first 6 cities had data that day (the other 13 were added Nov 18).
+# Earlier rows stay in data/rates.csv; they're just not drawn.
+CHART_START = dt.date(2026, 11, 18)
 CHART_DIR = Path("charts")
 README = Path("README.md")
 
@@ -116,6 +120,8 @@ def load_series():
         points = []
         for day_str in sorted(days):
             day = dt.date.fromisoformat(day_str)
+            if day < CHART_START:
+                continue
             rows = [r for r in days[day_str] if price(r) is not None]
             basic = [r for r in rows if r["supplier"].endswith("(Basic Service)")]
             offers = [r for r in rows if not r["supplier"].endswith("(Basic Service)")]
