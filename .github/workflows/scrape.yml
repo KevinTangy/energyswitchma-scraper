@@ -2,15 +2,15 @@ name: Daily EnergySwitch scrape
 
 on:
   schedule:
-    # 6:11 AM Eastern every day, all year. GitHub reads cron as UTC unless a
+    # Two runs a day, Eastern time all year. GitHub reads cron as UTC unless a
     # timezone is given; with an IANA timezone it follows daylight saving.
     # GitHub may delay or drop scheduled runs when it's busy, so a run can
     # start late; workflow_dispatch below is the manual fallback.
-    - cron: "11 6 * * *"
+    # If both run on the same day, the second replaces that day's rows
+    # (no duplicates).
+    - cron: "5 2 * * *"      # 2:05 AM Eastern
       timezone: "America/New_York"
-    # Backup at 12:41 PM Eastern in case the morning run is dropped. If the
-    # morning run worked, this just replaces the day's rows (no duplicates).
-    - cron: "41 12 * * *"
+    - cron: "11 11 * * *"    # 11:11 AM Eastern
       timezone: "America/New_York"
   workflow_dispatch:         # lets you run it manually from the Actions tab
 

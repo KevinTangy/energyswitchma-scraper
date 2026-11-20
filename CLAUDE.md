@@ -210,15 +210,17 @@ README. Each has:
 
 ## GitHub Actions
 
-- Schedule: `cron: "11 6 * * *"` with `timezone: "America/New_York"`, so
-  6:11 AM Eastern all year (daylight saving included), plus a backup run at
-  12:41 PM Eastern (`41 12 * * *`) in case the morning run is dropped. The
-  backup replaces the day's rows, so it never duplicates. `concurrency`
+- Schedule (Kevin's choice, Nov 20): two runs a day with
+  `timezone: "America/New_York"`, so Eastern time all year (daylight saving
+  included): 2:05 AM (`5 2 * * *`) and 11:11 AM (`11 11 * * *`). Either can
+  be delayed or dropped by GitHub; a second run on the same day replaces
+  the day's rows, so it never duplicates. `concurrency`
   makes overlapping runs wait for each other, and the commit step does
   `git pull --rebase` before pushing. Without `timezone`,
   GitHub reads cron as UTC. GitHub's docs warn scheduled runs can be delayed
-  or dropped under load; Nov 18's ran 8 hours late and Nov 19's didn't run
-  by 10 AM. Also has `workflow_dispatch` for manual runs.
+  or dropped under load; Nov 18's ran 8 hours late, Nov 19's morning run
+  was dropped and its backup ran 6 hours late, and Nov 20's first run
+  started at 2:04 PM. Also has `workflow_dispatch` for manual runs.
 - Steps: install Playwright and matplotlib, then scrape each city in
   `cities.csv` in a loop, passing its `compare_id`
   (with a 15-second pause between cities, `PAUSE_SECONDS`, to go easy on the

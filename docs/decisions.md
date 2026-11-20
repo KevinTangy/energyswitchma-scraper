@@ -138,3 +138,8 @@ In the order they were made (Nov 17–18, 2026).
 29. **Charts start Nov 18** (Nov 20). Nov 17 only has data for the first 6
     cities (the other 13 were added Nov 18), so `CHART_START` in
     `make_charts.py` hides it. The rows stay in `data/rates.csv`.
+
+30. **Runs at 2:05 AM and 11:11 AM Eastern** (Nov 20, Kevin's choice),
+    replacing 6:11 AM + 12:41 PM. Both use the `timezone` key; both are off
+    the top of the hour. When both run, the 11:11 AM data is what's kept
+    for the day.
