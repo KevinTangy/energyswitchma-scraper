@@ -2,7 +2,7 @@
 
 Daily electricity supply rates from [EnergySwitch MA](https://energyswitchma.gov), comparing each city's utility basic service rate (National Grid or Eversource) with the cheapest supplier offer.
 
-**Last updated:** November 23, 2026
+**Last updated:** November 24, 2026
 
 ## Today's savings
 
