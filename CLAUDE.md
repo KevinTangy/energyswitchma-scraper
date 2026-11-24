@@ -210,11 +210,11 @@ README. Each has:
 
 ## GitHub Actions
 
-- Schedule (Kevin's choice, Nov 20): two runs a day with
-  `timezone: "America/New_York"`, so Eastern time all year (daylight saving
-  included): 2:05 AM (`5 2 * * *`) and 11:11 AM (`11 11 * * *`). Either can
-  be delayed or dropped by GitHub; a second run on the same day replaces
-  the day's rows, so it never duplicates. `concurrency`
+- Schedule (Kevin's choice, Nov 24): one run a day at 2:05 AM Eastern
+  (`5 2 * * *` with `timezone: "America/New_York"`, so it follows daylight
+  saving). The 11:11 AM backup was removed Nov 24, so if GitHub drops the
+  2:05 AM run, that day has no data unless it's run by hand. A re-run on
+  the same day replaces the day's rows, so it never duplicates. `concurrency`
   makes overlapping runs wait for each other, and the commit step does
   `git pull --rebase` before pushing. Without `timezone`,
   GitHub reads cron as UTC. GitHub's docs warn scheduled runs can be delayed

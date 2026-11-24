@@ -149,3 +149,7 @@ In the order they were made (Nov 17–18, 2026).
     setup-python@v7 and upload-artifact@v7 (all `using: node24` in their
     action.yml). checkout v6+ stores the token in a separate file, but
     `git push` in the commit step still works without changes.
+
+32. **Back to one run a day: 2:05 AM Eastern** (Nov 24, Kevin's choice).
+    The 11:11 AM run was removed. Trade-off: no automatic backup if GitHub
+    drops the 2:05 AM run; use the manual "Run workflow" button that day.
