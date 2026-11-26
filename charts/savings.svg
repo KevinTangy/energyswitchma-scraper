@@ -374,10 +374,10 @@ z
    </g>
    <g id="patch_35">
     <path d="M 80.175012 548.1075 
-L 203.141567 548.1075 
-Q 207.141579 548.1075 207.141579 552.107512 
-L 207.141579 562.242488 
-Q 207.141579 566.2425 203.141567 566.2425 
+L 208.873146 548.1075 
+Q 212.873158 548.1075 212.873158 552.107512 
+L 212.873158 562.242488 
+Q 212.873158 566.2425 208.873146 566.2425 
 L 80.175012 566.2425 
 Q 76.175 566.2425 76.175 562.242488 
 L 76.175 552.107512 
@@ -395,10 +395,10 @@ z
    </g>
    <g id="patch_37">
     <path d="M 80.175012 578.3325 
-L 203.141567 578.3325 
-Q 207.141579 578.3325 207.141579 582.332512 
-L 207.141579 592.467488 
-Q 207.141579 596.4675 203.141567 596.4675 
+L 208.873146 578.3325 
+Q 212.873158 578.3325 212.873158 582.332512 
+L 212.873158 592.467488 
+Q 212.873158 596.4675 208.873146 596.4675 
 L 80.175012 596.4675 
 Q 76.175 596.4675 76.175 592.467488 
 L 76.175 582.332512 
@@ -416,10 +416,10 @@ z
    </g>
    <g id="patch_39">
     <path d="M 80.175012 608.5575 
-L 203.141567 608.5575 
-Q 207.141579 608.5575 207.141579 612.557512 
-L 207.141579 622.692488 
-Q 207.141579 626.6925 203.141567 626.6925 
+L 208.873146 608.5575 
+Q 212.873158 608.5575 212.873158 612.557512 
+L 212.873158 622.692488 
+Q 212.873158 626.6925 208.873146 626.6925 
 L 80.175012 626.6925 
 Q 76.175 626.6925 76.175 622.692488 
 L 76.175 612.557512 
@@ -2638,18 +2638,18 @@ z
     </g>
    </g>
    <g id="text_52">
-    <!-- 2.28¢ -->
-    <g style="fill: #0b0b0b" transform="translate(213.141579 559.772656) scale(0.1 -0.1)">
+    <!-- 2.38¢ -->
+    <g style="fill: #0b0b0b" transform="translate(218.873158 559.772656) scale(0.1 -0.1)">
      <use xlink:href="#DejaVuSans-Bold-15"/>
      <use xlink:href="#DejaVuSans-Bold-11" transform="translate(69.578125 0)"/>
-     <use xlink:href="#DejaVuSans-Bold-15" transform="translate(107.5625 0)"/>
+     <use xlink:href="#DejaVuSans-Bold-16" transform="translate(107.5625 0)"/>
      <use xlink:href="#DejaVuSans-Bold-1b" transform="translate(177.140625 0)"/>
      <use xlink:href="#DejaVuSans-Bold-64" transform="translate(246.71875 0)"/>
     </g>
    </g>
    <g id="text_53">
     <!-- CleanChoice Energy -->
-    <g style="fill: #52514e" transform="translate(257.141579 559.513242) scale(0.09 -0.09)">
+    <g style="fill: #52514e" transform="translate(262.873158 559.513242) scale(0.09 -0.09)">
      <use xlink:href="#DejaVuSans-26"/>
      <use xlink:href="#DejaVuSans-4f" transform="translate(69.828125 0)"/>
      <use xlink:href="#DejaVuSans-48" transform="translate(97.609375 0)"/>
@@ -2671,18 +2671,18 @@ z
     </g>
    </g>
    <g id="text_54">
-    <!-- 2.28¢ -->
-    <g style="fill: #0b0b0b" transform="translate(213.141579 589.997656) scale(0.1 -0.1)">
+    <!-- 2.38¢ -->
+    <g style="fill: #0b0b0b" transform="translate(218.873158 589.997656) scale(0.1 -0.1)">
      <use xlink:href="#DejaVuSans-Bold-15"/>
      <use xlink:href="#DejaVuSans-Bold-11" transform="translate(69.578125 0)"/>
-     <use xlink:href="#DejaVuSans-Bold-15" transform="translate(107.5625 0)"/>
+     <use xlink:href="#DejaVuSans-Bold-16" transform="translate(107.5625 0)"/>
      <use xlink:href="#DejaVuSans-Bold-1b" transform="translate(177.140625 0)"/>
      <use xlink:href="#DejaVuSans-Bold-64" transform="translate(246.71875 0)"/>
     </g>
    </g>
    <g id="text_55">
     <!-- CleanChoice Energy -->
-    <g style="fill: #52514e" transform="translate(257.141579 589.738242) scale(0.09 -0.09)">
+    <g style="fill: #52514e" transform="translate(262.873158 589.738242) scale(0.09 -0.09)">
      <use xlink:href="#DejaVuSans-26"/>
      <use xlink:href="#DejaVuSans-4f" transform="translate(69.828125 0)"/>
      <use xlink:href="#DejaVuSans-48" transform="translate(97.609375 0)"/>
@@ -2704,18 +2704,18 @@ z
     </g>
    </g>
    <g id="text_56">
-    <!-- 2.28¢ -->
-    <g style="fill: #0b0b0b" transform="translate(213.141579 620.222656) scale(0.1 -0.1)">
+    <!-- 2.38¢ -->
+    <g style="fill: #0b0b0b" transform="translate(218.873158 620.222656) scale(0.1 -0.1)">
      <use xlink:href="#DejaVuSans-Bold-15"/>
      <use xlink:href="#DejaVuSans-Bold-11" transform="translate(69.578125 0)"/>
-     <use xlink:href="#DejaVuSans-Bold-15" transform="translate(107.5625 0)"/>
+     <use xlink:href="#DejaVuSans-Bold-16" transform="translate(107.5625 0)"/>
      <use xlink:href="#DejaVuSans-Bold-1b" transform="translate(177.140625 0)"/>
      <use xlink:href="#DejaVuSans-Bold-64" transform="translate(246.71875 0)"/>
     </g>
    </g>
    <g id="text_57">
     <!-- CleanChoice Energy -->
-    <g style="fill: #52514e" transform="translate(257.141579 619.963242) scale(0.09 -0.09)">
+    <g style="fill: #52514e" transform="translate(262.873158 619.963242) scale(0.09 -0.09)">
      <use xlink:href="#DejaVuSans-26"/>
      <use xlink:href="#DejaVuSans-4f" transform="translate(69.828125 0)"/>
      <use xlink:href="#DejaVuSans-48" transform="translate(97.609375 0)"/>
